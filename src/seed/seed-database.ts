@@ -1,16 +1,39 @@
 import { initialData } from './seed';
 import prisma from '../lib/prisma';
+import { countries } from './seed-countries';
 
 
 
 async function main() {
 
+
+  await prisma.orderAddress.deleteMany();
+  await prisma.orderItem.deleteMany();
+  await prisma.order.deleteMany();
+
+
   // 1. Borrar registros previos
+  await prisma.userAddress.deleteMany();
+  await prisma.user.deleteMany();
+  await prisma.country.deleteMany();
+
   await prisma.productImage.deleteMany();
   await prisma.product.deleteMany();
   await prisma.category.deleteMany();
 
-  const { categories, products } = initialData;
+  const { categories, products, users } = initialData;
+  //Users
+  await prisma.user.createMany({
+    data: users
+  });
+
+  // Countries
+  await prisma.country.createMany({
+    data: countries
+  });
+
+
+
 
   // Categorias
   const categoriesData = categories.map((name) => ({ name }));
@@ -26,7 +49,7 @@ async function main() {
     return map;
   }, {} as Record<string, string>);
 
-  // Productos
+  //  Productos
   for (const product of products) {
     const { type, images, ...rest } = product;
 
@@ -39,6 +62,7 @@ async function main() {
 
     // Images
     const imagesData = images.map(image => ({
+
       url: image,
       altText: '', // Add the missing altText property
       productId: dbProduct.id
@@ -48,6 +72,7 @@ async function main() {
       data: imagesData
     });
   }
+
 
   console.log('Seed ejecutado correctamente');
 }

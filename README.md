@@ -11,7 +11,8 @@ Esto es un E-commerce exclusivo para la marca Decade ©
 4. Levantar la base de de datos: ```docker compose up -d```
 5. Correr las migraciones de Prisma:```npx prisma migrate dev```
 6. Ejecutar seed: ```npm run seed```
-7. Correr el proyecto con: ```npm run dev```
+7. Limpiar local storage del navegador. (En caso de hacer todo desde 0).
+8. Correr el proyecto con: ```npm run dev```
 
 
 

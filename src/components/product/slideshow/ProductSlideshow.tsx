@@ -12,6 +12,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import './slideshow.css';
+import { ProductImage } from "@/components";
 
 
 
@@ -37,9 +38,9 @@ export const ProductSlideshow = ({ images, title, className }: Props) => {
                 // } as React.CSSProperties}
                 spaceBetween={10}
                 navigation={true}
-                autoplay={{
-                    delay: 2500,
-                }}
+                // autoplay={{
+                //     delay: 2500,
+                // }}
                 thumbs={{
                     swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
                 }}
@@ -49,10 +50,10 @@ export const ProductSlideshow = ({ images, title, className }: Props) => {
                 {
                     images.map(image => (
                         <SwiperSlide key={image}>
-                            <Image
-                                width={1024}
-                                height={800}
-                                src={`/products/${image}`}
+                            <ProductImage
+                                width={300}
+                                height={300}
+                                src={image}
                                 alt={title}
                                 className="rounded-lg object-fill"
                             />
@@ -73,10 +74,10 @@ export const ProductSlideshow = ({ images, title, className }: Props) => {
                 {
                     images.map(image => (
                         <SwiperSlide key={image}>
-                            <Image
+                            <ProductImage
                                 width={300}
                                 height={300}
-                                src={`/products/${image}`}
+                                src={image}
                                 alt={title}
                                 className="rounded-lg object-fill"
                             />
