@@ -32,6 +32,7 @@ export const TopMenu = () => {
 
             {/*Center Menu*/}
             <div className="hidden sm:block">
+                <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/kid">Idelvi</Link>
                 <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/men">Hombres</Link>
                 <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/women">Mujeres</Link>
                 <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/kid">Niños</Link>
@@ -50,7 +51,7 @@ export const TopMenu = () => {
                     <div className=" relative">
                         {
                             (loaded && totalItemsInCart > 0) && (
-                                <span className=" fade-in absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-blue-700 text-white">
+                                <span className=" fade-in absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-red-700 text-white">
                                     {totalItemsInCart}
                                 </span>
                             )}

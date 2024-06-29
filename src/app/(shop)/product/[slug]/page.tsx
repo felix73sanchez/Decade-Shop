@@ -84,7 +84,7 @@ export default async function ProductSlugPage({ params }: Props) {
                 <AddToCart product={product} />
 
                 {/* Descripcion */}
-                <h3 className="font-bold text-sm"> Descripcion </h3>
+                <h3 className="font-bold text-sm "> Descripcion </h3>
                 <p className=" font-light">{product.description}</p>
 
             </div>
