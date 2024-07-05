@@ -26,6 +26,10 @@ body {
       rgb(var(--background-start-rgb))
       )
       rgb(var(--background-end-rgb))
+  display: flex; 
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  height: 100vh; /* h-screen */
 }
 
 
