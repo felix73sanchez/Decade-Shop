@@ -1,6 +1,6 @@
 'use client';
 
-import { titleFont } from "@/config/fonts"
+import { logoFont, titleFont } from "@/config/fonts"
 import { useCartStore, useUIStore } from "@/store";
 import Link from "next/link"
 import { useEffect, useState } from "react";
@@ -19,23 +19,23 @@ export const TopMenu = () => {
     }, [])
 
     return (
-        <nav className="flex px-5 justify-between items-center w-full">
+        <nav className="flex px-10 fixed top-0 left-0 w-full bg-zinc-50 text-black p-0 shadow justify-between items-center container z-50">
 
             {/*Logo*/}
             <div>
                 <Link
                     href="/">
-                    <span className={`${titleFont.className} antialiased font-bold text-6xl `}>DECA</span>
+                    <span className={`${logoFont.className} antialiased text-2xl `}>DECAVENTURE</span>
 
                 </Link>
             </div>
 
             {/*Center Menu*/}
             <div className="hidden sm:block">
-                <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/kid">Idelvi</Link>
-                <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/men">Hombres</Link>
-                <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/women">Mujeres</Link>
-                <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/gender/kid">Niños</Link>
+                <Link className="m-2 p-2 rounded-md transition-all hover:bg-lime-500" href="/gender/kid">Idelvi</Link>
+                <Link className="m-2 p-2 rounded-md transition-all hover:bg-lime-500" href="/gender/men">Hombres</Link>
+                <Link className="m-2 p-2 rounded-md transition-all hover:bg-lime-500" href="/gender/women">Mujeres</Link>
+                <Link className="m-2 p-2 rounded-md transition-all hover:bg-lime-500" href="/gender/kid">Niños</Link>
             </div>
 
             {/*Search, Cart, Menu*/}
@@ -60,7 +60,7 @@ export const TopMenu = () => {
 
                 </Link>
 
-                <button className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" onClick={openSideMenu} >
+                <button className="m-2 p-2 rounded-md transition-all hover:bg-lime-500" onClick={openSideMenu} >
                     Menu
                 </button>
 
