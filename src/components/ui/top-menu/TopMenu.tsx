@@ -1,6 +1,6 @@
 'use client';
 
-import { logoFont, allFont } from "@/config/fonts"
+import { logoFont, titleFont } from "@/config/fonts"
 import { useCartStore, useUIStore } from "@/store";
 import Link from "next/link"
 import { useEffect, useState } from "react";
@@ -19,7 +19,6 @@ export const TopMenu = () => {
     }, [])
 
     return (
-        
         <nav className="flex px-5  rounded-md fixed top-0 left-0 right-0 m-2 bg-colorGreen text-colorblanco  shadow justify-between items-center container z-10 w-auto">
 
             {/*Logo*/}

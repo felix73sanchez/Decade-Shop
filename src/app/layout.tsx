@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { allFont } from "@/config/fonts";
+import { inter } from "@/config/fonts";
 
 import "./globals.css";
 import { Providers } from '@/components';
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={allFont.className}>
+      <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
