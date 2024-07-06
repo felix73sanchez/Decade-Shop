@@ -1,0 +1,242 @@
+[33mcommit ed0e01c7e12d41141fb07607c2980cbf4a4afe30[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: ba28b04 3bdb510
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 03:37:41 2024 -0400
+
+    Merge branch 'main' of https://github.com/felix73sanchez/Decade-Shop
+
+[33mcommit ba28b04c1769a0b4be37b59d9b1b7224d529755c[m[33m ([m[1;31morigin/mello[m[33m, [m[1;32mmello[m[33m)[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 03:21:50 2024 -0400
+
+    final
+
+[33mcommit 3bdb510752b12f631d69f46d89c79f15764aba7d[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 02:54:36 2024 -0400
+
+    Revert "cambi allfont name y colors"
+    
+    This reverts commit cb76c3049229c45b8f67e1133155cf77cbf44587.
+
+[33mcommit 145579a7e577ca468e97e6567b48374086fd9d59[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 02:25:54 2024 -0400
+
+    Revert "cambi allfont name y colors"
+    
+    This reverts commit cb76c3049229c45b8f67e1133155cf77cbf44587.
+
+[33mcommit 6663e2a07e0736c7ffddf83ff5b5dd7c3445aa2f[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 02:23:05 2024 -0400
+
+    f
+
+[33mcommit 7ead1ca0f0aa32a871b4cfde842fc186a748fa4a[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 02:13:10 2024 -0400
+
+    Revert "cambio"
+    
+    This reverts commit d4a8c442c0aed867901ccc7209fff5ba8c5b27ad, reversing
+    changes made to cb76c3049229c45b8f67e1133155cf77cbf44587.
+
+[33mcommit d4a8c442c0aed867901ccc7209fff5ba8c5b27ad[m
+Merge: cb76c30 61427cc
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 01:58:15 2024 -0400
+
+    cambio
+
+[33mcommit cb76c3049229c45b8f67e1133155cf77cbf44587[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Sat Jul 6 01:51:26 2024 -0400
+
+    cambi allfont name y colors
+
+[33mcommit 61427ccd9278c2802042d9164ce659b1c835eeb3[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Fri Jul 5 21:29:24 2024 -0400
+
+    Tarea: Actualizar los estilos de los componentes TopMenu para un comportamiento responsivo
+    
+    Los estilos del componente TopMenu se han actualizado para mejorar la capacidad de respuesta. La clase `w-fit` ha sido reemplazada por `w-auto` para permitir que el menú de navegación ajuste su ancho según el contenido. Este cambio garantiza que el menú no se desborde ni se ajuste a varias líneas en pantallas más pequeñas.
+    
+    Mensaje de confirmación generado por el asistente de IA.
+
+[33mcommit 4ba03eea19bb45565040ae5dd17a056e32aa47f5[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Fri Jul 5 20:41:13 2024 -0400
+
+    aqui estaba el error
+
+[33mcommit 34e8822c5d303c0abf99c6b5895ef651c2f14750[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Fri Jul 5 20:26:53 2024 -0400
+
+    cambio
+
+[33mcommit 005edb03e7228daa208387ad2b9bcc8ddb50dad8[m
+Author: Deca <159152771+HeadCreator29@users.noreply.github.com>
+Date:   Fri Jul 5 18:59:18 2024 -0400
+
+    Actualizar globals.css
+    
+    probando
+
+[33mcommit 4c87d57efe29bbe600993dc2be42681c5133d77e[m
+Author: Deca <159152771+HeadCreator29@users.noreply.github.com>
+Date:   Fri Jul 5 18:54:51 2024 -0400
+
+    Actualizar globals.css
+
+[33mcommit f41e46ac29965ec2ab36b4ef652d88cdf3bef2b5[m
+Author: Deca <159152771+HeadCreator29@users.noreply.github.com>
+Date:   Fri Jul 5 17:15:08 2024 -0400
+
+    w-auto
+
+[33mcommit 8fe6ab07b437a1b5fba87665764f19a86692c3c2[m
+Author: Deca <159152771+HeadCreator29@users.noreply.github.com>
+Date:   Fri Jul 5 17:11:43 2024 -0400
+
+    w-full
+
+[33mcommit 0d2f5cf3f4f916eb06b814fab0acd633ad63d69c[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Fri Jul 5 12:54:50 2024 -0400
+
+    color de la marca agregado en tailwind.config.ts
+
+[33mcommit 128df03ece851bce6d62a23b2d56e47853fc09d8[m
+Author: Deca <idelvisvelazquez@gmail.com>
+Date:   Fri Jul 5 12:07:09 2024 -0400
+
+    cambio de font para logo, y roboto para lo demas + nav pueda desplazarse hacia abajo
+
+[33mcommit 6e938efb25d4bc304a37049d468a4d357533e55e[m
+Author: Deca <159152771+HeadCreator29@users.noreply.github.com>
+Date:   Fri Jul 5 11:26:21 2024 -0400
+
+    Delete src/app/favicon.ico.png
+
+[33mcommit 308c62a16a296a3afa10657c16ae38bb4df148e6[m
+Author: Deca <159152771+HeadCreator29@users.noreply.github.com>
+Date:   Thu Jul 4 00:07:34 2024 -0400
+
+    nuevo icon
+    
+    lo cambien por github directamente
+
+[33mcommit c031956584094c14b184deaec020f9a792c0f8e3[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Tue Jul 2 22:57:43 2024 -0400
+
+    Modificacion de formatos permitidos en la imagen.
+
+[33mcommit b715e445e44925ef923a4db44cca348db2d415a5[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Sat Jun 29 12:40:40 2024 -0400
+
+    chore: Update cloudinary and PayPal configuration
+    
+    feat: Improve UI and cart functionality
+    
+    fix: Fix compilation issue in production build
+    
+    chore: Update dependencies and configuration files
+    
+    chore: Clean up unused code and files
+    
+    chore: Update global CSS styles
+    
+    chore: Update Next.js configuration for image optimization
+    
+    chore: Update layout component to include providers
+    
+    chore: Update environment variables template
+    
+    chore: Update currency format to use USD instead of DOP
+    
+    chore: Update npm scripts for Prisma migration and generation
+    
+    chore: Update import statements in login.ts and index.ts
+    
+    chore: Update README with setup instructions
+    
+    feat: Add new product interfaces and components
+    
+    Bug: fix compilation de prod (Solucionado)
+    
+    All project: first commit
+    
+    Initial commit from Create Next App
+
+[33mcommit 0b7be9150be3f242138e1d4b99b4359709e32886[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Sat Jun 22 23:18:09 2024 -0400
+
+    chore: Update currency format to use USD instead of DOP
+
+[33mcommit 89c5e459b4d5b44be67816b6d435b93a892d554c[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Sat Jun 22 23:13:47 2024 -0400
+
+    Acrualizacion readme
+
+[33mcommit 764352e30252555618269180fa62723087642f9c[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Sat Jun 22 13:31:45 2024 -0400
+
+    chore: Update npm scripts for Prisma migration and generation.
+
+[33mcommit 04b9b2c17b86e9357b6c8f7bf4bccd04840b6d6b[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Sat Jun 22 13:12:34 2024 -0400
+
+    chore: Update import statements in login.ts and index.ts
+
+[33mcommit 1901071ab88e127b394d03b1b4720faa7d1f861b[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Sat Jun 22 12:43:37 2024 -0400
+
+    feat: Add new UI and cart functionality
+    
+    chore: Update dependencies and configuration files
+    
+    fix: Fix compilation issue in production build
+    
+    chore: Update README with setup instructions
+    
+    feat: Add new product interfaces and components
+    
+    chore: Clean up unused code and files
+    
+    chore: Update global CSS styles
+    
+    chore: Update Next.js configuration for image optimization
+    
+    chore: Update layout component to include providers
+    
+    chore: Update environment variables template
+    
+    chore: Update PayPal integration configuration
+
+[33mcommit 38436b3c85e3420a3edaa614109123b79f70b871[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Wed Jun 5 01:11:54 2024 -0400
+
+    Bug: fix compilacion de prod (Solucionado)
+
+[33mcommit 05cb7d879c7711363c5142403115d72246283641[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Tue Jun 4 00:01:34 2024 -0400
+
+    All proyect: first commit
+
+[33mcommit 95978baa18e2eb2f88d5cfda8e7ba8a064c0515b[m
+Author: Felix <Felixsanchez73@outlook.com>
+Date:   Sat Jun 1 13:29:11 2024 -0400
+
+    Initial commit from Create Next App

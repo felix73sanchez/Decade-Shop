@@ -1,4 +1,4 @@
-import { allFont } from "@/config/fonts";
+import { titleFont } from "@/config/fonts";
 
 interface Props {
     title: string;
@@ -9,7 +9,7 @@ interface Props {
 export const Title = ({ title, subtitle, className }: Props) => {
     return (
         <div className={`mt-3 ${className}`}>
-            <h1 className={`${allFont.className} antialiased text-4xl font-semibold mt-20 my-7`}>
+            <h1 className={`${titleFont.className} antialiased text-4xl font-semibold mt-20 my-7`}>
                 {title}
             </h1>
             {

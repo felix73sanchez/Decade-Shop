@@ -1,7 +1,7 @@
 'use client';
 
 import { getStockBySlug } from "@/actions";
-import { allFont } from "@/config/fonts"
+import { titleFont } from "@/config/fonts"
 import { useEffect, useState } from "react";
 
 
@@ -30,12 +30,12 @@ export const StockLabel = ({ slug }: Props) => {
         <>
             {
                 isloading ? (
-                    <h1 className={`${allFont.className} antialiased font-bold text-lg bg- rounded-lg animate-pulse`}>
+                    <h1 className={`${titleFont.className} antialiased font-bold text-lg bg-gray-200 rounded-lg animate-pulse`}>
                         &nbsp;
                     </h1>
 
                 ) : (
-                    <h1 className={`${allFont.className} antialiased font-bold text-sm`}>
+                    <h1 className={`${titleFont.className} antialiased font-bold text-lg`}>
                         Stock: {stock}
                     </h1>
 
