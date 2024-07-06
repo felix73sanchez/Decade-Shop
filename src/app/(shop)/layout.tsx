@@ -9,7 +9,7 @@ export default function ShopLayout({ children }: {
             <TopMenu />
             <Sidebar />
 
-            <div className="p-0">
+            <div className="px-1 sm:px-10">
                 {children}
             </div>
 
