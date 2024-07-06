@@ -19,7 +19,11 @@ export const TopMenu = () => {
     }, [])
 
     return (
+<<<<<<< HEAD
         <nav className="flex px-5  rounded-md fixed top-0 left-0 right-0 m-2 bg-colorGreen text-colorblanco  shadow justify-between items-center container z-10 w-auto">
+=======
+        <nav className="flex px-5  rounded-md fixed top-0 left-0 right-0 m-2 w-auto bg-colorGreen text-colorblanco  shadow justify-between items-center container z-50">
+>>>>>>> 61427ccd9278c2802042d9164ce659b1c835eeb3
 
             {/*Logo*/}
             <div>
