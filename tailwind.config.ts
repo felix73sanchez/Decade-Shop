@@ -17,8 +17,8 @@ const config: Config = {
         // Define tus colores personalizados aquí
         colorGreen: '#506E42',
         colorblanco: '#FFFDF6',
-        //colorblanco: 'rgb(34, 139, 34)',
-        //customRed: 'hsl(0, 100%, 50%)',
+        //variabledefineaquiRGB: 'rgb(34, 139, 34)',
+        //variabledefineaquiHSL: 'hsl(0, 100%, 50%)',
       },
     },
   },
