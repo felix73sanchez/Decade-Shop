@@ -1,4 +1,4 @@
-import { titleFont } from "@/config/fonts"
+import { allFont } from "@/config/fonts"
 import Link from "next/link"
 
 
@@ -9,7 +9,7 @@ export const Footer = () => {
             <Link
                 href="/"
             >
-                <span className={`${titleFont.className} antialiased font-bold`}> Decade </span>
+                <span className={`${allFont.className} antialiased font-bold`}> Decade </span>
                 <span>| Shop </span>
                 <span> © </span>
                 <span> {new Date().getFullYear()} </span>
