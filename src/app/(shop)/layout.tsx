@@ -7,14 +7,18 @@ import { usePathname } from 'next/navigation';
 export default function ShopLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  return (
-    <main className="min-h-screen relative">
-      <TopMenu /> {/* Componente del menú superior */}
-      <Sidebar /> {/* Componente de la barra lateral */}
-      
-      <div className="p-0">
-        {children} {/* Aquí se renderizará el contenido de las páginas */}
-      </div>
+export default function ShopLayout({ children }: {
+    children: React.ReactNode;
+}) {
+    return (
+        <main className="min-h-screen">
+
+            <TopMenu />
+            <Sidebar />
+
+            <div className="p-0">
+                {children}
+            </div>
 
       <Footer /> {/* Componente del pie de página */}
       
