@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { generatePaginationNumbers } from "@/utils";
 import clsx from "clsx";
 import Link from "next/link";
@@ -48,28 +49,27 @@ export const Pagination = ({ totalPages }: Props) => {
     }
 
     return (
-        <div className="flex text-center justify-center p-5 m-0 border border-colorGreen bg-colorblanco ">
+        <div className="flex text-center justify-center p-0 my-10">
 
             <nav aria-label="Page navigation example">
-                <ul className="flex list-style-none ">
+                <ul className="flex list-style-none items-center">
 
                     <li className="page-item p-0 m-0 pr-3">
                         <Link
-                            className="page-link relative block py-1.5 px-3  border-0 bg-transparent outline-none transition-all duration-300 text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
-                            href={createPageUrl(currentPage - 1)}>
-                            <IoChevronBackOutline size={30} />
+                            className="page-link relative block text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none"
+                            href={createPageUrl(currentPage - 1)}>Anterior
                         </Link></li>
 
                     {
                         allPages.map((page, index) => (
 
-                            <li key={page + '-' + index} className="page-item mx-m8 bg-colorSecondary rounded-brAll">
+                            <li key={page + '-' + index} className="page-item mx-m8 bg-colorSecondary text-colorPrimary rounded-brAll">
                                 <Link
                                     className={
                                         clsx(
-                                            "page-link relative block py-1.5 px-3 font-semibold outline-none transition-all duration-300 text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none",
+                                            "page-link relative block py-1 px-3   font-fw4 outline-none transition-all duration-300  hover:text-colorHover hover:bg- focus:shadow-none rounded-brAll shadow-customBS border-customBC border-customBW ",
                                             {
-                                                'bg-colorGreen text-white shadow-sm hover:text-white hover:bg-blue-700': page === currentPage,
+                                                'bg-colorPrimary text-colorSecondary shadow-sm hover:text-colorHover': page === currentPage,
                                             }
                                         )
                                     }
@@ -85,13 +85,11 @@ export const Pagination = ({ totalPages }: Props) => {
 
                     <li className="page-item">
                         <Link
-                            className="page-link relative block py-1.5 px-3  border-0 bg-transparent outline-none transition-all duration-300 text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none bg-"
-                            href={createPageUrl(currentPage + 1)}>
-                            <IoChevronForwardOutline size={30} />
+                            className="page-link relative block pl-3 text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none"
+                            href={createPageUrl(currentPage - 1)}>Siguiente
                         </Link></li>
                 </ul>
             </nav>
         </div>
     )
 }
-

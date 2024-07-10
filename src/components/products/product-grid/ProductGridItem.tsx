@@ -17,13 +17,13 @@ export const ProductGridItem = ({ product }: Props) => {
 
 
     return (
-        <div className="p-5 overflow-hidden fade-in border border-colorGreen  bg-colorblanco ">
+        <div className="p-0 overflow-hidden fade-in bg-colorSecondary rounded-brAll shadow-customBS border-customBC border-customBW">
 
             <Link href={`/product/${product.slug}`}>
                 <Image
                     src={`/products/${displayImage}`}
                     alt={product.title}
-                    className="w-full object-cover "
+                    className="w-full object-cover border-customBC border-b-customBW"
                     priority
                     width={852}
                     height={852}
@@ -32,12 +32,12 @@ export const ProductGridItem = ({ product }: Props) => {
                 />
             </Link>
 
-            <div className="p-2 py-0 m-0 flex flex-col text-colorGreen">
+            <div className="p-2 m-0 flex flex-col text-colorPrimary">
                 <Link
-                    className="hover:text-gray-400 text-xs pt-5"
+                    className="hover:text-color text-fs1 font-fw7"
                     href={`/producs/${product.slug}`}
                 >{product.title}</Link>
-                <span className="font-semibold">${product.price}</span>
+                <span className="font-fw4 text-fs1 ">${product.price}</span>
             </div>
 
         </div>
