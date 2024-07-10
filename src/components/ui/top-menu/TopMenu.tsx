@@ -1,6 +1,6 @@
 'use client';
 
-import { logoFont, titleFont } from "@/config/fonts"
+import { logoFont, allFont } from "@/config/fonts"
 import { useCartStore, useUIStore } from "@/store";
 import Link from "next/link"
 import { useEffect, useState } from "react";
@@ -40,8 +40,8 @@ export const TopMenu = () => {
     }, [lastScrollY]);
 
     return (
-        <nav className={`flex fixed top-0 left-0 right-0 m-m8 p-p8 justify-between items-center z-10 w-auto bg-colorPrimary text-colorSecondary rounded-brAll shadow-customBS border-colorPrimary border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : 
-        <nav className="flex px-5  rounded-md fixed top-0 left-0 right-0 m-2 w-fit bg-colorGreen text-colorblanco  shadow justify-between items-center container z-50">
+        
+        <nav className={`flex fixed top-0 left-0 right-0 m-m8 p-p8 justify-between items-center z-10 w-auto bg-colorPrimary text-colorSecondary rounded-brAll shadow-customBS border-colorPrimary border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : '-translate-y-16'}`}>
 
             {/*Logo*/}
             <div>

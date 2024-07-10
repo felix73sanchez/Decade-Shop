@@ -18,12 +18,12 @@ const BarMoving: React.FC = () => {
 
   return (
     <div
-      className={`fit fixed left-0 bottom-0 w-full overflow-hidden bg-colorPrimary text-colorSecondary transition-opacity duration-300 z-10 ${
+      className={`fit fixed left-0 bottom-0 w-full overflow-hidden bg-colorPrimary text-colorSecondary transition-opacity duration-75 z-10 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}>
-      <div className="whitespace-nowrap animate-marquee">
+      <div className="whitespace-nowrap animate-marquee p-1">
         <span className="">
-          Este es el texto que se mueve de derecha a izquierda y vuelve a aparecer por la derecha en un bucle continuo.
+        ENVÍO GRATIS A REPÚBLICA DOMINICANA EN TODOS LOS PEDIDOS SUPERIORES A RD$6,510.00
         </span>
       </div>
     </div>

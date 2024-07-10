@@ -9,7 +9,7 @@ interface Props {
 
 export const ProductGrid = ({ products }: Props) => {
     return (
-        <div className=" grid grid-cols-2 sm:grid-cols-4 gap-0 m-0">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-g8 mx-m8">
             {products.map((product) => (
                 <ProductGridItem key={product.slug}
                     product={product}
