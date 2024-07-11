@@ -14,6 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       margin: {
+        'mBody': '0.5rem', // Margen del cuerpo
         'm8': '0.5rem', // Margen personalizado
         'm0': '0rem', // Margen personalizado
         'mGenderTop': '4.5rem', // Margen personalizado
