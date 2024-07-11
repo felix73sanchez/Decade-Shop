@@ -62,7 +62,7 @@ const config: Config = {
       },
       borderRadius: {
         //Ezquinas Redondeadas de los borde personalizado aquí
-        'brAll': '0rem', //border radius de todo
+        'brAll': '0.875rem', //border radius de todo
       },
       boxShadow: {
         //Sombras para los componentes personalizado aquí

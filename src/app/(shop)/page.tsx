@@ -1,6 +1,6 @@
 // src/app/(shop)/page.tsx
 
-import Gridimg from '@/components/ui/grid/Gridimg';
+import { Gridimg } from '@/components';
 import { getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductGrid } from "@/components";
 import { redirect } from "next/navigation";
@@ -29,7 +29,7 @@ export default async function Home({ searchParams }: Props) {
   return (
     <>
       {/* Renderiza el componente Title solo en la página de inicio */}
-      {isHomePage() && <Gridimg />}
+      {<Gridimg/>}
       
       <ProductGrid products={products} />
       <Pagination totalPages={totalPages} />
