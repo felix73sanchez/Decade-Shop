@@ -4,9 +4,7 @@ import { logoFont, allFont } from "@/config/fonts"
 import { useCartStore, useUIStore } from "@/store";
 import Link from "next/link"
 import { useEffect, useState } from "react";
-import { IoSearchOutline, IoCartOutline, IoMenuSharp } from "react-icons/io5"
-import { RiShoppingCart2Line } from "react-icons/ri";
-
+import { PiMagnifyingGlassBold, PiShoppingCartSimpleBold, PiListBold } from "react-icons/pi";
 
 export const TopMenu = () => {
 
@@ -41,49 +39,49 @@ export const TopMenu = () => {
 
     return (
         
-        <nav className={`flex fixed top-0 left-0 right-0 m-m8 p-p8 justify-between items-center z-10 w-auto bg-colorPrimary text-colorSecondary rounded-brAll shadow-customBS border-colorPrimary border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : '-translate-y-16'}`}>
+        <nav className={`flex fixed top-0 left-0 right-0 my-mBody mx-mBody py-p8 px-5 justify-between items-center z-10 w-auto bg-colorPrimary text-colorSecondary border-colorPrimary rounded-brAll shadow-customBS  border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : '-translate-y-16'}`}>
 
             {/*Logo*/}
             <div>
                 <Link
                     href="/">
-                    <span className={`${logoFont.className} antialiased text-fsLogo font-fw9 pl-p8 `}>DECAVENTURE</span>
+                    <span className={`${logoFont.className} antialiased text-fsLogo font-fw9 hover:text-colorHover`}>DECAVENTURE</span>
 
                 </Link>
             </div>
 
             {/*Center Menu*/}
-            <div className="hidden sm:block font-fw4 items-center">
-                <Link className="mx-m8 transition-all hover:text-colorHover" href="/gender/kid">NEW IN</Link>
-                <Link className="mx-m8 transition-all hover:text-colorHover" href="/gender/men">HOMBRES</Link>
-                <Link className="mx-m8 transition-all hover:text-colorHover" href="/gender/women">MUJERES</Link>
-                <Link className="mx-m8 transition-all hover:text-colorHover" href="/gender/kid">NIÑOS</Link>
+            <div className="hidden sm:block font-fw5">
+                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/kid">NEW IN</Link>
+                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/men">HOMBRES</Link>
+                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/women">MUJERES</Link>
+                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/kid">NIÑOS</Link>
             </div>
 
             {/*Search, Cart, Menu*/}
-            <div className="flex items-center space-x-4">
-                <Link href="/search" className="mx-m8">
-                    <IoSearchOutline className="w-5 h-5" />
+            <div className="flex items-center space-x-5  ">
+                <Link href="/search" className="hover:text-colorHover">
+                    <PiMagnifyingGlassBold className="w-6 h-6" />
                 </Link>
                 <Link href={
                     ((totalItemsInCart === 0) && loaded)
                         ? "/empty"
                         : "/cart"
-                } className="mx-m8 ">
-                    <div className=" relative">
+                } className=" ">
+                    <div className=" relative hover:text-colorHover">
                         {
                             (loaded && totalItemsInCart > 0) && (
-                                <span className=" fade-in absolute text-fs1 px-1 rounded-brAll font-fw7 -top-2 -right-2 bg-red-700 text-colorSecondary">
+                                <span className="bg-red-600 fade-in absolute text-fs1 px-1 rounded-brAll font-fw9 -top-2 -right-2 text-colorSecondary">
                                     {totalItemsInCart}
                                 </span>
                             )}
-                        <RiShoppingCart2Line className="w-5 h-5" />
+                        <PiShoppingCartSimpleBold className="w-6 h-6" />
                     </div>
 
                 </Link>
                 
-                <button className="px-p8 font-fw4 transition-all hover:text-colorHover" onClick={openSideMenu} >
-                    <IoMenuSharp className="w-7 h-7" />
+                <button className=" font-fw4 transition-all hover:text-colorHover" onClick={openSideMenu} >
+                    <PiListBold className="w-7 h-7" />
                 </button>
 
             </div>

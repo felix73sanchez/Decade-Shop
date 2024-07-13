@@ -30,6 +30,7 @@ export default async function Home({ searchParams }: Props) {
     <>
       {/* Renderiza el componente Title solo en la página de inicio */}
       {<Gridimg/>}
+      <div className='ml-mElement p-pHeader font-fw7 text-fsHeader text-colorPrimary'>LO MAS RECIENTE</div>
       
       <ProductGrid products={products} />
       <Pagination totalPages={totalPages} />
