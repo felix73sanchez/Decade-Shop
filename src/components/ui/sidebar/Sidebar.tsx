@@ -6,6 +6,7 @@ import clsx from "clsx";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { IoCloseOutline, IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoSearchOutline, IoShirtOutline, IoTicketOutline } from "react-icons/io5"
+import { PiXBold } from "react-icons/pi";
 
 
 export const Sidebar = () => {
@@ -32,7 +33,7 @@ export const Sidebar = () => {
             {
                 isSidebarOpen && (
                     <div
-                        className="fixed top-0 left-0 w-screen h-screen z-20 bg-black bg-opacity-30"
+                        className="fixed top-0 left-0 w-screen h-screen z-0 bg-black bg-opacity-30"
                     />
                 )
             }
@@ -55,7 +56,7 @@ export const Sidebar = () => {
             <nav
 
                 className={
-                    clsx(" fixed p-5 right-0 top-0 w-[350px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300",
+                    clsx(" fixed p-5 right-0 top-10 w-[350px] h-screen bg-white z-10 shadow-2xl transform transition-all duration-300",
                         {
                             "translate-x-full": !isSidebarOpen,
 
@@ -63,7 +64,7 @@ export const Sidebar = () => {
                     )
                 }>
 
-                <IoCloseOutline
+                <PiXBold
                     size={50}
                     className="absolute top-5 right-5 cursor-pointer"
                     onClick={() => closeMenu()}

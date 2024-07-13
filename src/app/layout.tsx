@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={allFont.className}>
+      <body className={`mx-mBody {allFont.className}`}>
         <Providers>{children}</Providers>
       </body>
     </html>

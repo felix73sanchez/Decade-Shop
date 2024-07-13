@@ -22,7 +22,7 @@ const BarMoving: React.FC = () => {
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}>
       <div className="whitespace-nowrap animate-marquee p-1">
-        <span className="">
+        <span className="font-fw5 text-fs2">
         ENVÍO GRATIS A REPÚBLICA DOMINICANA EN TODOS LOS PEDIDOS SUPERIORES A RD$6,510.00
         </span>
       </div>
