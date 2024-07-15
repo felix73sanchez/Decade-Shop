@@ -8,7 +8,7 @@ export default function ShopLayout({ children }: { children: React.ReactNode }) 
   const pathname = usePathname();
 
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative uppercase"> {/*uppercase  todo mayúscula*/}
       <TopMenu /> {/* Componente del menú superior */}
       <Sidebar /> {/* Componente de la barra lateral */}
       

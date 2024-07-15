@@ -1,5 +1,6 @@
 'use client';
 
+import { allFont } from "@/config/fonts"
 import { PiHeartBold } from "react-icons/pi";
 import { Product } from "@/interfaces";
 import Image from "next/image";
@@ -17,7 +18,7 @@ export const ProductGridItem = ({ product }: Props) => {
 
 
     return (
-        <div className="p-pImgGrid overflow-hidden fade-in bg-colorSecondary rounded-brAll shadow-custom-1 border-customBC border-customBW ">
+        <div className={`${allFont.className} p-pImgGrid overflow-hidden fade-in bg-colorSecondary rounded-brAll shadow-custom-1 border-customBC border-customBW uppercase`}>
             <Link href={`/product/${product.slug}`} >
                 <Image
                     src={`/products/${displayImage}`}
@@ -32,16 +33,16 @@ export const ProductGridItem = ({ product }: Props) => {
             </Link>
             
             <div className="flex justify-between items-start w-full h-fit py-2 px-4  text-colorPrimary gap-g8">
-                <div className="flex-1 flex flex-col  ">
-                    <Link
-                        className=" hover:text-colorHover text-fs1 font-fw7"
+                <div className="flex-1 flex flex-col">
+                    <Link 
+                        className=" hover:text-colorHover text-fs1 font-fw9"
                         href={`/producs/${product.slug}`}
                         >{product.title}</Link>
                     <span className="font-fw4 text-fs1 break-words">${product.price}</span>
                 </div>
                 <div className=" flex-shrink-0 mt-auto pt-6  ">
                     <button className="bottom-0" >
-                    <PiHeartBold className="text-3xl w-8 h-8 p-1 rounded-lg bg-color4 text-colorSecondary  "/>
+                    <PiHeartBold className="text-3xl w-8 h-8 p-1 rounded-lg bg-color4 text-colorSecondary hover:text-color3 "/>
                     </button>
                 </div>                
             </div>

@@ -39,19 +39,19 @@ export const TopMenu = () => {
 
     return (
         
-        <nav className={`flex fixed top-0 left-0 right-0 my-mBody mx-mBody py-p8 px-5 justify-between items-center z-10 w-auto bg-colorPrimary text-colorSecondary border-colorPrimary rounded-brAll shadow-customBS  border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : '-translate-y-16'}`}>
+        <nav className={`${logoFont.className} flex fixed top-0 sm:left-0 sm:right-0 left-2 right-2 sm:mx-mBody mt-[0.3rem] px-5 sm:px-5 py-[0.5rem] sm:py-[0.5rem] justify-between items-center z-10 bg-colorPrimary text-colorSecondary border-colorPrimary rounded-brAll shadow-customBS border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : '-translate-y-16'}`}>
 
             {/*Logo*/}
             <div>
                 <Link
                     href="/">
-                    <span className={`${logoFont.className} antialiased text-fsLogo font-fw9 hover:text-colorHover`}>DECAVENTURE</span>
+                    <span className={` m-0 p-0 antialiased text-fsLogo font-fw9 hover:text-colorHover text-colorSecondary`}>DECAVENTURE</span>
 
                 </Link>
             </div>
 
             {/*Center Menu*/}
-            <div className="hidden sm:block font-fw5">
+            <div className={`hidden sm:block font-fw5 not-italic m-0 p-0`}>
                 <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/kid">NEW IN</Link>
                 <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/men">HOMBRES</Link>
                 <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/women">MUJERES</Link>
@@ -59,7 +59,7 @@ export const TopMenu = () => {
             </div>
 
             {/*Search, Cart, Menu*/}
-            <div className="flex items-center space-x-5  ">
+            <div className="flex items-center space-x-5  m-0 p-0">
                 <Link href="/search" className="hover:text-colorHover">
                     <PiMagnifyingGlassBold className="w-6 h-6" />
                 </Link>
@@ -71,7 +71,7 @@ export const TopMenu = () => {
                     <div className=" relative hover:text-colorHover">
                         {
                             (loaded && totalItemsInCart > 0) && (
-                                <span className="bg-red-600 fade-in absolute text-fs1 px-1 rounded-brAll font-fw9 -top-2 -right-2 text-colorSecondary">
+                                <span className="bg-red-600 fade-in absolute text-fs1 px-1 rounded-brAll font-fw7 not-italic -top-1 -right-2 text-colorSecondary">
                                     {totalItemsInCart}
                                 </span>
                             )}

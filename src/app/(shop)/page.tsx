@@ -1,9 +1,7 @@
-// src/app/(shop)/page.tsx
-
-import { Gridimg } from '@/components';
 import { getPaginatedProductsWithImages } from "@/actions";
-import { Pagination, ProductGrid } from "@/components";
+import { Pagination, ProductGrid, Gridimg } from "@/components";
 import { redirect } from "next/navigation";
+import { allFont } from "@/config/fonts"
 
 interface Props {
   searchParams: {
@@ -28,19 +26,21 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <>
-      {/* Renderiza el componente Title solo en la página de inicio */}
-      {<Gridimg/>}
-      <div className='ml-mElement p-pHeader font-fw7 text-fsHeader text-colorPrimary'>LO MAS RECIENTE</div>
+      {/* Renderiza el componente Gridimg solo en la página 1 */}
+      {page === 1 && <Gridimg className={`${allFont.className}`} />}
+
+      <div className="flex items-center justify-between p-p8 text-colorPrimary">
+            <div className="font-fw9 text-[1.1rem] ">CHECK OUT THE NEW</div>
+            <button className="font-fw5 text-fs2 py-2  hover:text-colorHover focus:outline-none ">
+                VIEW ALL
+            </button>
+        </div>
       
-      <ProductGrid products={products} />
+      {/* Aplica mt-16 a ProductGrid después de la página 1 */}
+      <div className={page > 1 ? 'mt-5' : '' }>
+        <ProductGrid products={products } />
+      </div>
       <Pagination totalPages={totalPages} />
     </>
   );
-}
-
-// Función para verificar si la página actual es la página de inicio
-function isHomePage() {
-  // Lógica para determinar si esta es la página de inicio (por ejemplo, basado en la URL, etc.)
-  // Por ejemplo, podrías verificar la ruta o cualquier otro criterio que identifique la página de inicio
-  return true; // Asume que esta función retorna true si estamos en la página de inicio
 }
