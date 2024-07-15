@@ -54,8 +54,8 @@ const config: Config = {
         //Colores --- blaco=FFFDF6 verde=384C2E verdeClaro= naranja=BC6C25 naranjaClaro=DDA15E
         colorPrimary: '#384C2E', //506E42HunterGreen Color de la marca
         colorSecondary: '#FFFDF6', //Crema Color de la marca
-        color3: 'DDA15E',
-        color4: '506E42',
+        color3: '#DDA15E',
+        color4: '#506E42',
         coloMix: '#FFFDF6', //Crema Color de la marca
         colorHover: '#DDA15E', //text-gray-400 HOVER
       },

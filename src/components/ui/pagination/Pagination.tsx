@@ -86,7 +86,7 @@ export const Pagination = ({ totalPages }: Props) => {
                     <li className="page-item">
                         <Link
                             className="page-link relative block pl-3 text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none"
-                            href={createPageUrl(currentPage - 1)}>Siguiente
+                            href={createPageUrl(currentPage + 1)}>Siguiente
                         </Link></li>
                 </ul>
             </nav>

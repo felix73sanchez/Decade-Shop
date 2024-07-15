@@ -1,8 +1,5 @@
-// src/app/(shop)/page.tsx
-
-import { Gridimg } from '@/components';
 import { getPaginatedProductsWithImages } from "@/actions";
-import { Pagination, ProductGrid } from "@/components";
+import { Pagination, ProductGrid, Gridimg } from "@/components";
 import { redirect } from "next/navigation";
 
 interface Props {
@@ -28,19 +25,16 @@ export default async function Home({ searchParams }: Props) {
 
   return (
     <>
-      {/* Renderiza el componente Title solo en la página de inicio */}
-      {<Gridimg/>}
+      {/* Renderiza el componente Gridimg solo en la página 1 */}
+      {page === 1 && <Gridimg className="" />}
+
       <div className='ml-mElement p-pHeader font-fw7 text-fsHeader text-colorPrimary'>LO MAS RECIENTE</div>
       
-      <ProductGrid products={products} />
+      {/* Aplica mt-16 a ProductGrid después de la página 1 */}
+      <div className={page > 1 ? 'mt-5' : ''}>
+        <ProductGrid products={products} />
+      </div>
       <Pagination totalPages={totalPages} />
     </>
   );
-}
-
-// Función para verificar si la página actual es la página de inicio
-function isHomePage() {
-  // Lógica para determinar si esta es la página de inicio (por ejemplo, basado en la URL, etc.)
-  // Por ejemplo, podrías verificar la ruta o cualquier otro criterio que identifique la página de inicio
-  return true; // Asume que esta función retorna true si estamos en la página de inicio
 }
