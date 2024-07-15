@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { allFont } from "@/config/fonts"
 import { generatePaginationNumbers } from "@/utils";
 import clsx from "clsx";
 import Link from "next/link";
@@ -49,7 +49,7 @@ export const Pagination = ({ totalPages }: Props) => {
     }
 
     return (
-        <div className="flex text-center justify-center p-0 my-10">
+        <div className={`${allFont.className} flex text-center justify-center p-0 my-10 `}>
 
             <nav aria-label="Page navigation example">
                 <ul className="flex list-style-none items-center">

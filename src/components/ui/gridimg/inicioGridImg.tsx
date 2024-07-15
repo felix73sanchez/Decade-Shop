@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { allFont } from "@/config/fonts";
-import { logoFont } from "@/config/fonts";
 
 interface Props {
     className?: string;
@@ -19,15 +18,20 @@ export const Gridimg: React.FC<Props> = ({ className }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 3000); // Cambiar imagen cada 3 segundos
+        }, 5000); // Cambiar imagen cada 3 segundos
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className={`relative w-full h-[32rem] overflow-hidden fade-in mt-[4.45rem] grid grid-cols-1 sm:grid-cols-3 gap-p8 sm:gap-g8 ${allFont.className} ${className}`}>
+        <div className={`relative w-full h-[32rem] overflow-hidden fade-in mt-[4.6rem] grid grid-cols-1 sm:grid-cols-3 gap-p8 sm:gap-g8 ${allFont.className} ${className}`}>
             {/* Imagen visible en pantallas móviles */}
             <div className="relative w-full h-[32rem] sm:hidden rounded-brAll shadow-customBS border-customBC border-customBW">
                 <img src={images[currentImageIndex].src} alt={images[currentImageIndex].alt} className="w-full h-full object-cover rounded-brAll" />
+                <div className="absolute inset-x-0 bottom-4 flex justify-center">
+                    {images.map((image, index) => (
+                        <div key={index} className={`w-2 h-2 rounded-full mx-1 ${index === currentImageIndex ? 'bg-color3' : 'bg-color4'}`} />
+                    ))}
+                </div>
                 <div className="absolute top-4 left-4 sm:top-8 sm:left-10">
                     <p className="text-colorPrimary text-xl sm:text-5xl font-fw9">NEW ARRIVALS</p>
                 </div>

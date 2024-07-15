@@ -1,5 +1,6 @@
 'use client';
 
+import { allFont } from "@/config/fonts"
 import { logout } from "@/actions";
 import { useUIStore } from "@/store";
 import clsx from "clsx";
@@ -26,7 +27,7 @@ export const Sidebar = () => {
 
 
     return (
-        <div>
+        <div className={`${allFont.className}`}>
 
             {/* Background black */}
 
