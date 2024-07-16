@@ -36,8 +36,8 @@ const config: Config = {
       fontSize: {
         'fs0': '0.7rem', // Tamaño de fuente personalizado
         'fs1': '0.75rem', // Tamaño de fuente personalizado
-        'fs2': '0.875rem',   // Tamaño de precio
-        'fsLogo': '1.75rem',   //logo font Size
+        'fs2': '0.875rem',  // Tamaño de precio
+        'fsLogo': '1.75rem',  //logo font Size
         'fsHeader': '1.37rem', //Encabezados texto
       },
       fontWeight: {
