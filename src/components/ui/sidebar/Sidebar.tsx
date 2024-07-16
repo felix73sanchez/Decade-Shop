@@ -88,6 +88,13 @@ export const Sidebar = () => {
                 {
                     isAuthenticated && (
                         <>
+                            <div className={`hidden sm:block font-fw5 not-italic m-0 p-0`}>
+                                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/kid">NEW IN</Link>
+                                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/men">HOMBRES</Link>
+                                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/women">MUJERES</Link>
+                                <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/kid">NIÑOS</Link>
+                             </div>
+                             
                             <Link
                                 href="/profile"
                                 onClick={() => closeMenu()}
