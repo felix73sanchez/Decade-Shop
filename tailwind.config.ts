@@ -90,6 +90,9 @@ const config: Config = {
       animation: {
         marquee: 'marquee 10s linear infinite',
       },
+      transitionDuration: {
+        '2000': '2000ms',
+      }
 
     },
   },

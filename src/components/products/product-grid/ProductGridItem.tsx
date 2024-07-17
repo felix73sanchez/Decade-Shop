@@ -18,7 +18,8 @@ export const ProductGridItem = ({ product }: Props) => {
 
 
     return (
-        <div className={`${allFont.className} p-pImgGrid overflow-hidden fade-in bg-colorSecondary rounded-brAll shadow-custom-1 border-customBC border-customBW uppercase`}>
+        <div className={`${allFont.className} p-pImgGrid overflow-hidden fade-in bg-colorSecondary rounded-brAll shadow-customBS border-customBC border-customBW `}>
+            
             <Link href={`/product/${product.slug}`} >
                 <Image
                     src={`/products/${displayImage}`}
