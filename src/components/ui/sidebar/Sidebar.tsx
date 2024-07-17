@@ -106,7 +106,7 @@ export const Sidebar = () => {
                             <span className=" text-xl">Cerrar sesión</span>
                         </button>
                     )}
-
+                    <div className="border-t border-gray-300 w-full"></div>
                     {!isAuthenticated && (
                         <Link
                             href="/auth/login"
