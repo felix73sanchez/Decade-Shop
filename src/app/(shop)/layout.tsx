@@ -11,7 +11,7 @@ export default function ShopLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <VisibilityProvider>
-      <main className="min-h-screen relative uppercase"> {/*uppercase todo mayúscula*/}
+      <main className="min-h-screen relative uppercase "> {/*uppercase todo mayúscula*/}
         <TopMenu /> {/* Componente del menú superior */}
         <Sidebar /> {/* Componente de la barra lateral */}
         
