@@ -21,4 +21,5 @@ export * from "./ui/title/Title";
 export * from "./ui/top-menu/TopMenu";
 export * from "./ui/footer/Footer";
 export * from "./ui/pagination/Pagination";
-export * from "./ui/gridimg/inicioGridImg"
+export * from "./ui/gridimg/inicioGridImg";
+export * from "./ui/barmoving/VisibilityContext";

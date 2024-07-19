@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'XR': '414px',
+        // => @media (min-width: 414px XR) { ... }
+  
+        '12Pro': '390px',
+        // => @media (min-width: 390px) { ... }
+  
+        '14Pro': '430px',
+        // => @media (min-width: 430px) { ... }
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -36,8 +46,8 @@ const config: Config = {
       fontSize: {
         'fs0': '0.7rem', // Tamaño de fuente personalizado
         'fs1': '0.75rem', // Tamaño de fuente personalizado
-        'fs2': '0.875rem',   // Tamaño de precio
-        'fsLogo': '1.75rem',   //logo font Size
+        'fs2': '0.875rem',  // Tamaño de precio
+        'fsLogo': '1.75rem',  //logo font Size
         'fsHeader': '1.37rem', //Encabezados texto
       },
       fontWeight: {
@@ -61,24 +71,24 @@ const config: Config = {
       },
       borderColor: {
         //Color de los borde personalizado aquí
-        'customBC': '#384C2E', //Color de los border de todo
-        'customBCImg': '#384C2E', //Color dBotton de img ProductosGrid
+        'customBC': '#506E42', //Color de los border de todo
+        'customBCImg': '#506E42', //Color dBotton de img ProductosGrid
       },
       borderWidth: {
         //Grosor de los borde personalizado aquí
         'customBW': '0.1rem', // Linea de todo
-        'customBwImg': '0.1rem', //Linea Botton de img ProductosGrid
+        'customBwImg': '0.115rem', //Linea Botton de img ProductosGrid
       },
       borderRadius: {
         //Ezquinas Redondeadas de los borde personalizado aquí
         'brAll': '1rem', //border radius de todo
-        'brImg': '0rem', //Border radius de img ProductosGrid
+        'brImg': '2rem', //Border radius de img ProductosGrid
       },
       boxShadow: {
         //Sombras para los componentes personalizado aquí
         'customBS': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);',
-        'custom-1': '5px 5px 9px rgb(120, 120, 120, 0.40), -5px -5px 10px rgba(240, 240, 240, 0.40)',
-        'custom-2': '5px 5px 20px rgb(120, 120, 120, 0.50), -2px -2px 5px rgba(240, 240, 240, 0.50)',
+        'custom-1': '5px 5px 9px rgb(110, 120, 155, 0.10)',
+        'custom-2': '2px 2px 5px rgb(80, 110, 66, 0.25), -2px -2px 5px rgba(80, 110, 66, 0.25)',
       },
       //Bar Moving 
       keyframes: {
@@ -88,8 +98,16 @@ const config: Config = {
         },
       },
       animation: {
-        marquee: 'marquee 10s linear infinite',
+        marquee: 'marquee 10s linear infinite', 
+        levitate: 'levitate 3s ease-in-out infinite', // Ajusta la duración y el tiempo según tus necesidades
       },
+      levitate: {
+        '0%, 100%': { transform: 'translateY(0)' },
+        '50%': { transform: 'translateY(-20px)' }, // Ajusta el valor según tus necesidades
+      },
+      transitionDuration: {
+        '2000': '2000ms',
+      }
 
     },
   },
