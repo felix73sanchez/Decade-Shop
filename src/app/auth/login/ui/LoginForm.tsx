@@ -1,5 +1,6 @@
 'use client';
 
+import { allFont } from "@/config/fonts"
 import { authenticate } from "@/actions";
 import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
 import clsx from "clsx";
@@ -24,11 +25,10 @@ export const LoginForm = () => {
 
 
     return (
-        <form action={dispatch} className="flex flex-col">
-
+        <form action={dispatch} className={` ${allFont} font-fw9 text-fs2 text-colorPrimary w-80 grid grid-cols-1 gap-0.5 `}>
             <label htmlFor="email">Correo electrónico</label>
             <input
-                className="px-5 py-2 border bg-gray-200 rounded mb-5"
+                className="px-3 py-3 border bg-gray-200 rounded-brAll mb-5"
                 type="email"
                 name="email"
             />
@@ -36,7 +36,7 @@ export const LoginForm = () => {
 
             <label htmlFor="email">Contraseña</label>
             <input
-                className="px-5 py-2 border bg-gray-200 rounded mb-5"
+                className="px-3 py-3 border bg-gray-200 rounded-brAll mb-5"
                 type="password"
                 name="password"
             />
@@ -59,15 +59,16 @@ export const LoginForm = () => {
                 type="submit"
                 className="btn-primary">
                 Ingresar
-            </button> */}
+            </button> 
+            */}
             <LoginButton />
 
 
             {/* divisor l ine */}
             <div className="flex items-center my-5">
-                <div className="flex-1 border-t border-gray-500"></div>
-                <div className="px-2 text-gray-800">O</div>
-                <div className="flex-1 border-t border-gray-500"></div>
+                <div className="flex-1 border-t border-colorPrimary"></div>
+                <div className="px-2 ">O</div>
+                <div className="flex-1 border-t border-colorPrimary"></div>
             </div>
 
             <Link
