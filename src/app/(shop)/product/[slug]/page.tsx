@@ -15,7 +15,7 @@ interface Props {
     }
 }
 
-export async function generateMetadata(
+/*export async function generateMetadata(
     { params }: Props,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
@@ -36,6 +36,58 @@ export async function generateMetadata(
             description: product?.description ?? "",
             images: [], // https://misitioweb.com/products/image.png
             //  images: [`/products/${product?.images[1]}`],
+        },
+    };
+}*/
+
+const checkLocalImage = async (image: string): Promise<boolean> => {
+    const localUrl = `/products/${image}`;
+    try {
+        const response = await fetch(localUrl, { method: 'HEAD' });
+        return response.ok;
+    } catch (error) {
+        return false;
+    }
+};
+
+export async function generateMetadata(
+    { params }: Props,
+    parent: Metadata
+): Promise<Metadata> {
+    const slug = params.slug;
+    const product = await getProductBySlug(slug);
+
+    if (!product) {
+        return {
+            title: "Producto no encontrado",
+            description: "",
+            openGraph: {
+                title: "Producto no encontrado",
+                description: "",
+                images: [],
+            },
+        };
+    }
+
+    const imageUrls = await Promise.all(
+        product.images.map(async (image) => {
+            const existsLocally = await checkLocalImage(image);
+            return existsLocally ? `/products/${image}` : image; // URL de Cloudinary
+        })
+    );
+
+    return {
+        title: product.title ?? "Producto no encontrado",
+        description: product.description ?? "",
+        openGraph: {
+            title: product.title ?? "Producto no encontrado",
+            description: product.description ?? "",
+            images: imageUrls.map((url) => ({
+                url,
+                width: 800, // Puedes ajustar esto según tus necesidades
+                height: 600, // Puedes ajustar esto según tus necesidades
+                alt: product.title,
+            })),
         },
     };
 }
