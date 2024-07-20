@@ -20,24 +20,24 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     // read route params
-    const slug = params.slug
+    const slug = params.slug;
 
     // fetch data
-    const product = await getProductBySlug(slug)
+    const product = await getProductBySlug(slug);
 
     // optionally access and extend (rather than replace) parent metadata
     // const previousImages = (await parent).openGraph?.images || []
 
     return {
-        title: product?.title ?? 'Product no encontrado',
-        description: product?.description ?? '',
+        title: product?.title ?? "Producto no encontrado",
+        description: product?.description ?? "",
         openGraph: {
-            title: product?.title ?? 'Product no encontrado',
-            description: product?.description ?? '',
-
-            images: [`/products/${product?.images[1]}.jpg`],
+            title: product?.title ?? "Producto no encontrado",
+            description: product?.description ?? "",
+            // images: [], // https://misitioweb.com/products/image.png
+            images: [`/products/${product?.images[1]}`],
         },
-    }
+    };
 }
 
 
