@@ -3,7 +3,7 @@
 import { logoFont } from "@/config/fonts";
 import { useCartStore, useUIStore } from "@/store";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { PiMagnifyingGlassBold, PiShoppingCartSimpleBold, PiListBold } from "react-icons/pi";
 import { useVisibility } from '@/components/ui/barmoving/VisibilityContext';
 
@@ -28,14 +28,14 @@ export const TopMenu = () => {
     const [showMenu, setShowMenu] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         if (window.scrollY > lastScrollY) {
             setShowMenu(false);
         } else {
             setShowMenu(true);
         }
         setLastScrollY(window.scrollY);
-    };
+    }, [lastScrollY]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -43,7 +43,7 @@ export const TopMenu = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [lastScrollY]);
+    }, [handleScroll]);
 
     return (
         <nav className={`${logoFont.className} flex fixed top-0 sm:left-0 sm:right-0 left-2 right-2 sm:mx-mBody mt-[0.3rem] px-5 sm:px-5 py-[0.5rem] sm:py-[0.5rem] justify-between items-center bg-colorPrimary text-colorSecondary border-colorPrimary rounded-brAll shadow-customBS border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : '-translate-y-20'}`} style={{ zIndex: navZIndex }}>
