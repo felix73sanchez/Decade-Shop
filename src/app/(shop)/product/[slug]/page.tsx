@@ -58,8 +58,8 @@ export async function generateMetadata(
             description: product.description ?? "",
             images: imageUrls.map((url) => ({
                 url,
-                width: 800, // Puedes ajustar esto según tus necesidades
-                height: 600, // Puedes ajustar esto según tus necesidades
+                width: 852, // Puedes ajustar esto según tus necesidades
+                height: 852, // Puedes ajustar esto según tus necesidades
                 alt: product.title,
             })),
         },

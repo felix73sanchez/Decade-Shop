@@ -9,6 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        'SE': '375px',
+        // => @media (min-width: 414px XR) { ... }
+
         'XR': '414px',
         // => @media (min-width: 414px XR) { ... }
   
@@ -16,6 +19,8 @@ const config: Config = {
         // => @media (min-width: 390px) { ... }
   
         '14Pro': '430px',
+        // => @media (min-width: 430px) { ... }
+        'pc': '1080px',
         // => @media (min-width: 430px) { ... }
       },
       backgroundImage: {

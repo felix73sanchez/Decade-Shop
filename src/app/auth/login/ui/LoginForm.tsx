@@ -1,6 +1,6 @@
 'use client';
 
-import { allFont } from "@/config/fonts"
+import { allFont, logoFont } from "@/config/fonts"
 import { authenticate } from "@/actions";
 import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
 import clsx from "clsx";
@@ -25,18 +25,23 @@ export const LoginForm = () => {
 
 
     return (
-        <form action={dispatch} className={` ${allFont} font-fw9 text-fs2 text-colorPrimary w-80 grid grid-cols-1 gap-0.5 `}>
-            <label htmlFor="email">Correo electrónico</label>
+        <form action={dispatch} className={`p-p8 pc:p-20 ${allFont} font-fw9 text-fs2 text-colorPrimary w-full grid grid-cols-1 gap-0`}>
+            
+            <div className="flex flex-col justify-center items-center mb-16 pc:mb-10 w-full  ">
+              <h1 className={`${logoFont.className} font-fw9 italic SE:text-[2.5rem] text-[3rem] pc:text-[3.2rem] text-colorPrimary`}>DECAVENTURE</h1>
+            </div>
+            
+            <label htmlFor="email" className="pb-1 pl-2">Correo electrónico</label>
             <input
-                className="px-3 py-3 border bg-gray-200 rounded-brAll mb-5"
+                className="px-28 py-3 border bg-gray-200 rounded-brAll mb-5"
                 type="email"
                 name="email"
             />
 
 
-            <label htmlFor="email">Contraseña</label>
+            <label htmlFor="email" className="pb-1 pl-2">Contraseña</label>
             <input
-                className="px-3 py-3 border bg-gray-200 rounded-brAll mb-5"
+                className="px-28 py-3 border bg-gray-200 rounded-brAll mb-5"
                 type="password"
                 name="password"
             />

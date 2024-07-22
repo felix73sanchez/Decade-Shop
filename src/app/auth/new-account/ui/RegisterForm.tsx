@@ -1,5 +1,6 @@
 'use client';
 
+import { logoFont } from '@/config/fonts';
 import { login, registerUser } from "@/actions";
 import clsx from "clsx";
 import Link from "next/link";
@@ -48,17 +49,17 @@ export const RegisterForm = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
-
+            <form onSubmit={handleSubmit(onSubmit)} className="p-p8 pc:p-20 ${allFont} font-fw9 text-fs2 text-colorPrimary w-full grid grid-cols-1 gap-0 ">
+        
                 {/* {
                     errors.name?.type === 'required' && <span className="text-red-500">*El nombre es obligatorio</span>
                 } */}
 
-                <label htmlFor="text">Nombre completo</label>
+                <label htmlFor="text" className="pb-1 pl-2">Nombre completo</label>
                 <input
                     className={
                         clsx(
-                            "px-5 py-2 border bg-gray-200 rounded mb-5",
+                            "px-28 py-3 border bg-gray-200 rounded-brAll mb-5",
                             { 'border-red-500': errors.name }
                         )
                     }
@@ -67,22 +68,22 @@ export const RegisterForm = () => {
                     {...register('name', { required: true })}
                 />
 
-                <label htmlFor="email">Correo electrónico</label>
+                <label htmlFor="email" className="pb-1 pl-2">Correo electrónico</label>
                 <input
                     className={
                         clsx(
-                            "px-5 py-2 border bg-gray-200 rounded mb-5",
+                            "px-28 py-3 border bg-gray-200 rounded-brAll mb-5",
                             { 'border-red-500': errors.email }
                         )
                     }
                     type="email"
                     {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                 />
-                <label htmlFor="password">Contraseña</label>
+                <label htmlFor="password" className="pb-1 pl-2">Contraseña</label>
                 <input
                     className={
                         clsx(
-                            "px-5 py-2 border bg-gray-200 rounded mb-5",
+                            "px-28 py-3  border bg-gray-200 rounded-brAll mb-5",
                             { 'border-red-500': errors.password }
                         )
                     }
@@ -91,11 +92,11 @@ export const RegisterForm = () => {
                 />
 
 
-                <span className="text-red-500">{errorMessage}</span>
+                <span className="text-red-500 mb-5">{errorMessage}</span>
 
 
                 <button
-                    className="btn-primary">
+                    className="btn-primary mt-m8">
                     Crear cuenta
                 </button>
 
