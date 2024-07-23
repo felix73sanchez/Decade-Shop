@@ -5,8 +5,8 @@ import Image from 'next/image';
 export default function LoginPage() {
   return (
     <>
-      <div className={`px-6 py-6 w-full h-full overflow-hidden bg-colorPrimary uppercase`}>
-        <div className="w-full h-full p-3 flex flex-col lg:flex-row rounded-brImg shadow-customBS border-customBC border-2 bg-colorSecondary">
+      <div className={`px-6 py-6 w-full h-screen overflow-hidden bg-colorPrimary uppercase`}>
+        <div className="w-full p-3 flex flex-col lg:flex-row rounded-brImg shadow-customBS border-customBC border-2 bg-colorSecondary">
           <div className="hidden lg:flex relative flex-col justify-center items-center w-1/2 h-full rounded-brImg shadow-customBS">
             <Image 
               src="/gridimg/6.jpg" 
