@@ -36,6 +36,7 @@ export const LoginForm = () => {
                 className="px-28 py-3 border bg-gray-200 rounded-brAll mb-5"
                 type="email"
                 name="email"
+                autoComplete="email"
             />
 
 
@@ -44,6 +45,8 @@ export const LoginForm = () => {
                 className="px-28 py-3 border bg-gray-200 rounded-brAll mb-5"
                 type="password"
                 name="password"
+                autoComplete="current-password"
+
             />
 
 
