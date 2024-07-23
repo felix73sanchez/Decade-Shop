@@ -16,7 +16,7 @@ export default function NewAccountPage() {
               className="absolute w-auto h-full object-cover rounded-brImg" 
             />
           </div>
-          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 h-full m-0 p-0 ">
+          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 h-full lg:h-full m-0 p-0 ">
             <RegisterForm />
           </div>
         </div>
