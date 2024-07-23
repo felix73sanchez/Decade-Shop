@@ -26,8 +26,8 @@ export const ProductGridItem = ({ product }: Props) => {
                     alt={product.title}
                     className="w-full object-cover rounded-brAll shadow-custom-2 "
                     priority
-                    width={852}
-                    height={852}
+                    width={200}
+                    height={200}
                     onMouseEnter={() => setDisplayImage(product.images[1])}
                     onMouseLeave={() => setDisplayImage(product.images[0])}
                  />
