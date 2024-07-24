@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+
         'SE': '375px',
         // => @media (min-width: 414px XR) { ... }
 
@@ -25,6 +26,7 @@ const config: Config = {
         'tablet': '1024',
 
         'h-SE': { 'raw': '(min-height: 667px)' },
+        'DUO': { 'raw': '(min-height: 720px)' },
         'h-XR': { 'raw': '(min-height: 896px)' },
         'h-12Pro': { 'raw': '(min-height: 844px)' },
         'h-14Pro': { 'raw': '(min-height: 932px)' },

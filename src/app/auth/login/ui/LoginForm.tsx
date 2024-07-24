@@ -21,7 +21,7 @@ export const LoginForm = () => {
         <form action={dispatch} className={`${allFont} m-0 p-0 font-fw9 text-fs2 text-colorPrimary w-full h-full grid grid-cols-1 gap-0 justify-center items-center uppercase`}>
 
             <div className="grid place-items-center">
-                <span className={`${logoFont.className} pb-0 font-fw9 italic text-[4.5rem] text-colorPrimary whitespace-nowrap leading-none`}>DECA</span>
+                <span className={`${logoFont.className} pb-5 font-fw9 italic text-[5rem] text-colorPrimary whitespace-nowrap leading-none`}>DECA</span>
             </div>
             
             <div className="flex flex-col gap-4 w-full">
