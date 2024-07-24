@@ -21,7 +21,7 @@ export const LoginForm = () => {
         <form action={dispatch} className={`${allFont} m-0 p-0 font-fw9 text-fs2 text-colorPrimary w-full h-full grid grid-cols-1 gap-0 justify-center items-center uppercase`}>
 
             <div className="grid place-items-center">
-                <span className={`${logoFont.className} pb-5 font-fw9 italic text-[5rem] text-colorPrimary whitespace-nowrap leading-none`}>DECA</span>
+                <span className={`${logoFont.className} font-fw9 italic text-[5rem] text-colorPrimary whitespace-nowrap leading-none`}>DECA</span>
             </div>
             
             <div className="flex flex-col gap-4 w-full">
@@ -31,6 +31,7 @@ export const LoginForm = () => {
                     <input
                         className="p-3 border bg-gray-200 rounded-brAll w-full"
                         type="email"
+                        id="email"
                         name="email"
                         autoComplete="email"
                     />
@@ -42,6 +43,7 @@ export const LoginForm = () => {
                     <input
                         className="p-3 border bg-gray-200 rounded-brAll w-full"
                         type="password"
+                        id="password"
                         name="password"
                         autoComplete="current-password"
                     />
@@ -53,7 +55,7 @@ export const LoginForm = () => {
                 {state === 'CredentialsSignin' && (
                     <div className="flex items-center space-x-1 pl-3 mb-1">
                         <ExclamationCircleIcon className="h-3 w-3 text-red-500" />
-                        <p className="text-fs1 text-red-500 whitespace-nowrap">Credenciales no son correctas.</p>
+                        <p className="text-fs0 text-red-500 whitespace-nowrap">Credenciales no son correctas.</p>
                     </div>
                 )}
                 <LoginButton />

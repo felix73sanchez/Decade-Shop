@@ -10,33 +10,19 @@ const config: Config = {
     extend: {
       screens: {
 
-        'SE': '375px',
-        // => @media (min-width: 414px XR) { ... }
+        'movileS': {'min': '300px', 'max': '374px'},
+        'movileM': {'min': '375px', 'max': '425px'},
+        'movileL': {'min': '426px', 'max': '767px'},
+        'tablet': {'min': '768px', 'max': '1023px'},
+        'laptop': {'min': '1024px', 'max': '1440px'},
+        'desktop': {'min': '1441px', 'max': '2560px'},
 
-        'XR': '414px',
-        // => @media (min-width: 414px XR) { ... }
-  
-        '12Pro': '390px',
-        // => @media (min-width: 390px) { ... }
-  
-        '14Pro': '430px',
-        // => @media (min-width: 430px) { ... }
-        'pc': '750px',
-        // => @media (min-width: 430px) { ... }
-        'tablet': '1024',
-
-        'h-SE': { 'raw': '(min-height: 667px)' },
-        'DUO': { 'raw': '(min-height: 720px)' },
-        'h-XR': { 'raw': '(min-height: 896px)' },
-        'h-12Pro': { 'raw': '(min-height: 844px)' },
-        'h-14Pro': { 'raw': '(min-height: 932px)' },
-        'h-pc': { 'raw': '(min-height: 1024px)' },
-        
-        'h-max-SE': { 'raw': '(max-height: 667px)' },
-        'h-max-XR': { 'raw': '(max-height: 896px)' },
-        'h-max-12Pro': { 'raw': '(max-height: 844px)' },
-        'h-max-14Pro': { 'raw': '(max-height: 932px)' },
-        'h-max-pc': { 'raw': '(max-height: 1024px)' },
+        'hmovileS': {'raw': '(min-height: 300px) and (max-height: 639px)'},
+        'hmovileM': {'raw': '(min-height: 640px) and (max-height: 739px)'},
+        'hmovileL': {'raw': '(min-height: 740px) and (max-height: 822px)'},
+        'htablet': {'raw': '(min-height: 822px) and (max-height: 960px)'},
+        'hlaptop': {'raw': '(min-height: 961px) and (max-height: 1399px)'},
+        'hdesktop': {'raw': '(min-height: 1400px) and (max-height: 2000px)'},
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

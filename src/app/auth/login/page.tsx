@@ -17,7 +17,7 @@ export default function LoginPage() {
               priority
             />
           </div>
-          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 h-full px-10 py-28 h-SE:py-20 h-XR:py-40 h-12Pro:py-40 h-14Pro:py-48 pc:py-16 pc:px-20 h-pc:py-80 DUO:py-20 ">
+          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 h-full hmovileS:py-12 hmovileM:py-16 hmovileL:py-28 htablet:py-40 hlaptop:py-80 hdesktop:py-96 movileS:px-4 movileM:px-8 movileL:px-10         tablet:px-40 laptop:px-20 desktop:px-20">
             <LoginForm />
           </div>
         </div>
