@@ -14,9 +14,10 @@ export default function LoginPage() {
               width={2000} 
               height={2000} 
               className="absolute w-auto h-full object-cover rounded-brImg" 
+              priority
             />
           </div>
-          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 h-full lg:h-full m-0 p-0 ">
+          <div className="flex flex-col justify-center items-center w-full lg:w-1/2 h-full py-16 h-max-SE:py-12 XR:py-24 12Pro:py-40 14Pro:py-32 pc:py-16  px-10 pc:px-20 h-pc:py-60 ">
             <LoginForm />
           </div>
         </div>

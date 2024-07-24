@@ -20,8 +20,21 @@ const config: Config = {
   
         '14Pro': '430px',
         // => @media (min-width: 430px) { ... }
-        'pc': '1080px',
+        'pc': '750px',
         // => @media (min-width: 430px) { ... }
+        'tablet': '1024',
+
+        'h-SE': { 'raw': '(min-height: 667px)' },
+        'h-XR': { 'raw': '(min-height: 896px)' },
+        'h-12Pro': { 'raw': '(min-height: 844px)' },
+        'h-14Pro': { 'raw': '(min-height: 932px)' },
+        'h-pc': { 'raw': '(min-height: 1024px)' },
+        
+        'h-max-SE': { 'raw': '(max-height: 667px)' },
+        'h-max-XR': { 'raw': '(max-height: 896px)' },
+        'h-max-12Pro': { 'raw': '(max-height: 844px)' },
+        'h-max-14Pro': { 'raw': '(max-height: 932px)' },
+        'h-max-pc': { 'raw': '(max-height: 1024px)' },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

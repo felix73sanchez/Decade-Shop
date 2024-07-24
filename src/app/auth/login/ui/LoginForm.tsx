@@ -1,92 +1,76 @@
 'use client';
 
-import { allFont, logoFont } from "@/config/fonts"
+import { allFont, logoFont } from "@/config/fonts";
 import { authenticate } from "@/actions";
 import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
 import clsx from "clsx";
 import Link from "next/link";
-//import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
-
 export const LoginForm = () => {
-
-    // const router = useRouter();
     const [state, dispatch] = useFormState(authenticate, undefined);
 
     useEffect(() => {
         if (state === 'Success') {
-            //router.replace('/');
             window.location.replace('/');
         }
-
     }, [state]);
 
-
     return (
-        <form action={dispatch} className={`p-p8 pc:p-20 ${allFont} font-fw9 text-fs2 text-colorPrimary w-full grid grid-cols-1 gap-0`}>
-            
-            <div className="flex flex-col justify-center items-center mb-16 pc:mb-10 w-full  ">
-              <h1 className={`${logoFont.className} font-fw9 italic SE:text-[2.5rem] text-[3rem] pc:text-[3.2rem] text-colorPrimary`}>DECAVENTURE</h1>
+        <form action={dispatch} className={`${allFont} m-0 p-0 font-fw9 text-fs2 text-colorPrimary w-full h-full grid grid-cols-1 gap-0 justify-center items-center uppercase`}>
+
+            <div className="grid place-items-center">
+                <span className={`${logoFont.className} pb-0 font-fw9 italic text-[4.5rem] text-colorPrimary whitespace-nowrap leading-none`}>DECA</span>
             </div>
             
-            <label htmlFor="email" className="pb-1 pl-2">Correo electrónico</label>
-            <input
-                className="px-28 py-3 border bg-gray-200 rounded-brAll mb-5"
-                type="email"
-                name="email"
-                autoComplete="email"
-            />
+            <div className="flex flex-col gap-4 w-full">
+                {/* LABEL CORREO */}
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="email" className="pl-3 pt-4 text-fs1">Correo electrónico</label>
+                    <input
+                        className="p-3 border bg-gray-200 rounded-brAll w-full"
+                        type="email"
+                        name="email"
+                        autoComplete="email"
+                    />
+                </div>
 
+                {/* LABEL CONTRASEÑA */}
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="password" className="pl-3 text-fs1">Contraseña</label>
+                    <input
+                        className="p-3 border bg-gray-200 rounded-brAll w-full"
+                        type="password"
+                        name="password"
+                        autoComplete="current-password"
+                    />
+                </div>
+            </div>
 
-            <label htmlFor="email" className="pb-1 pl-2">Contraseña</label>
-            <input
-                className="px-28 py-3 border bg-gray-200 rounded-brAll mb-5"
-                type="password"
-                name="password"
-                autoComplete="current-password"
-
-            />
-
-
-            <div
-                className="flex h-8 items-end space-x-1"
-                aria-live="polite"
-                aria-atomic="true"
-            >
+            {/* Contenedor para el mensaje de error y el botón */}
+            <div className="flex flex-col w-full pt-6">
                 {state === 'CredentialsSignin' && (
-                    <div className=" mb-2 flex flex-row ">
-                        <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
-                        <p className="text-sm text-red-500">  Credenciales no son correctas. </p>
+                    <div className="flex items-center space-x-1 pl-3 mb-1">
+                        <ExclamationCircleIcon className="h-3 w-3 text-red-500" />
+                        <p className="text-fs1 text-red-500 whitespace-nowrap">Credenciales no son correctas.</p>
                     </div>
                 )}
+                <LoginButton />
+
+                {/* Divisor */}
+                <div className="flex items-center m-0 p-2">
+                    <div className="flex-1 border-t border-gray-400"></div>
+                    <div className="px-2 text-gray-400">○</div>
+                    <div className="flex-1 border-t border-gray-400"></div>
+                </div>
+
+                <Link href="/auth/new-account" className="btn-secondary text-center">
+                    Crear una nueva cuenta
+                </Link>
             </div>
-
-            {/* <button
-                type="submit"
-                className="btn-primary">
-                Ingresar
-            </button> 
-            */}
-            <LoginButton />
-
-
-            {/* divisor l ine */}
-            <div className="flex items-center my-5">
-                <div className="flex-1 border-t border-colorPrimary"></div>
-                <div className="px-2 ">O</div>
-                <div className="flex-1 border-t border-colorPrimary"></div>
-            </div>
-
-            <Link
-                href="/auth/new-account"
-                className="btn-secondary text-center">
-                Crear una nueva cuenta
-            </Link>
-
-        </form>
-    )
+        </form> 
+    );
 }
 
 function LoginButton() {
@@ -95,11 +79,10 @@ function LoginButton() {
     return (
         <button
             type="submit"
-            className={
-                clsx({
-                    "btn-primary": !pending,
-                    "btn-disabled": pending,
-                })}
+            className={clsx(
+                "btn-primary",
+                { "btn-disabled": pending }
+            )}
             disabled={pending}
         >
             Ingresar
