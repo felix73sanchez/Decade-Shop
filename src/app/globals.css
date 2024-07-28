@@ -48,18 +48,18 @@ body {
 
 
 .btn-primary {
-  @apply bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded transition-all;
+  @apply bg-colorPrimary hover:bg-colorHover text-colorSecondary hover:text-colorPrimary py-3 rounded-brAll transition-all uppercase;
 }
 
 .btn-secondary {
-  @apply bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded transition-all;
+  @apply bg-gray-300 hover:bg-colorHover text-colorPrimary hover:text-colorSecondary py-3 rounded-brAll transition-all uppercase;
 }
 
 .btn-disabled {
-  @apply bg-gray-600  text-white py-2 px-4 rounded transition-all;
+  @apply bg-gray-600  text-white py-3 px-4 rounded transition-all;
 }
 
 .btn-danger {
-  @apply bg-red-500 hover:bg-red-700 text-white py-2 px-4 transition-all;
+  @apply bg-red-500 hover:bg-red-700 text-white py-3 px-4 transition-all;
 }
 

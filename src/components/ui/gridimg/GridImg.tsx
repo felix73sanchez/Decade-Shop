@@ -33,6 +33,7 @@ export const GridImg: React.FC<Props> = ({ className }) => {
                     width={images[currentImageIndex].width}
                     height={images[currentImageIndex].height}
                     className="w-full h-full object-cover rounded-brAll"
+                    priority // Agrega esta línea para dar prioridad a la carga de la imagen
                 />
                 <div className="absolute inset-x-0 bottom-4 flex justify-center">
                     {images.map((image, index) => (
@@ -53,6 +54,7 @@ export const GridImg: React.FC<Props> = ({ className }) => {
                         width={800}
                         height={600}
                         className="w-full h-full object-cover"
+                        priority // Agrega esta línea para dar prioridad a la carga de la imagen
                     />
                 </div>
                 <div className="absolute top-4 left-4 sm:top-8 sm:left-10">

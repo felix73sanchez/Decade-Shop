@@ -77,6 +77,7 @@ export const Sidebar = () => {
                     {/* Menu Items */}
                     {isAuthenticated && (
                         <>
+                             
                             <Link
                                 href="/profile"
                                 onClick={() => closeMenu()}
