@@ -68,7 +68,7 @@ export const AddToCart = ({ product }: Props) => {
             {/* Boton de Añadir al Carrito */}
             <button
                 onClick={addToCart}
-                className="btn-primary my-5">Añadir al Carrito</button>
+                className="btn-primary w-full mb-8">Añadir al Carrito</button>
 
         </>
     )

@@ -14,9 +14,9 @@ export const SizeSelector = ({ selectedSize, availableSizes, onSizeChanged }: Pr
 
 
     return (
-        <div className="my-5">
-            <h3 className="font-bold mb-4">Tallas disponibles</h3>
-            <div className="flex">
+        <div className="my-5 text-colorPrimary">
+            <h3 className="font-bold mb-5">Tallas disponibles</h3>
+            <div className="flex ">
                 {
                     availableSizes.map((size) => (
                         <button
@@ -24,12 +24,13 @@ export const SizeSelector = ({ selectedSize, availableSizes, onSizeChanged }: Pr
                             onClick={() => onSizeChanged(size)}
                             className={
                                 clsx(
-                                    "mx-2 hover:underline text-lg",
+                                    "w-full p-1 mx-2 hover:underline hover:bg-colorHover text-fs2 font-fw5 rounded-brAll shadow-customBS border-customBC border-customBW",
                                     {
-                                        'underline': selectedSize === size,
+                                        'bg-colorPrimary text-colorSecondary': selectedSize === size,
                                     }
                                 )
-                            }> {/* BOTON NORMAL: //TODO className={`btn-secondary ${selectedSize === size ? "bg-primary text-white" : ""} mr-2` || "mx-2 hover:underline text-lg" */}
+                            }> {/* BOTON NORMAL: //TODO className={`btn-secondary ${selectedSize === size ? "bg-primary text-white" : ""} mr-2` || "mx-2 hover:underline text-lg" 
+                            */}
                             {size}
                         </button>
                     ))

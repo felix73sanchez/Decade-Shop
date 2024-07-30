@@ -29,7 +29,7 @@ export default async function Home({ searchParams }: Props) {
       {/* Renderiza el componente Gridimg solo en la página 1 */}
       {page === 1 && <GridImg className={`${allFont.className}`} />}
 
-      <div className="flex items-center justify-between p-p8 text-colorPrimary">
+      <div className="flex items-center justify-between px-6 py-2 text-colorPrimary">
         <div className="font-fw9 text-[1.1rem] ">CHECK OUT THE NEW</div>
         <button className="font-fw5 text-fs2 py-2  hover:text-colorHover focus:outline-none ">
           VIEW ALL

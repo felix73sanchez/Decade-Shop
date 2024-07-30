@@ -1,51 +1,51 @@
-
-
-.swiper-slide {
-  
-  /* Center slide text vertically */
+/* Contenedor principal de los Swipers */
+.slideshow-container {
   display: flex;
+  align-items: flex-start; /* Alinea los elementos al principio del contenedor */
+  gap: 1rem; /* Espacio entre los elementos */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  height: 100%;
 }
 
+/* Primer Swiper (Principal) */
+.swiper-container {
+  flex: 0 0 83%; /* Ocupa el 75% del ancho del contenedor */
+  max-width: 83%; /* Asegura que el ancho no exceda el 75% */
+  height: 100%; /* Ajusta la altura según sea necesario */
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho y alto */
+}
+
+/* Segundo Swiper (Miniaturas) */
+.swiper-thumbnail {
+  flex: 0 0 15%; /* Ocupa el 25% del ancho del contenedor */
+  max-width: 15%; /* Asegura que el ancho no exceda el 25% */
+  height: 300px; /* Debe ser igual a la altura del primer Swiper */
+  box-sizing: border-box; /* Incluye el padding y el border en el ancho y alto */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+}
+
+/* Estilos generales para las diapositivas del Swiper */
 .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Asegura que las imágenes cubran el contenedor sin distorsionarse */
 }
 
-
-.swiper {
-  width: 100%;
-  height: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.swiper-slide {
-  background-size: cover;
-  background-position: center;
-}
-
-
+/* Estilos específicos para el Swiper de miniaturas */
 .mySwiper {
-  height: 20%;
+  width: 100%; /* Asegura que el Swiper de miniaturas ocupe todo el ancho disponible */
+  height: 100%; /* Asegura que el Swiper de miniaturas ocupe toda la altura disponible */
   box-sizing: border-box;
-  padding: 10px 0;
 }
 
 .mySwiper .swiper-slide {
-  width: 25%;
-  height: 100%;
-  opacity: 0.4;
+  width: 100%; /* Asegura que cada diapositiva ocupe todo el ancho del Swiper de miniaturas */
+  height: auto; /* Ajusta la altura automáticamente */
+  opacity: 0.6; /* Opacidad por defecto para las miniaturas */
+
 }
 
 .mySwiper .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  opacity: 1; /* Opacidad completa para la diapositiva activa */
 }

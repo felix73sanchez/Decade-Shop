@@ -75,33 +75,33 @@ export default async function ProductSlugPage({ params }: Props) {
     }
 
     return (
-        <div className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3 ">
+        <div className="w-full h-full mt-20 mb-20 grid grid-cols-1 md:grid-cols-3 gap-g8 px-p8 bg-colorSecondary">
             {/* Slide Show */}
-            <div className="col-span-1 md:col-span-2">
+            <div className=" p-5 col-span-1 md:col-span-2 rounded-brAll shadow-customBS border-customBC border-customBW">
                 {/* Mobile SlideShow */}
                 <ProductMobileSlideshow
                     title={product.title}
                     images={product.images}
-                    className="block md:hidden"
+                    className="block md:hidden "
                 />
                 {/* Desktop SlideShow */}
                 <ProductSlideshow
                     title={product.title}
                     images={product.images}
-                    className="hidden md:block"
+                    className="hidden md:block "
                 />
             </div>
             {/* Detalles */}
-            <div className="col-span-1 px-5">
+            <div className={`${allFont.className} col-span-1 p-5 rounded-brAll shadow-customBS border-customBC border-customBW`}>
                 <StockLabel slug={slug} />
-                <h1 className={`${allFont.className} antialiased font-black text-xl`}>
+                <h1 className={` antialiased font-black text-xl`}>
                     {product.title}
                 </h1>
                 <p className="text-lg mb-5">${product.price}</p>
                 <AddToCart product={product} />
                 {/* Descripcion */}
                 <h3 className="font-bold text-sm">Descripcion</h3>
-                <p className="font-light">{product.description}</p>
+                <p className="font-fw4 text-fs2">{product.description}</p>
             </div>
         </div>
     );

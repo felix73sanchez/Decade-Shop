@@ -62,7 +62,7 @@ export const Pagination = ({ totalPages }: Props) => {
         <div className={`${allFont.className} flex justify-center my-10 px-1 12Pro:px-1 XR:px-1 14Pro:px-2`}>
             <nav aria-label="Page navigation example">
                 <ul className="flex list-style-none items-center XR:gap-1 12Pro:gap-0 14Pro:gap-1">
-                    <li className="page-item">
+                    <li className="page-item pr-5">
                         <Link
                             className="page-link relative block text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none"
                             href={createPageUrl(currentPage - 1)}>Anterior
@@ -85,7 +85,7 @@ export const Pagination = ({ totalPages }: Props) => {
                         </li>
                     ))}
 
-                    <li className="page-item">
+                    <li className="page-item pl-5">
                         <Link
                             className="page-link relative block text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none"
                             href={createPageUrl(currentPage + 1)}>Siguiente
