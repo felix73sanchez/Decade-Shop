@@ -16,52 +16,53 @@ export default async function OrdersPage() {
     }
 
     return (
-        <>
-            <Title title="Orders" />
+        <>  <div className="my-20 m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden ">
+                
 
-            <div className="mb-10">
-                <table className="min-w-full">
-                    <thead className="bg-gray-200 border-b">
-                        <tr>
+                <Title title="Orders"  className="pl-4 font-fw5 text-fs1"/>
+
+                <table className="min-w-full mysm:min-w-2 bg-gray-200 font-fw9 text-fs1rem  mysm:text-[0.6rem]">
+                    <thead className=" ">
+                        <tr className="">
                             <th
                                 scope="col"
-                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
                             >
                                 #ID
                             </th>
                             <th
                                 scope="col"
-                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
                             >
                                 Nombre completo
                             </th>
                             <th
                                 scope="col"
-                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
                             >
                                 Estado
                             </th>
                             <th
                                 scope="col"
-                                className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
                             >
                                 Opciones
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="">
                         {orders.map((order) => (
                             <tr
                                 key={order.id}
-                                className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
+                                className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHover font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
                             >
-                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <td className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap ">
                                     #deca|{order.id.split("-").at(-1)}
                                 </td>
-                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
                                     {order.OrderAddress?.firstName} {order.OrderAddress?.lastName}
                                 </td>
-                                <td className="flex items-center text-sm  text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                <td className="flex items-center px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
                                     {order.isPaid ? (
                                         <>
                                             <IoCardOutline className="text-green-800" />
@@ -74,7 +75,7 @@ export default async function OrdersPage() {
                                         </>
                                     )}
                                 </td>
-                                <td className="text-sm text-gray-900 font-light px-6 ">
+                                <td className=" px-6 py-4 mysm:py-2 mysm:px-3 mysm:whitespace-normal">
                                     <Link href={`/orders/${order.id}`} className="hover:underline">
                                         Ver orden
                                     </Link>
