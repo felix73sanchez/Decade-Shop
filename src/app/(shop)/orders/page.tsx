@@ -21,7 +21,7 @@ export default async function OrdersPage() {
 
                 <Title title="Orders"  className="pl-4 font-fw5 text-fs1"/>
 
-                <table className="min-w-full mysm:min-w-2 bg-gray-200 font-fw9 text-fs1rem  mysm:text-[0.6rem]">
+                <table className="min-w-full bg-gray-200 font-fw9 text-fs1rem  mysm:text-[0.6rem]">
                     <thead className=" ">
                         <tr className="">
                             <th
