@@ -59,7 +59,7 @@ export const Pagination = ({ totalPages }: Props) => {
     };
 
     return (
-        <div className={`${allFont.className} flex justify-center my-10 px-1 12Pro:px-1 XR:px-1 14Pro:px-2`}>
+        <div className={`${allFont.className} flex justify-center my-10 px-1 mysm:text-fs1`}>
             <nav aria-label="Page navigation example">
                 <ul className="flex list-style-none items-center XR:gap-1 12Pro:gap-0 14Pro:gap-1">
                     <li className="page-item pr-5">
@@ -70,12 +70,12 @@ export const Pagination = ({ totalPages }: Props) => {
                     </li>
 
                     {allPages.map((page, index) => (
-                        <li key={page + '-' + index} className="page-item mx-1 bg-colorSecondary text-colorPrimary rounded-brAll">
+                        <li key={page + '-' + index} className="page-item px-1 font-fw5 text-fs2 text-colorPrimary rounded-brAll">
                             <Link
                                 className={clsx(
-                                    "page-link relative block py-1 px-3 font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none rounded-brAll shadow-customBS border-customBC border-customBW",
+                                    "page-link relative block w-fit px-4 py-1 mt-1 font-fw5 text-fs2font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW",
                                     {
-                                        'bg-colorPrimary text-colorSecondary shadow-sm hover:text-colorHover': page === currentPage,
+                                        'bg-colorPrimary shadow-none  text-colorSecondary hover:text-colorHover': page === currentPage,
                                     }
                                 )}
                                 href={createPageUrl(page)}

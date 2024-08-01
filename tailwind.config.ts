@@ -16,6 +16,7 @@ const config: Config = {
         'tablet': {'min': '768px', 'max': '1023px'},
         'laptop': {'min': '1024px', 'max': '1440px'},
         'desktop': {'min': '1441px', 'max': '2560px'},
+        'mysm': {'min': '300px', 'max': '767px'},
 
         'hmovileS': {'raw': '(min-height: 300px) and (max-height: 639px)'},
         'hmovileM': {'raw': '(min-height: 640px) and (max-height: 739px)'},
@@ -53,6 +54,9 @@ const config: Config = {
         'fs0': '0.7rem', // Tamaño de fuente personalizado
         'fs1': '0.75rem', // Tamaño de fuente personalizado
         'fs2': '0.875rem',  // Tamaño de precio
+        'fs1rem': '1rem',  // Tamaño de precio
+        'fs1.2rem': '1.2rem',  // Tamaño de precio
+        'fs2rem': '2rem',  // Tamaño de precio
         'fsLogo': '1.75rem',  //logo font Size
         'fsHeader': '1.37rem', //Encabezados texto
       },

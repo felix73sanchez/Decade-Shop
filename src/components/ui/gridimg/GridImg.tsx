@@ -26,7 +26,7 @@ export const GridImg: React.FC<Props> = ({ className }) => {
     return (
         <div className={`relative w-full h-[36rem] px-p8 overflow-hidden fade-in mt-[4.6rem] grid grid-cols-1 sm:grid-cols-3 gap-p8 sm:gap-g8 ${allFont.className} ${className}`}>
             {/* Imagen visible en pantallas móviles */}
-            <div className="relative w-full h-[36rem] sm:hidden rounded-brAll shadow-customBS border-customBC border-customBW">
+            <div className="relative w-full h-[36rem] sm:hidden border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
                 <Image
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].alt}
@@ -46,7 +46,7 @@ export const GridImg: React.FC<Props> = ({ className }) => {
             </div>
 
             {/* Div a la izquierda, visible en pantallas medianas y grandes */}
-            <div className="relative hidden sm:block w-full h-[36rem] sm:col-span-2 rounded-brAll shadow-customBS border-customBC border-customBW">
+            <div className="relative hidden sm:block w-full h-[36rem] sm:col-span-2 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
                 <div className="w-full h-full overflow-hidden rounded-brAll">
                     <Image
                         src="/gridimg/1.jpg"

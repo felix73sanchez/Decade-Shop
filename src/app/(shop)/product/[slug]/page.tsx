@@ -75,9 +75,9 @@ export default async function ProductSlugPage({ params }: Props) {
     }
 
     return (
-        <div className="w-full h-full mt-20 mb-20 grid grid-cols-1 md:grid-cols-3 gap-g8 px-p8 bg-colorSecondary">
+        <div className="w-full h-full mt-20 mb-20 grid grid-cols-1 md:grid-cols-3 gap-g8 px-p8 bg-colorSecondary text-colorPrimary">
             {/* Slide Show */}
-            <div className=" p-5 col-span-1 md:col-span-2 rounded-brAll shadow-customBS border-customBC border-customBW">
+            <div className=" p-5 col-span-1 md:col-span-2 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
                 {/* Mobile SlideShow */}
                 <ProductMobileSlideshow
                     title={product.title}
@@ -88,20 +88,20 @@ export default async function ProductSlugPage({ params }: Props) {
                 <ProductSlideshow
                     title={product.title}
                     images={product.images}
-                    className="hidden md:block "
+                    className="sm:hidden md:block"
                 />
             </div>
             {/* Detalles */}
-            <div className={`${allFont.className} col-span-1 p-5 rounded-brAll shadow-customBS border-customBC border-customBW`}>
+            <div className={`${allFont.className} col-span-1 p-5 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW`}>
                 <StockLabel slug={slug} />
-                <h1 className={` antialiased font-black text-xl`}>
+                <h1 className={`antialiased font-fw9 text-fs1.2rem`}>
                     {product.title}
                 </h1>
-                <p className="text-lg mb-5">${product.price}</p>
+                <p className="w-fit px-3 py-1 mt-1 font-fw5 text-fs2 bg-color3 text-colorPrimary rounded-brAll border-customBC border-customBW">${product.price}</p>
                 <AddToCart product={product} />
                 {/* Descripcion */}
-                <h3 className="font-bold text-sm">Descripcion</h3>
-                <p className="font-fw4 text-fs2">{product.description}</p>
+                <h3 className="text-fs1rem font-fw9 ">Descripcion</h3>
+                <p className="text-fs2 font-fw4">{product.description}</p>
             </div>
         </div>
     );

@@ -5,6 +5,7 @@ import { QuantitySelector, SizeSelector } from "@/components";
 import type { CartProduct, Product, Size } from "@/interfaces";
 import { useCartStore } from "@/store";
 import { useState } from "react";
+import clsx from 'clsx';
 
 
 interface Props {
@@ -68,7 +69,7 @@ export const AddToCart = ({ product }: Props) => {
             {/* Boton de Añadir al Carrito */}
             <button
                 onClick={addToCart}
-                className="btn-primary w-full mb-8">Añadir al Carrito</button>
+                className="btn-primary w-full mb-8 font-fw7 text-fs1rem text-center rounded-brAll hover:rounded-brAll border-customBW border-colorSecondary hover:border-colorPrimary ">Añadir al Carrito</button>
 
         </>
     )

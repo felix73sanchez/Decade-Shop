@@ -4,6 +4,7 @@ import { Product } from "@/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { PiHeartBold } from "react-icons/pi";
 
 interface Props {
     product: Product;
@@ -42,7 +43,7 @@ export const ProductGridItem = ({ product }: Props) => {
     }
 
     return (
-        <div className="p-0 overflow-hidden fade-in bg-colorSecondary rounded-brAll shadow-customBS border-customBC border-customBW">
+        <div className="p-0 overflow-hidden fade-in flex flex-col h-full border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
             <Link href={`/product/${product.slug}`}>
                 <Image
                     src={displayImage}
@@ -56,14 +57,23 @@ export const ProductGridItem = ({ product }: Props) => {
                 />
             </Link>
 
-            <div className="p-2 m-0 flex flex-col text-colorPrimary">
+            <div className="p-2 flex flex-col justify-between flex-grow">
                 <Link
-                    className="hover:text-color text-fs1 font-fw7"
+                    className="hover:text-color text-fs2 font-fw9  text-colorPrimary hover:text-colorHover "
                     href={`/product/${product.slug}`}
                 >
                     {product.title}
                 </Link>
-                <span className="font-fw4 text-fs1">${product.price}</span>
+                <div className="flex flex-col h-full">
+                    <div className="flex justify-between items-end flex-grow my-2 mx-1">
+                        <span className="w-fit px-3 py-1 font-fw7 text-fs2 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
+                            ${product.price}
+                        </span>
+                        {/* Desktop SlideShow */}<button className="ml-4">
+                            <PiHeartBold className="text-3xl w-fit px-3 py-1  border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW" />
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );

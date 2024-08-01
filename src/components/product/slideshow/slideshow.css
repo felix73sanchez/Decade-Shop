@@ -6,6 +6,12 @@
   width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
   height: 100%;
 }
+/* Media Query para pantallas móviles */
+@media (max-width: 768px) {
+  .slideshow-container {
+      display: none;
+  }
+}
 
 /* Primer Swiper (Principal) */
 .swiper-container {
