@@ -9,7 +9,7 @@ interface Props {
 export const Title = ({ title, subtitle, className }: Props) => {
     return (
         <div className={` ${className} ${allFont.className}`}>
-            <h1 className={`antialiased text-fs1.2rem font-semibold my-m8`}>
+            <h1 className={`antialiased mysm:text-fs1 text-fs1.2rem font-semibold my-m8`}>
                 {title}
             </h1>
             {/*

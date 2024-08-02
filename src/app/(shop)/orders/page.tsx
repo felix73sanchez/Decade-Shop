@@ -56,7 +56,7 @@ export default async function OrdersPage() {
                                 key={order.id}
                                 className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHover font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
                             >
-                                <td className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap ">
+                                <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
                                     #deca|{order.id.split("-").at(-1)}
                                 </td>
                                 <td className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
@@ -65,13 +65,13 @@ export default async function OrdersPage() {
                                 <td className="flex items-center px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
                                     {order.isPaid ? (
                                         <>
-                                            <IoCardOutline className="text-green-800" />
-                                            <span className="mx-2 text-green-800">Pagada</span>
+                                            <IoCardOutline className="text-green-800 mysm:overflow-hidden" />
+                                            <span className="mx-2  text-green-800">Pagada</span>
                                         </>
                                     ) : (
                                         <>
-                                            <IoCardOutline className="text-red-800" />
-                                            <span className="mx-2 text-red-800">No Pagada</span>
+                                            <IoCardOutline className="text-red-800 mysm:hidden" />
+                                            <span className="mx-2 mysm:mx-0 text-red-800 ">No Pagada</span>
                                         </>
                                     )}
                                 </td>
