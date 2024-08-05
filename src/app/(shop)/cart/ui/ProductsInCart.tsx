@@ -29,32 +29,32 @@ export const ProductsInCart = () => {
         <>
             {
                 productsIncCart.map(product => (
-                    <div key={`${product.slug}-${product.size}`} className="flex mb-5">
+                    <div key={`${product.slug}-${product.size}`} className="flex mb-5 h-full w-full ">
 
                         <ProductImage
                             src={product.image}
-                            width={100}
-                            height={100}
+                            width={150}
+                            height={150}
                             style={{
-                                width: '100px',
-                                height: '100px',
+                                width: '130px',
+                                height: '140px',
                             }}
                             priority
                             alt={product.title}
-                            className="mr-5 rounded"
+                            className="mr-5 rounded-brAll border-colorPrimary border-customBW"
                         />
-                        <div>
-                            <Link className="hover:underline cursor-pointer" href={`/product/${product.slug}`}>
+                        <div className="w-full h-full">
+                            <Link className="hover:underline cursor-pointer hover:text-colorHover" href={`/product/${product.slug}`}>
                                 {product.size} - {product.title}
                             </Link>
-                            <p> ${product.price} </p>
+                            <p className=""> ${product.price} </p>
                             <QuantitySelector
                                 quantity={product.quantity}
                                 onQuantityChanged={quantity => updateProductQuantity(product, quantity)}
                             />
                             <button
                                 onClick={() => removeProductFromCart(product)}
-                                className="underline mt-3">
+                                className="underline ">
                                 Eliminar
                             </button>
                         </div>

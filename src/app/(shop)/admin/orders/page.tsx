@@ -18,10 +18,10 @@ export default async function OrdersPage() {
 
     return (
         <>  <div className="mt-20 m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
-                <Title title="Todas las ordenes" className="pl-4 font-fw5 text-fs1" />
+                <Title title="Todas las ordenes" className="font-fw5 text-fs1" />
 
                 <div className="">
-                    <table className="min-w-full bg-gray-200 font-fw9 text-fs1rem  mysm:text-[0.6rem]">
+                    <table className="min-w-full bg-gray-200 font-fw9 text-fs1rem mysm:text-[0.6rem]">
                         <thead className="bg-gray-200 border-b">
                             <tr>
                                 <th

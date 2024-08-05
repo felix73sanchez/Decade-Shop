@@ -18,9 +18,9 @@ export default async function OrdersPage() {
 
     return (
         <>  <div className="mt-20 m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
-                <Title title="Mantenimiento de usuarios"  className="pl-4 font-fw5 text-fs1"/>
+                <Title title="Mantenimiento de usuarios"  className="font-fw5 text-fs1"/>
 
-                <div className="">
+                <div className="text-colorPrimary">
                     <UsersTable users={users} />
 
                    

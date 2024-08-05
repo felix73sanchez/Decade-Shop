@@ -2,7 +2,9 @@
 
 import { changeUserRole } from "@/actions";
 import { User } from "@/interfaces";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { PiCaretDown, PiCaretUp } from 'react-icons/pi'; // Importar los íconos
+import './styles.css'; // Ruta actualizada
 
 interface Props {
     users: User[];
@@ -10,6 +12,8 @@ interface Props {
 
 export const UsersTable = ({ users }: Props) => {
     const [updatedUsers, setUpdatedUsers] = useState(users);
+    const [openSelect, setOpenSelect] = useState<string | null>(null);
+    const selectRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
     const handleChangeRole = async (userId: string, newRole: string) => {
         await changeUserRole(userId, newRole);
@@ -20,25 +24,48 @@ export const UsersTable = ({ users }: Props) => {
         );
     };
 
+    const handleSelect = (userId: string) => {
+        setOpenSelect(prevId => {
+            if (prevId === userId) {
+                return null;
+            }
+            if (prevId && selectRefs.current[prevId]) {
+                selectRefs.current[prevId]?.classList.add('select-hide');
+            }
+            if (selectRefs.current[userId]) {
+                selectRefs.current[userId].classList.remove('select-hide');
+            }
+            return userId;
+        });
+    };
+
+    const handleOptionClick = (userId: string, newRole: string) => {
+        handleChangeRole(userId, newRole);
+        if (selectRefs.current[userId]) {
+            selectRefs.current[userId].classList.add('select-hide');
+        }
+        setOpenSelect(null);
+    };
+
     return (
-        <table className="min-w-full">
+        <table className="min-w-full text-colorPrimary font-fw9 text-fs1rem mysm:text-[0.6rem]">
             <thead className="bg-gray-200 border-b">
                 <tr>
                     <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
                     >
                         Email
                     </th>
                     <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
                     >
                         Nombre completo
                     </th>
                     <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
                     >
                         Rol
                     </th>
@@ -48,23 +75,47 @@ export const UsersTable = ({ users }: Props) => {
                 {updatedUsers.map((user) => (
                     <tr
                         key={user.id}
-                        className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
+                        className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHover font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
                     >
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
                             {user.email}
                         </td>
-                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
                             {user.name}
                         </td>
-                        <td className="flex items-center text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                            <select
-                                value={user.role}
-                                onChange={(e) => handleChangeRole(user.id, e.target.value)}
-                                className="text-sm w-full p-2 text-gray-900"
-                            >
-                                <option value="admin">Administrador</option>
-                                <option value="user">Usuario</option>
-                            </select>
+                        <td className="flex items-center px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
+                            <div className="custom-select">
+                                <div
+                                    className="select-selected flex items-center justify-between cursor-pointer"
+                                    onClick={() => handleSelect(user.id)}
+                                >
+                                    <span className="text-left">{user.role}</span>
+                                    <div className="ml-2 flex items-center">
+                                        {openSelect === user.id ? (
+                                            <PiCaretUp className="w-4 h-4 transition-transform" />
+                                        ) : (
+                                            <PiCaretDown className="w-4 h-4 transition-transform" />
+                                        )}
+                                    </div>
+                                </div>
+                                <div
+                                    ref={(el) => { selectRefs.current[user.id] = el; }}
+                                    className={`select-items ${openSelect === user.id ? '' : 'select-hide'}`}
+                                >
+                                    <div
+                                        className={user.role === 'admin' ? 'same-as-selected' : ''}
+                                        onClick={() => handleOptionClick(user.id, 'admin')}
+                                    >
+                                        Admin
+                                    </div>
+                                    <div
+                                        className={user.role === 'user' ? 'same-as-selected' : ''}
+                                        onClick={() => handleOptionClick(user.id, 'user')}
+                                    >
+                                        User
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 ))}

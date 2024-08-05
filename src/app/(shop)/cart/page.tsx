@@ -16,18 +16,18 @@ export default function CartPage() {
 
     return (
 
-        <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
+        <div className="mt-20 mb-20 flex justify-center items-center m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
 
-            <div className="flex flex-col w-[1000px]">
+            <div className="flex flex-col w-full h-full" >
 
-                <Title title="Carrito" />
+                <Title title="Carrito" className=" text-fs1.2rem"/>
 
-                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-10">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-g8 p-5 w-full h-full">
 
                     {/* Carrito */}
-                    <div className="flex flex-col mt-5">
-                        <span className="text-xl">Agregar mas items</span>
-                        <Link href="/" className="underline mb-5">
+                    <div className="flex flex-col p-5 w-full h-full bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
+                        <span className="text-fs1.2rem font-fw7">Agregar mas items</span>
+                        <Link href="/" className="underline mb-5 hover:text-colorHover">
                             Continua comprando!
                         </Link>
 
@@ -38,8 +38,8 @@ export default function CartPage() {
                     </div>
 
                     {/* Checkout - Resumen de Orden */}
-                    <div className=" bg-white rounded-xl shadow-xl p-7 h-fit">
-                        <h2 className="text-2xl mb-2"> Resumen de Orden </h2>
+                    <div className=" bg-colorSecondary p-5 h-fit border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
+                        <h2 className="text-fs1.2rem font-fw7 mb-2"> Resumen de Orden </h2>
 
                         <OrderSummary />
 

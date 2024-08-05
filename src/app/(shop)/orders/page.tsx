@@ -19,7 +19,7 @@ export default async function OrdersPage() {
         <>  <div className="my-20 m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden ">
                 
 
-                <Title title="Orders"  className="pl-4 font-fw5 text-fs1"/>
+                <Title title="Orders"  className="font-fw5 text-fs1"/>
 
                 <table className="min-w-full bg-gray-200 font-fw9 text-fs1rem  mysm:text-[0.6rem]">
                     <thead className=" ">
