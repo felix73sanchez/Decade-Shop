@@ -29,7 +29,7 @@ export const LoginForm = () => {
                 <div className="flex flex-col gap-1">
                     <label htmlFor="email" className="pl-3 pt-4 text-fs1">Correo electrónico</label>
                     <input
-                        className="p-3 border bg-gray-200 rounded-brAll w-full"
+                        className="p-3 border bg-colorGray rounded-brAll w-full"
                         type="email"
                         id="email"
                         name="email"
@@ -41,7 +41,7 @@ export const LoginForm = () => {
                 <div className="flex flex-col gap-1">
                     <label htmlFor="password" className="pl-3 text-fs1">Contraseña</label>
                     <input
-                        className="p-3 border bg-gray-200 rounded-brAll w-full"
+                        className="p-3 border bg-colorGray rounded-brAll w-full"
                         type="password"
                         id="password"
                         name="password"

@@ -82,37 +82,37 @@ export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-2 sm:gap-5 sm:grid-cols-2">
             <div className="flex flex-col mb-2">
                 <span>Nombres</span>
-                <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('firstName', { required: true })} />
+                <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('firstName', { required: true })} />
             </div>
 
             <div className="flex flex-col mb-2">
                 <span>Apellidos</span>
-                <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('lastName', { required: true })} />
+                <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('lastName', { required: true })} />
             </div>
 
             <div className="flex flex-col mb-2">
                 <span>Dirección</span>
-                <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('address', { required: true })} />
+                <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('address', { required: true })} />
             </div>
 
             <div className="flex flex-col mb-2">
                 <span>Dirección 2 (opcional)</span>
-                <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('address2')} />
+                <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('address2')} />
             </div>
 
             <div className="flex flex-col mb-2">
                 <span>Código postal</span>
-                <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('postalCode', { required: true })} />
+                <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('postalCode', { required: true })} />
             </div>
 
             <div className="flex flex-col mb-2">
                 <span>Ciudad</span>
-                <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('city', { required: true })} />
+                <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('city', { required: true })} />
             </div>
 
             <div className="flex flex-col mb-2">
                 <span>País</span>
-                <select className="p-2 border rounded-md bg-gray-200" {...register('country', { required: true })}>
+                <select className="p-2 border rounded-md bg-colorGray" {...register('country', { required: true })}>
                     <option value="">[ Seleccione ]</option>
                     {
                         countries.map(country => (
@@ -124,7 +124,7 @@ export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
 
             <div className="flex flex-col mb-2">
                 <span>Teléfono</span>
-                <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('phone', { required: true })} />
+                <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('phone', { required: true })} />
             </div>
 
             <div className="flex flex-col mb-2 sm:mt-1">

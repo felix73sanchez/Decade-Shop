@@ -52,7 +52,7 @@ body {
 }
 
 .btn-secondary {
-  @apply bg-gray-300 hover:bg-colorHover text-colorPrimary hover:text-colorSecondary py-3 rounded-brAll transition-all uppercase;
+  @apply bg-colorGray hover:bg-colorHover text-colorPrimary hover:text-colorSecondary py-3 rounded-brAll transition-all uppercase;
 }
 
 .btn-disabled {

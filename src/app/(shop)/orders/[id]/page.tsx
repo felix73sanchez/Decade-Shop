@@ -92,7 +92,7 @@ export default async function OrderPageById({ params }: Props) {
 
                         {/*LINEA DIVISAORA */}
                         <div
-                            className="w-full h-0.5 bg-gray-200 mb-10"
+                            className="w-full h-0.5 bg-colorGray mb-10"
                         />
 
                         <h2 className="text-2xl mb-2"> Resumen de Orden </h2>

@@ -20,9 +20,9 @@ export default function CartPage() {
 
             <div className="flex flex-col w-full h-full" >
 
-                <Title title="Carrito" className=" text-fs1.2rem"/>
+                <Title title="Carrito" className="border-b-customBW border-colorPrimary bg-color3"/>
 
-                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-g8 p-5 w-full h-full">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 gap-g8 p-5 w-full h-full bg-colorGray">
 
                     {/* Carrito */}
                     <div className="flex flex-col p-5 w-full h-full bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">

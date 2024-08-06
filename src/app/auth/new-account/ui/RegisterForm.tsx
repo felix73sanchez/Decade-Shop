@@ -40,7 +40,7 @@ export const RegisterForm = () => {
                 <div className="flex flex-col gap-1 w-full">
                     <label htmlFor="name" className="pl-3 text-fs1">Nombre completo</label>
                     <input
-                        className={clsx("p-3 border bg-gray-200 rounded-brAll w-full", { 'border-red-500': errors.name })}
+                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full", { 'border-red-500': errors.name })}
                         type="text"
                         id="name"
                         autoFocus
@@ -49,7 +49,7 @@ export const RegisterForm = () => {
 
                     <label htmlFor="email" className="pl-3 pt-5 text-fs1">Correo electrónico</label>
                     <input
-                        className={clsx("p-3 border bg-gray-200 rounded-brAll w-full", { 'border-red-500': errors.email })}
+                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full", { 'border-red-500': errors.email })}
                         type="email"
                         id="email"
                         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
@@ -58,7 +58,7 @@ export const RegisterForm = () => {
                 
                     <label htmlFor="password" className="pl-3 pt-5 text-fs1 ">Contraseña</label>
                     <input
-                        className={clsx("p-3 border bg-gray-200 rounded-brAll w-full ", { 'border-red-500': errors.password })}
+                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full ", { 'border-red-500': errors.password })}
                         type="password"
                         id="password"
                         {...register('password', { required: true, minLength: 6 })}

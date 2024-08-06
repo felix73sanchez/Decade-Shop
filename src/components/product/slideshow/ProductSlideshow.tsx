@@ -34,7 +34,7 @@ export const ProductSlideshow = ({ images, title, className }: Props) => {
                         swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
                     }}
                     modules={[FreeMode, Navigation, Thumbs, Autoplay]}
-                    className="h-full w-full rounded-brAll shadow-custom-2 "
+                    className="h-full w-full rounded-brAll "
                 >
                     {images.map(image => (
                         <SwiperSlide key={image}>
@@ -69,7 +69,7 @@ export const ProductSlideshow = ({ images, title, className }: Props) => {
                                 height={300}
                                 src={image}
                                 alt={title}
-                                className="object-fill border-colorPrimary rounded-brAll shadow-custom-2 border-customBW"
+                                className="object-fill border-colorPrimary rounded-brAll border-customBW"
                             />
                         </SwiperSlide>
                     ))}

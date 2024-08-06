@@ -22,12 +22,12 @@ export const QuantitySelector = ({ quantity, onQuantityChanged }: Props) => {
 
 
     return (
-        <div className="flex w-full px-2 my-2 text-center bg-gray-200 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW ">
-            <button onClick={() => onValueChange(-1)}>
+        <div className="flex w-full px-2 my-2 text-center bg-colorGray border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW ">
+            <button className="hover:text-colorHover"  onClick={() => onValueChange(-1)}>
                 <IoRemoveCircleOutline size={30} />
             </button>
-            <span className="w-full mx-3 py-p8 bg-gray-200 text-center rounded-brAll text-fs1rem font-fw5 ">{quantity}</span>
-            <button onClick={() => onValueChange(+1)}>
+            <span className="w-full mx-3 py-p8 bg-colorGray text-center rounded-brAll text-fs1rem font-fw5 ">{quantity}</span>
+            <button className="hover:text-colorHover" onClick={() => onValueChange(+1)}>
                 <IoAddCircleOutline size={30} />
             </button>
         </div>

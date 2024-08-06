@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: Props) {
 
       {/* Aplica mt-16 a ProductGrid después de la página 1 */}
 
-      <div className={`px-p8 ${page > 1 ? 'mt-5' : ''}`}>
+      <div className={`px-p8  ${page > 1 ? 'mt-5' : ''}`}>
         <ProductGrid products={products} />
       </div>
       <Pagination totalPages={totalPages} />

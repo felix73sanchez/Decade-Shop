@@ -104,36 +104,36 @@ export const ProductForm = ({ product, categories }: Props) => {
             <div className="w-full">
                 <div className="flex flex-col mb-2">
                     <span>Título</span>
-                    <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('title', { required: true })} />
+                    <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('title', { required: true })} />
                 </div>
 
                 <div className="flex flex-col mb-2">
                     <span>Slug</span>
-                    <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('slug', { required: true })} />
+                    <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('slug', { required: true })} />
                 </div>
 
                 <div className="flex flex-col mb-2">
                     <span>Descripción</span>
                     <textarea
                         rows={5}
-                        className="p-2 border rounded-md bg-gray-200"
+                        className="p-2 border rounded-md bg-colorGray"
                         {...register('description', { required: true })}
                     ></textarea>
                 </div>
 
                 <div className="flex flex-col mb-2">
                     <span>Price</span>
-                    <input type="number" className="p-2 border rounded-md bg-gray-200" {...register('price', { required: true, min: 0 })} />
+                    <input type="number" className="p-2 border rounded-md bg-colorGray" {...register('price', { required: true, min: 0 })} />
                 </div>
 
                 <div className="flex flex-col mb-2">
                     <span>Tags</span>
-                    <input type="text" className="p-2 border rounded-md bg-gray-200" {...register('tags', { required: true })} />
+                    <input type="text" className="p-2 border rounded-md bg-colorGray" {...register('tags', { required: true })} />
                 </div>
 
                 <div className="flex flex-col mb-2">
                     <span>Gender</span>
-                    <select className="p-2 border rounded-md bg-gray-200" {...register('gender', { required: true })}>
+                    <select className="p-2 border rounded-md bg-colorGray" {...register('gender', { required: true })}>
                         <option value="">[Seleccione]</option>
                         <option value="men">Men</option>
                         <option value="women">Women</option>
@@ -144,7 +144,7 @@ export const ProductForm = ({ product, categories }: Props) => {
 
                 <div className="flex flex-col mb-2">
                     <span>Categoria</span>
-                    <select className="p-2 border rounded-md bg-gray-200" {...register('categoryId', { required: true })}>
+                    <select className="p-2 border rounded-md bg-colorGray" {...register('categoryId', { required: true })}>
                         <option value="">[Seleccione]</option>
                         {
                             categories.map(category => (
@@ -166,7 +166,7 @@ export const ProductForm = ({ product, categories }: Props) => {
                     <span>Inventario</span>
                     <input
                         type="number"
-                        className="p-2 border rounded-md bg-gray-200"
+                        className="p-2 border rounded-md bg-colorGray"
                         {...register("inStock", { required: true, min: 0 })}
                     />
                 </div>
@@ -203,7 +203,7 @@ export const ProductForm = ({ product, categories }: Props) => {
                             type="file"
                             {...register('images')}
                             multiple
-                            className="p-2 border rounded-md bg-gray-200"
+                            className="p-2 border rounded-md bg-colorGray"
                             accept="image/png, image/jpeg, image/jpg, image/avif"
                         />
                     </div>

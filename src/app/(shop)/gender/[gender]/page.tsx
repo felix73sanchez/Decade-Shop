@@ -48,10 +48,10 @@ export default async function GenderPageById({ params, searchParams }: Props) {
     return (
         <>  
             <div className='m-mBody mt-5'>
-                <div className='ml-5 text-colorPrimary text-fs1 font-fw1 '>
+                <div className='mt-20 text-colorPrimary text-fs1 font-fw1 '>
                     <Title
                         title={`${labels[gender]}`}
-                        className=''
+                        className='bg-colorSecondary'
                         /*subtitle={`Seccion de  ${gender}'s de la tienda`}
                         className="mb-2 text-7xl"*/
                     />

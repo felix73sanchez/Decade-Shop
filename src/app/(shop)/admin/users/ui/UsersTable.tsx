@@ -49,7 +49,7 @@ export const UsersTable = ({ users }: Props) => {
 
     return (
         <table className="min-w-full text-colorPrimary font-fw9 text-fs1rem mysm:text-[0.6rem]">
-            <thead className="bg-gray-200 border-b">
+            <thead className="bg-colorGray border-b uppercase">
                 <tr>
                     <th
                         scope="col"
@@ -75,7 +75,7 @@ export const UsersTable = ({ users }: Props) => {
                 {updatedUsers.map((user) => (
                     <tr
                         key={user.id}
-                        className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHover font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
+                        className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
                     >
                         <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
                             {user.email}

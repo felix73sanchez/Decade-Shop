@@ -9,7 +9,7 @@ interface Props {
 export const Title = ({ title, subtitle, className }: Props) => {
     return (
         <div className={` ${className} ${allFont.className}`}>
-            <h1 className={`p-p8 pl-5 antialiased mysm:text-fs1 text-fs1.2rem font-fw9  border-b-customBW border-colorPrimary bg-color3`}>
+            <h1 className={`p-p8 pl-5 mysm:pl-3 antialiased text-fsHeader font-fw7 uppercase`}>
                 {title}
             </h1>
             {/*
@@ -23,3 +23,4 @@ export const Title = ({ title, subtitle, className }: Props) => {
         </div>
     )
 }
+7

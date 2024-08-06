@@ -49,7 +49,7 @@ export const ProductMobileSlideshow = ({ images, title, className }: Props) => {
                                 height={500}
                                 src={`/products/${image}`}
                                 alt={title}
-                                className="object-fill rounded-brAll shadow-custom-2"
+                                className="object-fill rounded-brAll"
                             />
                         </SwiperSlide>
                     ))

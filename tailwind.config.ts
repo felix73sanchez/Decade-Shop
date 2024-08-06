@@ -9,7 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-
         'movileS': {'min': '300px', 'max': '374px'},
         'movileM': {'min': '375px', 'max': '425px'},
         'movileL': {'min': '426px', 'max': '767px'},
@@ -58,7 +57,7 @@ const config: Config = {
         'fs1.2rem': '1.2rem',  // Tamaño de precio
         'fs2rem': '2rem',  // Tamaño de precio
         'fsLogo': '1.75rem',  //logo font Size
-        'fsHeader': '1.37rem', //Encabezados texto
+        'fsHeader': '1.5rem', //Encabezados texto
       },
       fontWeight: {
         //Valores permitidos ['100','300', '400', '500', '700', '900']
@@ -70,6 +69,7 @@ const config: Config = {
         fw7: '700', //Nombre de los gender del topmenu, nombre de los producto y emcabezados
         fw9: '900', // Weight logo y numero de carrito
       },
+
       colors: {
         //Colores --- blaco=FFFDF6 verde=384C2E verdeClaro= naranja=BC6C25 naranjaClaro=DDA15E
         colorPrimary: '#384C2E', //506E42HunterGreen Color de la marca
@@ -77,7 +77,10 @@ const config: Config = {
         color3: '#DDA15E',
         color4: '#506E42',
         coloMix: '#FFFDF6', //Crema Color de la marca
-        colorHover: '#DDA15E', //text-gray-400 HOVER
+        colorGray: "rgb(226 232 240)", //slate-200 fondo
+        colorHoverGray: "rgb(241 245 249)", //slate-100 HOVER
+        colorHover: '#DDA15E', //naranja HOVER
+        
       },
       borderColor: {
         //Color de los borde personalizado aquí

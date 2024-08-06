@@ -37,7 +37,7 @@ export default async function OrdersPage({ searchParams }: Props) {
 
             <div className="mb-10">
                 <table className="min-w-full">
-                    <thead className="bg-gray-200 border-b">
+                    <thead className="bg-colorGray border-b">
                         <tr>
                             <th
                                 scope="col"

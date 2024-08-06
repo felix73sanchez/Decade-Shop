@@ -18,11 +18,11 @@ export default async function OrdersPage() {
 
     return (
         <>  <div className="mt-20 m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
-                <Title title="Todas las ordenes" className="font-fw5 text-fs1" />
+                <Title title="Todas las ordenes" className="border-b-customBW border-colorPrimary bg-color3" />
 
                 <div className="">
-                    <table className="min-w-full bg-gray-200 font-fw9 text-fs1rem mysm:text-[0.6rem]">
-                        <thead className="bg-gray-200 border-b">
+                    <table className="min-w-full bg-colorGray font-fw9 text-fs1rem mysm:text-[0.6rem]">
+                        <thead className="bg-colorGray border-b uppercase">
                             <tr>
                                 <th
                                     scope="col"
@@ -54,7 +54,7 @@ export default async function OrdersPage() {
                             {orders.map((order) => (
                                 <tr
                                     key={order.id}
-                                    className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHover font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
+                                    className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
                                 >
                                     <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
                                         #deca|{order.id.split("-").at(-1)}
