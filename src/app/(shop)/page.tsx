@@ -2,6 +2,7 @@ import { getPaginatedProductsWithImages } from "@/actions";
 import { Pagination, ProductGrid, GridImg } from "@/components";
 import { redirect } from "next/navigation";
 import { allFont } from "@/config/fonts"
+import { Footer} from "@/components";
 
 interface Props {
   searchParams: {
@@ -42,6 +43,7 @@ export default async function Home({ searchParams }: Props) {
         <ProductGrid products={products} />
       </div>
       <Pagination totalPages={totalPages} />
+      <Footer /> {/* Componente del pie de página */}
     </>
   );
 }

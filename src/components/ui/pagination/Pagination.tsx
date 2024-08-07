@@ -59,7 +59,7 @@ export const Pagination = ({ totalPages }: Props) => {
     };
 
     return (
-        <div className={`${allFont.className} flex justify-center my-10 px-1 mysm:text-fs1`}>
+        <div className={`${allFont.className} flex justify-center mb-10 px-1 mysm:text-fs1`}>
             <nav aria-label="Page navigation example">
                 <ul className="flex list-style-none items-center XR:gap-1 12Pro:gap-0 14Pro:gap-1">
                     <li className="page-item pr-5">

@@ -20,11 +20,21 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #FFFDF6;
+  background: rgb(226 232 240);
   position: relative;
 }
 
-
+@keyframes moveLeft {
+  0% {
+      transform: translateX(0); /* Sin movimiento */
+  }
+  100% {
+      transform: translateX(-100vw); /* Mueve el ícono hacia la izquierda */
+  }
+}
+.move-left {
+  animation: moveLeft 3s forwards; /* Mueve el ícono hacia la izquierda */
+}
 
 @keyframes fadeIn {
   0% {opacity: 0;}
@@ -48,19 +58,19 @@ body {
 
 
 .btn-primary {
-  @apply bg-colorPrimary hover:bg-colorHover text-colorSecondary hover:text-colorPrimary py-3 rounded-brAll transition-all uppercase;
+  @apply bg-colorPrimary hover:bg-colorHover text-colorSecondary hover:text-colorPrimary py-3 rounded-brAll transition-all uppercase w-full;
 }
 
 .btn-secondary {
-  @apply bg-colorGray hover:bg-colorHover text-colorPrimary hover:text-colorSecondary py-3 rounded-brAll transition-all uppercase;
+  @apply bg-colorGray hover:bg-colorHover text-colorPrimary hover:text-colorSecondary py-3 rounded-brAll transition-all uppercase w-full;
 }
 
 .btn-disabled {
-  @apply bg-gray-600  text-white py-3 px-4 rounded transition-all;
+  @apply bg-colorGray  hover:bg-colorHover text-colorPrimary hover:text-colorSecondary py-3 rounded-brAll transition-all uppercase w-full;
 }
 
 .btn-danger {
-  @apply bg-red-500 hover:bg-red-700 text-white py-3 px-4 transition-all;
+  @apply bg-red-500 hover:bg-red-700 text-white py-3 px-4 transition-all w-full;
 }
 
 /* SCROLLLLLLLL */

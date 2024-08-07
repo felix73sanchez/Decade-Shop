@@ -2,7 +2,7 @@ export const revalidate = 0;
 
 // https://tailwindcomponents.com/component/hoverable-table
 import { getOrdersByUser } from "@/actions";
-import { Title } from "@/components";
+import { Title, Pagination, Footer  } from "@/components";
 
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -16,76 +16,81 @@ export default async function OrdersPage() {
     }
 
     return (
-        <>  <div className="my-20 m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden ">
-                
+        <>  
+            <div className="flex flex-col min-h-screen">
+                <div className="flex-grow mt-20 m-mBody">
+                    <div className="border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden ">
+                        
 
-                <Title title="Orders"  className="border-b-customBW border-colorPrimary bg-color3 uppercase"/>
+                        <Title title="Orders"  className="border-b-customBW border-colorPrimary bg-color3 "/>
 
-                <table className="min-w-full bg-colorGray font-fw9 text-fs1rem  mysm:text-[0.6rem]">
-                    <thead className=" ">
-                        <tr className="uppercase text-colorPrimary">
-                            <th
-                                scope="col"
-                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                            >
-                                #ID
-                            </th>
-                            <th
-                                scope="col"
-                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                            >
-                                Nombre completo
-                            </th>
-                            <th
-                                scope="col"
-                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                            >
-                                Estado
-                            </th>
-                            <th
-                                scope="col"
-                                className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                            >
-                                Opciones
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody className="">
-                        {orders.map((order) => (
-                            <tr
-                                key={order.id}
-                                className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
-                            >
-                                <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
-                                    #deca|{order.id.split("-").at(-1)}
-                                </td>
-                                <td className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
-                                    {order.OrderAddress?.firstName} {order.OrderAddress?.lastName}
-                                </td>
-                                <td className="flex items-center px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
-                                    {order.isPaid ? (
-                                        <>
-                                            <IoCardOutline className="text-green-800 mysm:overflow-hidden" />
-                                            <span className="mx-2  text-green-800">Pagada</span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <IoCardOutline className="text-red-800 mysm:hidden" />
-                                            <span className="mx-2 mysm:mx-0 text-red-800 ">No Pagada</span>
-                                        </>
-                                    )}
-                                </td>
-                                <td className=" px-6 py-4 mysm:py-2 mysm:px-3 mysm:whitespace-normal">
-                                    <Link href={`/orders/${order.id}`} className="hover:underline">
-                                        Ver orden
-                                    </Link>
-                                </td>
-                            </tr>
-                        ))}
-
-
-                    </tbody>
-                </table>
+                        <table className="min-w-full bg-colorGray font-fw9 text-fs1rem  mysm:text-[0.6rem]">
+                            <thead className=" ">
+                                <tr className="uppercase text-colorPrimary">
+                                    <th
+                                        scope="col"
+                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
+                                    >
+                                        #ID
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
+                                    >
+                                        Nombre completo
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
+                                    >
+                                        Estado
+                                    </th>
+                                    <th
+                                        scope="col"
+                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
+                                    >
+                                        Opciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody className="">
+                                {orders.map((order) => (
+                                    <tr
+                                        key={order.id}
+                                        className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
+                                    >
+                                        <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
+                                            #deca|{order.id.split("-").at(-1)}
+                                        </td>
+                                        <td className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
+                                            {order.OrderAddress?.firstName} {order.OrderAddress?.lastName}
+                                        </td>
+                                        <td className="flex items-center px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
+                                            {order.isPaid ? (
+                                                <>
+                                                    <IoCardOutline className="text-green-800 mysm:overflow-hidden" />
+                                                    <span className="mx-2  text-green-800">Pagada</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <IoCardOutline className="text-red-800 mysm:hidden" />
+                                                    <span className="mx-2 mysm:mx-0 text-red-800 ">No Pagada</span>
+                                                </>
+                                            )}
+                                        </td>
+                                        <td className=" px-6 py-4 mysm:py-2 mysm:px-3 mysm:whitespace-normal">
+                                            <Link href={`/orders/${order.id}`} className="hover:underline">
+                                                Ver orden
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <Pagination totalPages={1} />
+                <Footer /> {/* Componente del pie de página */}
             </div>
         </>
     );

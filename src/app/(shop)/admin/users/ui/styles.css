@@ -1,9 +1,9 @@
-
-/* admi y usuario */
+/* Estilos originales */
 .custom-select {
   position: relative;
   display: inline-block;
   width: 100%;
+  border: 8px;
 }
 
 .custom-select select {
@@ -22,7 +22,7 @@
 
 .select-items {
   position: absolute;
-  background-color: #ffffff;
+  background-color: #FFFDF6;
   border-radius: 8px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 99;
@@ -31,20 +31,25 @@
   overflow-y: auto;
   border: 1px solid #384C2E;
   box-sizing: border-box;
+  display: none; /* Ocultar el menú por defecto */
 }
 
 .select-items div {
   color: #384C2E;
   padding: 8px 16px;
   cursor: pointer;
-
 }
 
 .select-items div:hover, .same-as-selected {
   background-color: rgb(229 231 235);
 }
 
-.select-hide {
-  display: none;
+.select-show {
+  display: block; /* Mostrar el menú desplegable cuando sea necesario */
 }
 
+.admin-role {
+  color: red; /* Cambia esto al color que desees */
+}
+
+/* Asegúrate de que el contenedor de la tabla permita overflow visible para los elementos hijos */

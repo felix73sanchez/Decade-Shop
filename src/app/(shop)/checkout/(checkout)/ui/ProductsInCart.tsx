@@ -41,13 +41,13 @@ export const ProductsInCart = () => {
                             }}
                             priority
                             alt={product.title}
-                            className="mr-5 rounded"
+                            className="mr-5 rounded-brAll"
                         />
                         <div>
                             <span>
                                 {product.size} - {product.title} ({product.quantity})
                             </span>
-                            <p className=" font-bold"> {currencyFormat(product.price * product.quantity)} </p>
+                            <p className=" font-fw7"> {currencyFormat(product.price * product.quantity)} </p>
 
 
                         </div>

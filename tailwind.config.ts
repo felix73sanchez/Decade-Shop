@@ -99,7 +99,7 @@ const config: Config = {
       },
       boxShadow: {
         //Sombras para los componentes personalizado aquí
-        'customBS': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);',
+        'customBS': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);',
         'custom-1': '5px 5px 9px rgb(110, 120, 155, 0.10)',
         'custom-2': '2px 2px 5px rgb(80, 110, 66, 0.25), -2px -2px 5px rgba(80, 110, 66, 0.25)',
       },

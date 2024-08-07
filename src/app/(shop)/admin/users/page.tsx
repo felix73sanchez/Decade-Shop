@@ -2,7 +2,7 @@ export const revalidate = 0;
 
 // https://tailwindcomponents.com/component/hoverable-table
 import { getPaginatedUsers } from "@/actions";
-import { Pagination, Title } from "@/components";
+import { Pagination, Title, Footer } from "@/components";
 
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -17,17 +17,23 @@ export default async function OrdersPage() {
     }
 
     return (
-        <>  <div className="mt-20 m-mBody border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
-                <Title title="Mantenimiento de usuarios"  className="border-b-customBW border-colorPrimary bg-color3"/>
+        <>  
+        <div className="flex flex-col min-h-screen">
+            <div className="flex-grow mt-20 m-mBody"> 
+                <div className="bg-colorSecondary  border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW pb-4">
+                        <Title title="Mantenimiento de usuarios"  className="border-b-customBW rounded-t-brAll border-colorPrimary bg-color3"/>
 
-                <div className="text-colorPrimary">
-                    <UsersTable users={users} />
+                        <div className="text-colorPrimary ">
+                            <UsersTable users={users} />
 
-                   
-                </div> 
-                
+                        
+                        </div> 
+                        
+                </div>
             </div>
-            <Pagination totalPages={3}/>
-        </>
+            <Pagination totalPages={1} />
+            <Footer /> {/* Componente del pie de página */}                   
+        </div>
+        </> 
     );
 }

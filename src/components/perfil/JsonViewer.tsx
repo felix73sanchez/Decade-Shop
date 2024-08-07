@@ -1,4 +1,4 @@
-
+import { allFont } from "@/config/fonts";
 import React from 'react';
 
 const JsonViewer: React.FC<{ data: Record<string, any> }> = ({ data }) => {
@@ -29,22 +29,22 @@ const JsonViewer: React.FC<{ data: Record<string, any> }> = ({ data }) => {
 
     return (
         <div className="">
-            <table className="min-w-full divide-y divide-colorGray">
-                <thead className="bg-colorGray uppercase">
+            <table className={`${allFont.className} min-w-full divide-y divide-colorGray `}>
+                <thead className="bg-colorGray font-fw9 text-fs1rem  mysm:text-[0.6rem] uppercase">
                     <tr>
-                        <th className="px-6 py-3 text-left text-fs1rem font-fw9 text-colorPrimary">Datos</th>
-                        <th className="px-6 py-3 text-left text-fs1rem font-fw9 text-colorPrimary">Detalles</th>
+                        <th className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left">Datos</th>
+                        <th className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left">Detalles</th>
                     </tr>
                 </thead>
                 <tbody className="bg-colorSecondary divide-y divide-colorGray">
                     {Object.keys(data)
                         .filter(key => isAdmin || displayedKeys.includes(key)) // Muestra todos si es admin
                         .map((key) => (
-                            <tr key={key} className='hover:bg-colorHoverGray'>
-                                <td className="px-6 py-4 whitespace-nowrap text-fs1rem font-fw7 text-colorPrimary uppercase">
+                            <tr key={key} className='bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full'>
+                                <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal font-fw7 uppercase">
                                     {key}
                                 </td>
-                                <td className="px-6 py-4 text-fs2 font-fw5 text-colorPrimary">
+                                <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
                                     {formatValue(data[key], key)}  {/* Pasar ambos argumentos */}
                                 </td>
                             </tr>

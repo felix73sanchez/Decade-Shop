@@ -1,9 +1,9 @@
 export const revalidate = 60; // 1 minute or 60 seconds
 
 import { getPaginatedProductsWithImages } from '@/actions';
-import { Pagination, ProductGrid, Title } from '@/components';
+import { Pagination, ProductGrid, Title, Footer } from '@/components';
 import { Gender } from '@prisma/client';
-import { redirect } from 'next/navigation'
+import { redirect } from 'next/navigation';
 
 interface Props {
     params: {
@@ -48,10 +48,10 @@ export default async function GenderPageById({ params, searchParams }: Props) {
     return (
         <>  
             <div className='m-mBody mt-5'>
-                <div className='mt-20 text-colorPrimary text-fs1 font-fw1 '>
+                <div className='mt-16 text-colorPrimary text-fs1 font-fw1 '>
                     <Title
                         title={`${labels[gender]}`}
-                        className='bg-colorSecondary'
+                        className=''
                         /*subtitle={`Seccion de  ${gender}'s de la tienda`}
                         className="mb-2 text-7xl"*/
                     />
@@ -61,6 +61,7 @@ export default async function GenderPageById({ params, searchParams }: Props) {
                 />
 
                 <Pagination totalPages={totalPages} />
+                <Footer /> {/* Componente del pie de página */}
             </div>
         </>
 

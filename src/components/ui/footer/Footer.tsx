@@ -5,28 +5,26 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <div className="flex w-full justify-center text-xs mb-10">
+        <div className="flex w-full justify-center gap-g8 text-fs1 bottom-0 uppercase mb-5">
             <Link
                 href="/"
             >
-                <span className={`${allFont.className} antialiased font-bold`}> Decade </span>
-                <span>| Shop </span>
+                <span className={`${allFont.className} antialiased font-fw7`}> Deca </span>
+                <span className="font-fw7">| Shop </span>
                 <span> © </span>
                 <span> {new Date().getFullYear()} </span>
             </Link>
 
             <Link
                 href="/"
-                className="mx-3"
-            >
-                Privacidad & Terminos
+                className=""
+            > Privacidad & Terminos
             </Link>
 
             <Link
                 href="/"
-                className="mx-3"
-            >
-                Location
+                className=""
+            >Location
             </Link>
         </div>
     )
