@@ -23,4 +23,3 @@ export const useUIStore = create<State>((set) => ({
     })),
     setNavZIndex: (zIndex: number) => set({ navZIndex: zIndex }),
 }));
-

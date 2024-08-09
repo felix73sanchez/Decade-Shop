@@ -1,21 +1,26 @@
-"use client";
-
-import { useState } from 'react';
-import { Title } from "@/components";
+// src/app/(shop)/cart/page.tsx
 import Link from "next/link";
 import { ProductsInCart } from "./ui/ProductsInCart";
 import { Footer } from "@/components";
-import { AddressForm } from "../checkout/address/ui/AddressForm"; // Importar AddressForm
-import OrderSummaryDetails from "./ui/OrderSummaryDetails"; // Importar el nuevo componente
+import dynamic from 'next/dynamic';
+import { getCountries, getUserAddress } from "@/actions";
+import { auth } from '@/auth.config';
+import { redirect } from 'next/navigation'; // Importa redirect
 
-const countries = [
-  { id: 'us', name: 'United States' },
-  { id: 'ca', name: 'Canada' },
-  // Agrega otros países según sea necesario
-];
+// Cargar CartClientPage dinámicamente
+const CartClientPage = dynamic(() => import('./ui/CartClientPage'), { ssr: false });
 
-export default function CartPage() {
-    const [showAddressForm, setShowAddressForm] = useState(false);
+export default async function CartPage() {
+    const countries = await getCountries();
+    const session = await auth();
+
+    if (!session?.user) {
+        redirect('/auth/login'); // Redirige al login
+        return null; // No renderizar nada después de redirigir
+    }
+    
+
+    const userAddress = await getUserAddress(session.user.id) ?? undefined;
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -35,17 +40,11 @@ export default function CartPage() {
                         </div>
 
                         {/* Checkout - Resumen de Orden */}
-                        <div className="bg-colorSecondary p-5 h-fit border-colorPrimary text-colorPrimary rounded-brAll border-customBW overflow-hidden">
-
-                            <OrderSummaryDetails setShowAddressForm={setShowAddressForm} />
-
-                            {showAddressForm && <AddressForm countries={countries} />} {/* Renderizado condicional */}
-
-                        </div>
+                        <CartClientPage countries={countries} userAddress={userAddress} />
                     </div>
                 </div>
             </div>
-            <Footer /> {/* Componente del pie de página */}
+            <Footer />
         </div>
     );
 }

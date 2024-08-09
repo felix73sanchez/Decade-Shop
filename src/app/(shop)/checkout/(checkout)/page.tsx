@@ -13,7 +13,7 @@ export default function CheckoutPage() {
                         {/* Carrito */}
                         <div className="flex flex-col px-5">
                             {/* Items del carrito */}
-                            <Title className="" title="Verificar Orden" />
+                            <Title className="font-fw7 text-fs1rem" title="Verificar Orden" />
                             <div className="text-xl  mb-5 pl-3">
                                 <span className="">Ajustar elementos</span>
                                 <Link href="/cart" className=" ml-3 underline">

@@ -10,12 +10,9 @@ interface OrderSummaryDetailsProps {
 }
 
 const OrderSummaryDetails: React.FC<OrderSummaryDetailsProps> = ({ setShowAddressForm }) => {
+    
     const [isSummaryVisible, setIsSummaryVisible] = useState(true);
-    const numProductos = 1;
-    const subtotal = 30.00;
-    const impuestos = subtotal * 0.15;
-    const total = subtotal + impuestos;
-
+    
     const handleCheckoutClick = () => {
         setShowAddressForm(true);
         setIsSummaryVisible(false);

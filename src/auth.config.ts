@@ -55,28 +55,28 @@ export const authConfig: NextAuthConfig = {
 
     Credentials({
       async authorize(credentials) {
-
         const parsedCredentials = z
           .object({ email: z.string().email(), password: z.string().min(6) })
           .safeParse(credentials);
-
-
-        if (!parsedCredentials.success) return null;
-
+     
+        if (!parsedCredentials.success) {
+          throw new Error('Formato de credenciales no válido');
+        }
+     
         const { email, password } = parsedCredentials.data;
-
-
-        // Buscar el correo
+     
         const user = await prisma.user.findUnique({ where: { email: email.toLowerCase() } });
-        if (!user) return null;
-
-        // Comparar las contraseñas
-        if (!bcryptjs.compareSync(password, user.password)) return null;
-
-
-        // Regresar el usuario sin el password
+        if (!user) {
+          throw new Error('Ninguna usuario encontrada con este correo electrónico');
+        }
+     
+        const isPasswordValid = bcryptjs.compareSync(password, user.password);
+        if (!isPasswordValid) {
+          throw new Error('Contraseña inválida');
+        }
+     
         const { password: _, ...rest } = user;
-
+     
         return rest;
       },
     }),

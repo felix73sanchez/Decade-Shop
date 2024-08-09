@@ -60,32 +60,26 @@ export const PlaceOrder = () => {
 
 
     return (
-        <div className=" bg-colorSecondary rounded-brAll shadow-custom-2 border-colorPrimary border-customBW p-7 text-colorPrimary">
+        <div className=" bg-white rounded-xl shadow-xl p-7">
 
-            <h2 className=" antialiased text-fsHeader font-fw7 uppercase mb-2">Direccion de entrega</h2> {/*//TODO Adecuar esto con la realidad de la Orden y la Tienda.*/}
-            <div className="grid grid-cols-2 justify-between px-2">
-                <span>Nombre completo</span>
-                <p className="text-right"> {address.firstName} {address.lastName} </p>
-                <span>Dirección</span>
-                <p className="text-right"> {address.address} </p>
-                <span>Ciudad</span>
-                <p className="text-right"> {address.city} </p>
-                <span>País</span>
-                <p className="text-right"> {address.country}</p>
-                <span>Código postal</span>
-                <p className="text-right"> {address.postalCode} </p>
-                <span>Teléfono</span>
-                <p className="text-right"> {address.phone} </p>
+            <h2 className=" text-2xl mb-2">Direccion de entrega</h2> {/*//TODO Adecuar esto con la realidad de la Orden y la Tienda.*/}
+            <div className="mb-10 ">
+                <p className="text-xl"> {address.firstName} {address.lastName} </p>
+                <p> {address.address} </p>
+                <p> {address.city} </p>
+                <p> {address.country}</p>
+                <p> {address.postalCode} </p>
+                <p> {address.phone} </p>
 
             </div>
 
             {/*LINEA DIVISAORA */}
             <div
-                className="w-full h-[0.02rem] bg-colorGray my-5"
+                className="w-full h-0.5 bg-gray-200 mb-10"
             />
 
-            <h2 className="antialiased text-fsHeader font-fw7 uppercase mb-2"> Resumen de Orden </h2>
-            <div className="grid grid-cols-2 justify-between px-2">
+            <h2 className="text-2xl mb-2"> Resumen de Orden </h2>
+            <div className="grid grid-cols-2 justify-between">
 
                 <span>No. Productos</span>
                 <span className="text-right">
@@ -98,11 +92,8 @@ export const PlaceOrder = () => {
                 <span>Impuestos (15%)</span>
                 <span className="text-right">{currencyFormat(tax)}</span>
 
-            </div>
-            <div className="grid grid-cols-2 justify-between p">
-
-                <span className="mt-5 antialiased text-fsHeader font-fw7 uppercase">Total:</span>
-                <span className="mt-5 antialiased text-fsHeader font-fw7 uppercase text-right">{currencyFormat(total)}</span>
+                <span className="mt-5 text-2xl">Total:</span>
+                <span className="mt-5 text-2xl text-right">{currencyFormat(total)}</span>
 
             </div>
 
