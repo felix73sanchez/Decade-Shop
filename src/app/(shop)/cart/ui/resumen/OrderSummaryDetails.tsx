@@ -23,7 +23,7 @@ const OrderSummaryDetails: React.FC<OrderSummaryDetailsProps> = ({ setShowAddres
     }
 
     return (
-        <div>
+        <div className='w-full h-fit p-5 bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll border-customBW overflow-hidden '>
             <h2 className="text-fs1.2rem font-fw7 mb-2 uppercase">Resumen de Orden</h2>
             <OrderSummary />
             <div className="mt-5 mb-2">

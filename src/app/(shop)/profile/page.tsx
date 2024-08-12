@@ -13,9 +13,9 @@ export default async function ProfilePage() {
 
     return (
         <div className="flex flex-col min-h-screen ">
-            <div className="mt-20 flex-grow m-mBody">
+            <div className="mt-20 flex-grow mx-mBody">
                 <div className={`${allFont.className} border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden`}>
-                    <Title title="Perfil " className="border-b-customBW border-colorPrimary bg-color3" />
+                    <Title title="Perfil" className="border-b-customBW border-colorPrimary bg-color3" />
                     <JsonViewer data={session.user} />
                 </div>
                

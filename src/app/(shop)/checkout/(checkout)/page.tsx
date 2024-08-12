@@ -6,7 +6,7 @@ import { Footer } from "@/components";
 
 export default function CheckoutPage() {
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen ">
             <div className="mt-20 flex-grow flex justify-center items-start mx-mBody">
                 <div className="flex flex-col w-full h-full m-mBody ">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-gap8">

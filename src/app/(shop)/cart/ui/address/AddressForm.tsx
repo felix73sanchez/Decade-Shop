@@ -6,11 +6,9 @@ import { useSession } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
 import clsx from 'clsx';
 
-
 import type { Address, Country } from '@/interfaces';
 import { useAddressStore } from '@/store';
 import { deleteUserAddress, setUserAddress } from '@/actions';
-
 
 type FormInputs = {
     firstName: string;
@@ -24,14 +22,13 @@ type FormInputs = {
     rememberAddress: boolean;
 }
 
-
 interface Props {
     countries: Country[];
     userStoredAddress?: Partial<Address>;
+    onNext?: () => void; // Añadido para aceptar la prop onNext
 }
 
-
-export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
+export const AddressForm = ({ countries, userStoredAddress = {}, onNext }: Props) => {
 
     const router = useRouter();
     const { handleSubmit, register, formState: { isValid }, reset } = useForm<FormInputs>({
@@ -43,22 +40,18 @@ export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
 
     const { data: session } = useSession({
         required: true,
-    })
+    });
 
     const setAddress = useAddressStore(state => state.setAddress);
     const address = useAddressStore(state => state.address);
 
-
-
     useEffect(() => {
         if (address.firstName) {
-            reset(address)
+            reset(address);
         }
-    }, [address, reset])
+    }, [address, reset]);
 
     const onSubmit = async (data: FormInputs) => {
-
-
         const { rememberAddress, ...restAddress } = data;
         setAddress(restAddress);
 
@@ -68,16 +61,17 @@ export const AddressForm = ({ countries, userStoredAddress = {} }: Props) => {
             await deleteUserAddress(session!.user.id);
         }
 
-        router.push('/checkout');
-
-    }
-
-
+        if (onNext) {
+            onNext();  // Llama a onNext si se pasa como prop
+        } else {
+            router.push('/checkout'); // Usa la redirección por defecto si onNext no está definida
+        }
+    };
 
     return (
-        <div className='w-full'>
+        <div className='w-full p-5 bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll border-customBW overflow-hidden '>
             <div className='text-fs1.2rem font-fw7 mb-2 uppercase'>
-                <span className=' uppercase  text-colorPrimary '>Dirección</span>
+                <span className=' uppercase  text-colorPrimary '>Direccion para entrega</span>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-2 sm:gap-5 sm:grid-cols-2 mt-3 text-colorPrimary text-fs1rem">
                 <div className="flex flex-col mb-2">

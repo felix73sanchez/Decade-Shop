@@ -11,6 +11,7 @@ export { OrderStatus } from './orders/OrderStatus';
 
 export { SizeSelector } from "./product/size-selector/SizeSelector";
 export { QuantitySelector } from "./product/quantity-selector/QuantitySelector";
+export { QuantitySelectorVertical } from "./product/quantity-selector/QuantitySelectorVertical";
 export { ProductSlideshow } from "./product/slideshow/ProductSlideshow";
 export { ProductMobileSlideshow } from "./product/slideshow/ProductMobileSlideshow";
 export { StockLabel } from "./product/stock-label/StockLabel";
