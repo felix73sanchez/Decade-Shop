@@ -73,7 +73,7 @@ export const AddressForm = ({ countries, userStoredAddress = {}, onNext }: Props
             <div className='text-fs1.2rem font-fw7 mb-2 uppercase'>
                 <span className=' uppercase  text-colorPrimary '>Direccion para entrega</span>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-2 sm:gap-5 sm:grid-cols-2 mt-3 text-colorPrimary text-fs1rem">
+            <form onSubmit={handleSubmit(onSubmit)} className="grid mysm:grid-cols-1 gap-2 sm:gap-5 grid-cols-2 mt-3 text-colorPrimary text-fs1rem">
                 <div className="flex flex-col mb-2">
                     <span className='ml-2 mb-1 uppercase font-fw5'>Nombres</span>
                     <input type="text" className="px-3 py-2 border-customBW border-colorPrimary rounded-brAll bg-colorGray" {...register('firstName', { required: true })} />

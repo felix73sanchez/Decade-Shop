@@ -22,12 +22,12 @@ export const QuantitySelectorVertical = ({ quantity, onQuantityChanged }: Props)
 
 
     return (
-        <div className="flex w-full items-center justify-between  mysm:text-fs1  ">
-            <button className="hover:text-colorHover mysm:text-fs1 p-1 border-colorPrimary border-customBW rounded-brAll"  onClick={() => onValueChange(-1)}>
+        <div className="h-8 mysm:h-5 flex w-full items-center justify-between mysm:text-fs1 border-colorPrimary border-2 mysm:border-customBW rounded-brAll">
+            <button className="hover:text-colorHover mysm:text-fs1 p-0.5 mysm:p-0 ml-1 border-colorPrimary border-2 mysm:border-customBW rounded-brAll"  onClick={() => onValueChange(-1)}>
                 <PiMinusBold size={10} />
             </button>
-            <span className="w-full mx-5 mysm:mx-1 mysm:py-0 px-0 text-fs1rem mysm:text-fs2 font-fw5   rotate-0">{quantity}</span>
-            <button className="hover:text-colorHover mysm:text-fs1 items-center border-colorPrimary border-customBW rounded-brAll p-1" onClick={() => onValueChange(+1)}>
+            <span className="w-8 text-fs1rem mysm:text-fs1 font-fw5">{quantity}</span>
+            <button className="hover:text-colorHover mysm:text-fs1 items-center border-colorPrimary border-2 mysm:border-customBW  rounded-brAll p-0.5 mysm:p-0 mr-1" onClick={() => onValueChange(+1)}>
                 <PiPlusBold  size={10} 
                 />
             </button>

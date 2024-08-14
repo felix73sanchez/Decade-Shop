@@ -26,72 +26,152 @@ export const ProductsInCart = () => {
 
     return (
         <>
-        <div className="">
-            <div className="w-full flex items-center justify-between h-full mb-m8 uppercase font-fw5 text-fs1rem mysm:text-fs1">
-                <div className="mysm:w-[4rem] w-[8rem] text-center">                 
-                    <p className="pl-2">Product</p>
-                </div> 
-                <div className="mysm:w-28 w-60">
-                <p className=""></p>
-                </div>   
-                <div className="text-left ">
-                    <p className="pl-2">Size</p>
-                </div>   
-                <div className="text-center mysm:w-16 w-22">
-                    <p className="pl-2">Cantidad</p>
-                </div>
-                <div className="text-center">
-                    <p className="pl-2">Total </p>
-                </div>
-                <div className=" mr-10 mysm:mr-[3.5rem]">
-                    <p className=""></p>
-                </div>
-            </div>
-            {productsInCart.map(product => (
-                <div key={`${product.slug}-${product.size}`} 
-                    className={clsx("mysm:p-0 w-full flex items-center justify-between h-full mb-m8 uppercase  bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll border-customBW overflow-hidden  text-fs1rem mysm:text-fs1", {
-                    })}>
+        
+            <div className=" text-colorPrimary">
+                <div className="w-full
+                                mysm:hidden
+                                grid grid-cols-10 gap-g8
+                                mysm:grid-cols-4 mysm:text-fs1
+                                text-fs1rem tablet:text-fs1
+                                font-fw3
+                                items-center justify-between 
+                                uppercase">
 
-                    <div className={clsx("rounded-brAll ", {
-                            })}>
+                    <div className="col-span-2 
+                                    w-[7rem]
+                                    tablet:w-[6rem]
+                                    desktop:w-[8rem]
+                                    items-center justify-center ">
+                                    <p className="text-center">Producto</p>
+                    </div> 
+
+                    <div className="col-span-8
+                                    grid grid-cols-8 gap-g8
+                                    mysm:grid-cols-4
+                                    tablet:grid-cols-6
+                                    laptop:grid-cols-7
+                                    items-center justify-between">
+
+                        <div className="flex flex-col
+                                        col-span-3 laptop:col-span-2
+                                        mysm:col-span-3 
+                                        tablet:col-span-1 tablet:text-fs1
+                                        tablet:text-left">
+                                        <p className="text-colorGray leading-tight"></p>
+                        </div>   
+                        <div className="flex flex-col
+                                        col-span-1 
+                                        text-center">
+                            <p className="text-fs2">Size</p>
+                        </div>   
+                        <div className="flex flex-col
+                                        col-span-3 
+                                        justify-between text-center">
+                                <div className="col-span-full sm:col-span-1 flex gap-g8 justify-between items-center">
+                                <div className="col-span-1 sm:col-span-1 flex flex-col text-center w-[4rem]">
+                                <p className="text-fs2 ">unidad</p>
+                                </div>   
+                                <div className="col-span-1 sm:col-span-2 flex items-center justify-center">
+                                    <p className="text-fs2 laptop:mx-2">Cantidad</p>
+                                </div>
+                                <div className="col-span-1 sm:col-span-1 text-center w-[5.5rem]">
+                                    <p className="text-fs2 pr-2.5">Total </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex
+                                        col-span-1
+                                        text-center justify-center">
+                                        <p className="text-colorGray"></p>
+                        </div>
+                    </div>
+                </div>
+                {productsInCart.map(product => (
+                <div key={`${product.slug}-${product.size}`} className="
+                    w-full h-[7.65rem] mysm:h-fit mb-m8
+                    grid grid-cols-10 gap-g8
+                    mysm:grid-cols-7  
+                    items-center justify-between uppercase 
+                    bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll border-customBW overflow-hidden">
+                   
+                    <div className="w-[7rem] mysm:w-fit tablet:w-[6rem]   
+                                    h-[7rem] mysm:h-fit tablet:h-fit 
+                                    col-span-2 m-1
+                                    items-center justify-center ">
                         <ProductImage
                             src={product.image}
                             width={852}
                             height={852}
                             priority
                             alt={product.title}
-                            className={clsx("rounded-brAll border-customBW mysm:w-[4rem] mysm:h-[4.2rem] w-[8rem] h-[7.2rem] ", {
+                            className={clsx("rounded-brAll border-customBW w-full h-full", {
                             })}
                         />
                     </div>
-                        <div className="pl-5 mysm:pl-0.5 mysm:w-[4.5rem] w-60 ">
-                            <Link className=" hover:underline cursor-pointer hover:text-colorHover font-fw7 mysm:text-[0.6rem] leading-tight text-fs1rem" href={`/product/${product.slug}`}>
-                                {product.title} - ${product.price}
-                            </Link>
-                        </div>   
-                        <div className="">
-                            <Link className="hover:underline cursor-pointer hover:text-colorHover font-fw5 mysm:text-fs1 text-fs1rem" href={`/product/${product.slug}`}>
+
+                    <div className="col-span-8 mysm:col-span-5
+                                    grid grid-cols-8 gap-6
+                                    mysm:grid-cols-5 tablet:grid-cols-6 laptop:grid-cols-7  
+                                    tablet:text-fs1
+                                    laptop:text-fs2
+                                    desktop:text-fsLogo 
+                                    items-center justify-between text-fs1rem font-fw7 ">
+                        
+                        <div className="flex flex-col mysm:pl-0 pl-2 desktop:pl-0
+                                        col-span-3 
+                                        mysm:col-span-4
+                                        tablet:col-span-1  
+                                        laptop:col-span-2
+                                        tems-center mysm:items-start">
+                                            
+                                        <Link className="hover:underline cursor-pointer hover:text-colorHover font-fw7 leading-tight text-left mysm:whitespace-nowrap" href={`/product/${product.slug}`}>
+                                            {product.title}
+                                        </Link>
+                        </div>
+                        <div className="col-span-1 flex flex-col text-center mysm:pr-8 ">
+                            <div className="font-fw7">
                                 {product.size}
-                            </Link>
-                        </div>   
-                        <div className="mx-2 mysm:p-0 mysm:mx-0 p-1 mysm:text-fs1 text-fs1rem mysm:w-16 w-22 items-center justify-center border-colorPrimary border-customBW rounded-brAll ">
-                            <QuantitySelectorVertical
-                                quantity={product.quantity}
-                                onQuantityChanged={quantity => updateProductQuantity(product, quantity)}
-                            />
+                            </div>
                         </div>
-                        <div className="">
-                            <p className="mysm:text-fs1 text-fs1rem">${(product.price * product.quantity).toFixed(2)}</p>
+                        <div className="flex flex-col
+                                        col-span-3
+                                        mysm:col-span-4 
+                                        justify-between text-center ">
+                                        
+                                        <div className="flex gap-g8 
+                                                        col-span-full sm:col-span-1 justify-between items-center">
+                                <div className="col-span-1 flex flex-col text-center w-[4rem] mysm:text-left">
+                                    <div className="font-fw7 mysm:text-fs1 mysm:font-fw5">
+                                        ${product.price}
+                                    </div>
+                                </div>
+                                <div className="flex
+                                                col-span-2
+                                                mysm:col-span-1 
+                                                laptop:mx-2
+                                                items-center mysm:items-start justify-center">
+                                                <div className="w-full">
+                                                    <QuantitySelectorVertical
+                                                        quantity={product.quantity}
+                                                        onQuantityChanged={quantity => updateProductQuantity(product, quantity)} 
+                                                    />
+                                                </div>
+                                </div>
+                                <div className="col-span-1 sm:col-span-1 text-center tablet:text-right w-[5.5rem] mysm:w-[8rem] mysm:text-fs1 mysm:font-fw5">
+                                    <p className="">${(product.price * product.quantity).toFixed(2)}</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="p-1 mr-3 mysm:mr-2">
+                        <div className="col-span-1 flex text-center justify-center mr-3 mysm:mr-5 ">
                             <PiTrash
-                                className="cursor-pointer hover:text-colorHover text-[20px] mysm:text-[16px]"
+                                className="cursor-pointer hover:text-colorHover text-[1.5rem] mysm:text-[2rem] "
                                 onClick={() => removeProductFromCart(product)}
                             />
                         </div>
+                    </div>
                 </div>
-            ))}
-        </div>
+                ))}
+            </div>
         </>
     );
 }

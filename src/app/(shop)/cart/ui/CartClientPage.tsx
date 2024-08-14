@@ -33,16 +33,12 @@ const CartClientPage: React.FC<CartClientPageProps> = ({ countries, userAddress 
                     {/* Renderizado condicional basado en el paso */}
                     {step === 1 && (
                         <>
-                            <div className="grid grid-cols-1 sm:grid-cols-5 w-full h-full items-center py-2">
-                                <Title className="sm:col-span-3 col-span-1 text-fs1.2rem sm:text-fs1rem font-fw7 uppercase whitespace-nowrap" title="Agregar más items" />
+                            <div className="grid mysm:grid-cols-2 grid-cols-5 gap-g8 w-full h-full items-center justify-center py-p8">
+                                    <Title className="col-span-3 mysm:col-span-1 uppercase whitespace-nowrap" title="Agregar más items" />
+                                    <Link href="/" className=" col-span-2 mysm:col-span-1 pl-5 underline hover:text-colorHover justify-between items-center font-fw5 text-fs1rem mysm:text-fs1 whitespace-nowrap">
+                                        ¡Continúa comprando!
+                                    </Link>
                                 
-                            </div>
-                            <div className=" w-full">
-                                <div className="col-span-2 mysm:col-span-1 h-full w-full flex  justify-between items-center font-fw7 text-fs1rem">
-                                        <Link href="/" className=" col-span-2 mysm:col-span-1 pl-5 underline hover:text-colorHover justify-between items-center font-fw5 text-fs1rem">
-                                            ¡Continúa comprando!
-                                        </Link>
-                                </div>
                             </div>
                             <div className="grid mysm:grid-cols-1 grid-cols-5 gap-g8 mysm:gap-1 w-full h-full">
                                     {/* Carrito */}
@@ -60,31 +56,33 @@ const CartClientPage: React.FC<CartClientPageProps> = ({ countries, userAddress 
                     
                     {step === 2 && (
                         <>
-                        <div className="ml-3 grid grid-cols-2 gap-g8 w-full h-full">
-                            <span className="text-fs1.2rem font-fw7 uppercase">Agregar más items</span>
-                            <Link href="/" className="underline mb-5 mysm:pl-5 hover:text-colorHover text-fs1rem font-fw5">
+                        <div className="grid mysm:grid-cols-2 grid-cols-5 gap-g8 w-full h-full items-center justify-center py-p8">
+                            <Title className="col-span-3 mysm:col-span-1 uppercase whitespace-nowrap"title="Agregar más items"/>
+                            <Link href="/" className="col-span-2 mysm:col-span-1 pl-5 underline hover:text-colorHover justify-between items-center font-fw5 text-fs1rem mysm:text-fs1 whitespace-nowrap">
                                 ¡Continúa comprando!
                             </Link>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-g8 w-full h-full">
+                        <div className="grid mysm:grid-cols-1 grid-cols-5 gap-g8 mysm:gap-1 w-full h-full">
                             {/* Carrito */}
-                            <div className="flex flex-col w-full h-fit gap-g8">
+                            <div className="col-span-3 mysm:col-span-1 h-fit w-full">
                                 {/* Items del carrito */}
                                 <ProductsInCart />
                             </div>
-                            <AddressForm
-                                countries={countries}
-                                userStoredAddress={userAddress}
-                                onNext={handleNext} // Pasar la función `handleNext` a `AddressForm`
-                            />
+                            <div className="sm:col-span-2 col-span-1 h-full w-full">
+                                <AddressForm
+                                    countries={countries}
+                                    userStoredAddress={userAddress}
+                                    onNext={handleNext} // Pasar la función `handleNext` a `AddressForm`
+                                />
+                            </div>
                         </div>
                         </>
                     )}
                 {step === 3 && (
                     <>
-                    <div className="ml-3 grid grid-cols-2 gap-g8 w-full h-full">
-                        <Title className="pl-5 font-fw7 text-fs1rem" title="Verificar Orden" />
-                        <Link href="/cart" className="underline mb-5 mysm:pl-5 hover:text-colorHover text-fs1rem font-fw5">
+                    <div className="grid mysm:grid-cols-2 grid-cols-2 gap-g8 w-full h-full items-center justify-center py-p8">
+                        <Title className="col-span-1 mysm:col-span-1 uppercase whitespace-nowrap" title="Verificar Orden" />
+                        <Link href="/cart" className="col-span-1 mysm:col-span-1 pl-5 underline hover:text-colorHover justify-between items-center font-fw5 text-fs1rem mysm:text-fs1 whitespace-nowrap">
                         Editar carrito
                         </Link>
                     </div>
