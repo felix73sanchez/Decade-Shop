@@ -39,9 +39,9 @@ export default async function OrderPageById({ params }: Props) {
 
     return (
 
-        <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
+        <div className="flex justify-center items-center mx-mBody mt-20">
 
-            <div className="flex flex-col w-[1000px]">
+            <div className="flex flex-col w-full mx-mBody">
 
                 <Title title={`Orden #deca|${id.split('-').at(-1)}`} />
 
@@ -77,42 +77,7 @@ export default async function OrderPageById({ params }: Props) {
                     </div>
 
                     {/* Checkout - Resumen de Orden */}
-                    <div className=" bg-white rounded-xl shadow-xl p-7">
-
-                        <h2 className=" text-2xl mb-2">Direccion de entrega</h2> {/*//TODO Adecuar esto con la realidad de la Orden y la Tienda.*/}
-                        <div className="mb-10 ">
-                            <p className="text-xl"> {address!.firstName} {address!.lastName} </p>
-                            <p> {address!.address} </p>
-                            <p> {address!.city} </p>
-                            <p> {address!.countryId}</p>
-                            <p> {address!.postalCode} </p>
-                            <p> {address!.phone} </p>
-
-                        </div>
-
-                        {/*LINEA DIVISAORA */}
-                        <div
-                            className="w-full h-0.5 bg-colorGray mb-10"
-                        />
-
-                        <h2 className="text-2xl mb-2"> Resumen de Orden </h2>
-                        <div className="grid grid-cols-2 justify-between">
-
-                            <span>No. Productos</span>
-                            <span className="text-right">
-                                {order?.itemsInOrder === 1 ? "1 artículo" : `${order?.itemsInOrder} artículos`}
-                            </span>
-
-                            <span>Subtotal</span>
-                            <span className="text-right">{currencyFormat(order!.subTotal)}</span>
-
-                            <span>Impuestos (15%)</span>
-                            <span className="text-right">{currencyFormat(order!.tax)}</span>
-
-                            <span className="mt-5 text-2xl">Total:</span>
-                            <span className="mt-5 text-2xl text-right">{currencyFormat(order!.total)}</span>
-
-                        </div>
+                    
 
 
                         <div className=" mt-5 mb-2 w-full">
@@ -131,7 +96,5 @@ export default async function OrderPageById({ params }: Props) {
                 </div>
 
             </div>
-
-        </div>
     );
 }

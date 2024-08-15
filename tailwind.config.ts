@@ -9,13 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        'movileS': {'min': '300px', 'max': '374px'},
+        'movileS': {'min': '200px', 'max': '379px'},
         'movileM': {'min': '375px', 'max': '425px'},
         'movileL': {'min': '426px', 'max': '767px'},
-        'tablet': {'min': '768px', 'max': '1023px'},
+        'tablet': {'min': '830px', 'max': '1023px'},
         'laptop': {'min': '1024px', 'max': '1440px'},
         'desktop': {'min': '1441px', 'max': '2560px'},
-        'mysm': {'min': '300px', 'max': '767px'},
+        'mysm': {'min': '380px', 'max': '829px'},
 
         'hmovileS': {'raw': '(min-height: 300px) and (max-height: 639px)'},
         'hmovileM': {'raw': '(min-height: 640px) and (max-height: 739px)'},

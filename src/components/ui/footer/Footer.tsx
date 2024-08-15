@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <div className="flex w-full justify-center gap-g8 text-fs1 bottom-0 uppercase mb-5">
+        <div className="flex w-full justify-center gap-g8 text-fs1 mysm:text-xs movileS:text-xs bottom-0 uppercase mb-5">
             <Link
                 href="/"
             >

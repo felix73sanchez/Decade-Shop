@@ -9,9 +9,9 @@ import { Product } from '../../../../interfaces/product.interface';
 
 
 // Cargar componentes dinámicamente
-const OrderSummaryDetails = dynamic(() => import('./resumen/OrderSummaryDetails'), { ssr: false });
+const OrderSummaryDetails = dynamic(() => import('./checkout/resumen/OrderSummaryDetails'), { ssr: false });
 const PlaceOrder = dynamic(() => import('./place-order/PlaceOrder').then(mod => mod.PlaceOrder), { ssr: false });
-const ProductsInCart = dynamic(() => import('./ProductsInCart').then(mod => mod.ProductsInCart), { ssr: false });
+const ProductsInCart = dynamic(() => import('./products-in-cart/ProductsInCart').then(mod => mod.ProductsInCart), { ssr: false });
 const ProductsPlaceOrder = dynamic(() => import('./place-order/ProductsPlaceOrder').then(mod => mod.ProductsPlaceOrder), { ssr: false });
 
 interface CartClientPageProps {
@@ -33,20 +33,20 @@ const CartClientPage: React.FC<CartClientPageProps> = ({ countries, userAddress 
                     {/* Renderizado condicional basado en el paso */}
                     {step === 1 && (
                         <>
-                            <div className="grid mysm:grid-cols-2 grid-cols-5 gap-g8 w-full h-full items-center justify-center py-p8">
-                                    <Title className="col-span-3 mysm:col-span-1 uppercase whitespace-nowrap" title="Agregar más items" />
-                                    <Link href="/" className=" col-span-2 mysm:col-span-1 pl-5 underline hover:text-colorHover justify-between items-center font-fw5 text-fs1rem mysm:text-fs1 whitespace-nowrap">
+                            <div className="grid mysm:grid-cols-2 movileS:grid-cols-2 grid-cols-5 gap-g8 w-full h-full items-center justify-center py-p8 movileS:text-center">
+                                    <Title className="col-span-3 mysm:col-span-1 movileS:col-span-1 uppercase" title="Agregar más items" />
+                                    <Link href="/" className=" col-span-2 mysm:col-span-1 movileS:col-span-1 pl-5 underline hover:text-colorHover justify-between items-center font-fw5 text-fs1rem mysm:text-fs1 movileS:text-sm ">
                                         ¡Continúa comprando!
                                     </Link>
                                 
                             </div>
-                            <div className="grid mysm:grid-cols-1 grid-cols-5 gap-g8 mysm:gap-1 w-full h-full">
+                            <div className="grid mysm:grid-cols-1 movileS:grid-cols-1 grid-cols-5 gap-g8 mysm:gap-1 w-full h-full">
                                     {/* Carrito */}
-                                    <div className="col-span-3 mysm:col-span-1 h-fit w-full">
+                                    <div className="col-span-3 mysm:col-span-1 movileS:col-span-1 h-fit w-full">
                                         <ProductsInCart />
                                     </div>
                                     {/* Resumen de la orden */}
-                                    <div className="sm:col-span-2 col-span-1 h-full w-full">
+                                    <div className="col-span-2 mysm:col-span-1 movileS:col-span-1 h-full w-full">
                                         <OrderSummaryDetails setShowAddressForm={handleNext} />
                                     </div>
                             </div>
