@@ -24,9 +24,9 @@ export const GridImg: React.FC<Props> = ({ className }) => {
     }, []);
 
     return (
-        <div className={`relative w-full h-[36rem] px-p8 overflow-hidden fade-in mt-[4.6rem] grid grid-cols-1 sm:grid-cols-3 gap-p8 sm:gap-g8 ${allFont.className} ${className}`}>
+        <div className={`relative w-full h-[36rem] px-p8 overflow-hidden fade-in mt-[4.6rem] grid grid-cols-1 topmenu:grid-cols-3 gap-g8 ${allFont.className} ${className}`}>
             {/* Imagen visible en pantallas móviles */}
-            <div className="relative w-full h-[36rem] sm:hidden border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
+            <div className="relative w-full h-[36rem] topmenu:hidden block border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
                 <Image
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].alt}
@@ -40,13 +40,13 @@ export const GridImg: React.FC<Props> = ({ className }) => {
                         <div key={index} className={`w-2 h-2 rounded-full mx-1 ${index === currentImageIndex ? 'bg-color3' : 'bg-color4'}`} />
                     ))}
                 </div>
-                <div className="absolute top-4 left-4 sm:top-8 sm:left-10">
-                    <p className="text-colorPrimary text-xl sm:text-5xl font-fw9">NEW ARRIVALS</p>
+                <div className="absolute top-4 topmenu:left-4 topmenu:top-8 left-10">
+                    <p className="text-colorPrimary text-3xl font-fw9">NEW ARRIVALS</p>
                 </div>
             </div>
 
             {/* Div a la izquierda, visible en pantallas medianas y grandes */}
-            <div className="relative hidden sm:block w-full h-[36rem] sm:col-span-2 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
+            <div className="relative hidden topmenu:block w-full h-[36rem] col-span-2 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
                 <div className="w-full h-full overflow-hidden rounded-brAll">
                     <Image
                         src="/gridimg/1.jpg"
@@ -57,13 +57,13 @@ export const GridImg: React.FC<Props> = ({ className }) => {
                         priority // Agrega esta línea para dar prioridad a la carga de la imagen
                     />
                 </div>
-                <div className="absolute top-4 left-4 sm:top-8 sm:left-10">
-                    <p className="text-colorPrimary text-xl sm:text-5xl font-fw9">NEW ARRIVALS</p>
+                <div className="absolute top-4 left-4 topmenu:top-8 topmenu:left-10">
+                    <p className="text-colorPrimary topmenu:text-5xl font-fw9">NEW ARRIVALS</p>
                 </div>
             </div>
 
             {/* Contenedor de los dos divs a la derecha, visible en pantallas medianas y grandes */}
-            <div className="relative hidden sm:grid grid-rows-1 gap-g8 sm:gap-g8 w-full h-full">
+            <div className="relative hidden topmenu:grid grid-rows-1 gap-g8 w-full h-full">
                 <div className="relative w-full h-[17.75rem] rounded-brAll shadow-customBS border-customBC border-customBW">
                     <Image
                         src="/gridimg/2.jpg"

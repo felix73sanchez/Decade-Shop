@@ -2,7 +2,7 @@
 .slideshow-container {
   display: flex;
   align-items: flex-start; /* Alinea los elementos al principio del contenedor */
-  gap: 1rem; /* Espacio entre los elementos */
+  gap: 0.75rem; /* Espacio entre los elementos */
   width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
   height: 100%;
 }
@@ -54,4 +54,32 @@
 
 .mySwiper .swiper-slide-thumb-active {
   opacity: 1; /* Opacidad completa para la diapositiva activa */
+}
+/* zoom imagen*/
+
+.zoom-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.zoom-image-container {
+  position: relative;
+  cursor: none; /* Oculta el cursor cuando está sobre la imagen */
+}
+
+.zoom-result {
+  position: absolute;
+  display: none; /* Oculta el zoom por defecto */
+  pointer-events: none; /* Evita que el zoom interfiera con el mouse */
+  z-index: 10;
+  width: 200px; /* Tamaño del cuadro de zoom */
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: 540% 540%; /* Ajusta el nivel de zoom */
+  background-position: center; /* Centra el zoom */
+  transform: translate(-50%, -50%); /* Ajusta el cuadro de zoom para que esté centrado en la posición del ratón */
+}
+
+.zoom-image-container:hover .zoom-result {
+  display: block; /* Muestra el cuadro de zoom solo al pasar el ratón sobre la imagen */
 }

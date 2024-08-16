@@ -75,9 +75,9 @@ export default async function ProductSlugPage({ params }: Props) {
     }
 
     return (
-        <div className="w-full h-full mt-20 mb-20 grid grid-cols-1 md:grid-cols-3 gap-g8 px-p8  text-colorPrimary uppercase">
+        <div className=" mt-20 mb-20 grid mx-mBody grid-cols-1 md:grid-cols-3 gap-g8 px-p8  text-colorPrimary uppercase">
             {/* Slide Show */}
-            <div className=" p-5 col-span-1 md:col-span-2 bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
+            <div className="w-full h-full col-span-1 md:col-span-2 ">
                 {/* Mobile SlideShow */}
                 <ProductMobileSlideshow
                     title={product.title}
@@ -88,7 +88,7 @@ export default async function ProductSlugPage({ params }: Props) {
                 <ProductSlideshow
                     title={product.title}
                     images={product.images}
-                    className="sm:hidden md:block"
+                    className="sm:hidden md:block "
                 />
             </div>
             {/* Detalles */}

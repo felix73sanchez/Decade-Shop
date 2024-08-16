@@ -16,6 +16,8 @@ const config: Config = {
         'laptop': {'min': '1024px', 'max': '1440px'},
         'desktop': {'min': '1441px', 'max': '2560px'},
         'mysm': {'min': '380px', 'max': '829px'},
+        'topmenu':{'min': '700px'},
+        'topmenu400':{'max': '400px'},
 
         'hmovileS': {'raw': '(min-height: 300px) and (max-height: 639px)'},
         'hmovileM': {'raw': '(min-height: 640px) and (max-height: 739px)'},

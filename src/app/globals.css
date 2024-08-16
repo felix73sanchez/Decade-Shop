@@ -22,6 +22,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(226 232 240);
   position: relative;
+
 }
 
 @keyframes moveLeft {

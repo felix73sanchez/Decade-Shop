@@ -54,14 +54,14 @@ export const TopMenu = () => {
     return (
         <>
             <nav className={`${logoFont.className} flex fixed top-0 sm:left-0 sm:right-0 left-2 right-2 sm:mx-mBody mt-[0.3rem] px-5 sm:px-5 py-[0.5rem] sm:py-[0.5rem] justify-between items-center bg-colorPrimary text-colorSecondary border-colorPrimary rounded-brAll shadow-customBS border-customBW transition-transform duration-1000 ${showMenu ? 'translate-y-0.5' : '-translate-y-20'}`} style={{ zIndex: navZIndex }}>
-                <div>
+                <div className=" m-0 p-0 antialiased text-fsLogo font-fw9 italic hover:text-colorHover text-colorSecondary">
                     <Link href="/">
-                        <span className={`m-0 p-0 antialiased text-fsLogo font-fw9 italic hover:text-colorHover text-colorSecondary`}>DECA</span>
-                        <span className={`movileS:hidden m-0 p-0 antialiased text-fsLogo font-fw9 italic hover:text-colorHover text-colorSecondary`}>VENTURE</span>
+                        <span className={``}>DECA</span>
+                        <span className={`movileS:hidden`}>VENTURE</span>
                     </Link>
                 </div>
 
-                <div className={`hidden sm:block font-fw5 not-italic m-0 p-0`}>
+                <div className={`hidden topmenu:block font-fw5 not-italic m-0 p-0`}>
                     <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/kid">NEW IN</Link>
                     <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/men">HOMBRES</Link>
                     <Link className="mx-mElement transition-all hover:text-colorHover" href="/gender/women">MUJERES</Link>

@@ -1,0 +1,18 @@
+/* ProductImageZoom.css */
+
+.zoom-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.zoom-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px; /* Cambia el tamaño del cuadro de zoom aquí */
+    height: 100px;
+    border: 1px solid #d4d4d4;
+    display: none;
+    background-repeat: no-repeat;
+    pointer-events: none; /* Para que no interfiera con el movimiento del mouse */
+}
