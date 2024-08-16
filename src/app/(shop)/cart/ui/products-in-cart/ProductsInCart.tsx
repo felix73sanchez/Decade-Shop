@@ -125,7 +125,7 @@ export const ProductsInCart = () => {
                                         laptop:col-span-2
                                         tems-center mysm:items-start movileS:items-start">
                                             
-                                        <Link className="hover:underline cursor-pointer hover:text-colorHover font-fw7 leading-tight text-left mysm:whitespace-nowrap" href={`/product/${product.slug}`}>
+                                        <Link className="hover:underline cursor-pointer hover:text-colorHover font-fw7 leading-tight text-left" href={`/product/${product.slug}`}>
                                             {product.title}
                                         </Link>
                         </div>
