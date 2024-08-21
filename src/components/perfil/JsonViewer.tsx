@@ -29,28 +29,23 @@ const JsonViewer: React.FC<{ data: Record<string, any> }> = ({ data }) => {
 
     return (
         <div className="">
-            <table className={`${allFont.className} min-w-full divide-y divide-colorGray `}>
-                <thead className="bg-colorGray font-fw9 text-fs1rem  mysm:text-[0.6rem] uppercase">
-                    <tr>
-                        <th className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left">Datos</th>
-                        <th className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left">Detalles</th>
-                    </tr>
-                </thead>
-                <tbody className="bg-colorSecondary divide-y divide-colorGray">
-                    {Object.keys(data)
-                        .filter(key => isAdmin || displayedKeys.includes(key)) // Muestra todos si es admin
-                        .map((key) => (
-                            <tr key={key} className='bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full'>
-                                <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal font-fw7 uppercase">
-                                    {key}
-                                </td>
-                                <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
-                                    {formatValue(data[key], key)}  {/* Pasar ambos argumentos */}
-                                </td>
-                            </tr>
-                        ))}
-                </tbody>
-            </table>
+            <div className={`${allFont.className}  min-w-full`}>
+    {Object.keys(data)
+        .filter(key => isAdmin || displayedKeys.includes(key)) // Muestra todos si es admin
+        .map((key) => (
+            <React.Fragment key={key}>
+                <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-y-4 gap-y-0 bg-colorSecondary hover:bg-colorHover hover:border-colorPrimary hover:rounded-brAll hover:border-customBW transition duration-300 ease-in-out px-5 py-3 uppercase">
+                    <div className=" font-fw7 text-fs1rem">
+                        {key}
+                    </div>
+                    <div className="font-fw5 text-fs2">
+                        {formatValue(data[key], key)}  {/* Pasar ambos argumentos */}
+                    </div>
+                </div>
+            </React.Fragment>
+        ))}
+</div>
+
         </div>
     );
 };

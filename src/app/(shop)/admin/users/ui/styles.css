@@ -14,7 +14,7 @@
   background-color: #FFFDF6;
   border-bottom: 1px solid #384C2E;
   border-radius: 8px;
-  padding: 6px 10px;
+  padding: 6px 15px;
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
@@ -36,12 +36,15 @@
 
 .select-items div {
   color: #384C2E;
-  padding: 8px 16px;
+  padding: 4px 16px;
   cursor: pointer;
 }
 
-.select-items div:hover, .same-as-selected {
-  background-color: rgb(229 231 235);
+.same-as-selected {
+  background-color: #DDA15E;
+}
+.select-items div:hover{
+  background-color: rgb(226 232 240);
 }
 
 .select-show {

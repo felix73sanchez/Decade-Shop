@@ -9,17 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        'movileS': {'min': '200px', 'max': '379px'},
-        'movileM': {'min': '375px', 'max': '425px'},
+        'movileS': {'min': '200px', 'max': '379px'}, //en uso
+        'movileM': {'min': '375px', 'max': '425px'}, //en uso
         'movileL': {'min': '426px', 'max': '767px'},
-        'tablet': {'min': '830px', 'max': '1023px'},
-        'laptop': {'min': '1024px', 'max': '1440px'},
-        'desktop': {'min': '1441px', 'max': '2560px'},
-        'mysm': {'min': '380px', 'max': '829px'},
+        'tablet': {'min': '830px', 'max': '1023px'}, 
+        'laptop': {'min': '1024px', 'max': '1440px'}, //en uso
+        'desktop': {'min': '1441px', 'max': '2560px'}, //en uso
+        'mysm': {'min': '380px', 'max': '829px'}, //en uso
         'topmenu':{'min': '700px'},
         'topmenu400':{'max': '400px'},
 
-        'hmovileS': {'raw': '(min-height: 300px) and (max-height: 639px)'},
+        'hmovileS': {'raw': '(min-height: 300px) and (max-height: 650px)'},
         'hmovileM': {'raw': '(min-height: 640px) and (max-height: 739px)'},
         'hmovileL': {'raw': '(min-height: 740px) and (max-height: 822px)'},
         'htablet': {'raw': '(min-height: 822px) and (max-height: 960px)'},

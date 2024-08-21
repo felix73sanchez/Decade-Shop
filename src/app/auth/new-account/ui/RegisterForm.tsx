@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useState } from 'react';
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/16/solid";
 
 type FormImput = {
     name: string;
@@ -15,6 +16,7 @@ type FormImput = {
 
 export const RegisterForm = () => {
     const [errorMessage, setErrorMessage] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm<FormImput>();
 
     const onSubmit: SubmitHandler<FormImput> = async (data) => {
@@ -40,7 +42,7 @@ export const RegisterForm = () => {
                 <div className="flex flex-col gap-1 w-full">
                     <label htmlFor="name" className="pl-3 text-fs1">Nombre completo</label>
                     <input
-                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full", { 'border-red-500': errors.name })}
+                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full font-fw5", { 'border-red-500': errors.name })}
                         type="text"
                         id="name"
                         autoFocus
@@ -49,43 +51,55 @@ export const RegisterForm = () => {
 
                     <label htmlFor="email" className="pl-3 pt-5 text-fs1">Correo electrónico</label>
                     <input
-                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full", { 'border-red-500': errors.email })}
+                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full font-fw5", { 'border-red-500': errors.email })}
                         type="email"
                         id="email"
                         {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                     />
 
-                
-                    <label htmlFor="password" className="pl-3 pt-5 text-fs1 ">Contraseña</label>
-                    <input
-                        className={clsx("p-3 border bg-colorGray rounded-brAll w-full ", { 'border-red-500': errors.password })}
-                        type="password"
-                        id="password"
-                        {...register('password', { required: true, minLength: 6 })}
-                    />
+                    <label htmlFor="password" className="pl-3 pt-5 text-fs1">Contraseña</label>
+                    <div className="relative">
+                        <input
+                            className={clsx("p-3 border bg-colorGray rounded-brAll w-full pr-10 font-fw5", { 'border-red-500': errors.password })}
+                            type={showPassword ? "text" : "password"}
+                            id="password"
+                            {...register('password', { required: true, minLength: 6 })}
+                        />
+                        <button
+                            type="button"
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2"
+                            onClick={() => setShowPassword(!showPassword)}
+                        >
+                            {showPassword ? (
+                                <EyeSlashIcon className="h-5 w-5 text-gray-500" />
+                            ) : (
+                                <EyeIcon className="h-5 w-5 text-gray-500" />
+                            )}
+                        </button>
+                    </div>
                 </div>
 
                 <div className="flex flex-col w-full pt-6">
                     <span className="text-red-500 pl-3 mb-1 text-fs1">{errorMessage}</span>
                     <button
+                        type="submit"
                         className="btn-primary h-12">
                         Crear cuenta
                     </button>
                 
+                    {/* divisor line */}
+                    <div className="flex items-center m-0 p-2">
+                        <div className="flex-1 border-t border-gray-500"></div>
+                        <div className="px-2 text-gray-800">○</div>
+                        <div className="flex-1 border-t border-gray-500"></div>
+                    </div>
 
-                {/* divisor l ine */}
-                <div className="flex items-center m-0 p-2">
-                    <div className="flex-1 border-t border-gray-500"></div>
-                    <div className="px-2 text-gray-800">○</div>
-                    <div className="flex-1 border-t border-gray-500"></div>
+                    <Link
+                        href="/auth/login"
+                        className="flex btn-secondary items-center justify-center h-[2.7rem]">
+                        Ingresar
+                    </Link>
                 </div>
-
-                <Link
-                    href="/auth/login"
-                    className="flex btn-secondary  items-center justify-center h-[2.7rem]">
-                    Ingresar
-                </Link>
-</div>
             </form>
         </div>
     )

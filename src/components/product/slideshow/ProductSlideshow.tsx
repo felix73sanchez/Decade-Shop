@@ -87,7 +87,7 @@ export const ProductSlideshow = ({ images, title, className }: Props) => {
                                         className="object-fill bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW"
                                     />
                                     <div
-                                        className="zoom-result"
+                                        className="zoom-result rounded-brAll"
                                         style={{
                                             display: zoom.display,
                                             backgroundImage: `url(${imageUrl})`,

@@ -19,74 +19,63 @@ export default async function OrdersPage() {
         <>  
             <div className="flex flex-col min-h-screen">
                 <div className="flex-grow mt-20 m-mBody">
-                    <div className="border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden ">
-                        
+                    <div className="bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden ">
+                        <div className="m-5">
+                            <Title title="Orders"  className=""/>
+                            <div className=" border-y-customBW border-colorPrimary mb-16">
+                                <div className="min-w-full">
+                                    <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 bg-colorSecondary px-5 py-3 uppercase font-fw7 text-fs1rem">
+                                        <div className="text-left">
+                                            #ID
+                                        </div>
+                                        <div className="text-left">
+                                            Nombre
+                                        </div>
+                                        <div className="text-left">
+                                            Estado
+                                        </div>
+                                        <div className="text-left">
+                                            Opciones
+                                        </div>
+                                    </div>
 
-                        <Title title="Orders"  className="border-b-customBW border-colorPrimary bg-color3 "/>
+                                    <div>
+                                        {orders.map((order) => (
+                                            <div
+                                                key={order.id}
+                                                className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 bg-colorSecondary  border-y-customBW hover:bg-colorHover hover:border-colorPrimary hover:rounded-brAll hover:border-customBW transition duration-300 ease-in-out px-5 py-3 uppercase font-fw5 text-fs1rem"
+                                            >
+                                                <div className="">
+                                                    #deca|{order.id.split("-").at(-1)}
+                                                </div>
+                                                <div>
+                                                    {order.OrderAddress?.firstName} {order.OrderAddress?.lastName}
+                                                </div>
+                                                <div className="flex items-center">
+                                                    {order.isPaid ? (
+                                                        <>
+                                                            <IoCardOutline className="text-green-800" />
+                                                            <span className="mx-1 text-green-800">Pagada</span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <IoCardOutline className="text-red-800" />
+                                                            <span className="text-red-800 mx-1">No Pagada</span>
+                                                        </>
+                                                    )}
+                                                </div>
+                                                <div>
+                                                    <Link href={`/orders/${order.id}`} className="hover:underline">
+                                                        Ver orden
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
 
-                        <table className="min-w-full bg-colorGray font-fw9 text-fs1rem  mysm:text-[0.6rem]">
-                            <thead className=" ">
-                                <tr className="uppercase text-colorPrimary">
-                                    <th
-                                        scope="col"
-                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                                    >
-                                        #ID
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                                    >
-                                        Nombre completo
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                                    >
-                                        Estado
-                                    </th>
-                                    <th
-                                        scope="col"
-                                        className=" px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                                    >
-                                        Opciones
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody className="">
-                                {orders.map((order) => (
-                                    <tr
-                                        key={order.id}
-                                        className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full"
-                                    >
-                                        <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
-                                            #deca|{order.id.split("-").at(-1)}
-                                        </td>
-                                        <td className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
-                                            {order.OrderAddress?.firstName} {order.OrderAddress?.lastName}
-                                        </td>
-                                        <td className="flex items-center px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal">
-                                            {order.isPaid ? (
-                                                <>
-                                                    <IoCardOutline className="text-green-800 mysm:overflow-hidden" />
-                                                    <span className="mx-2  text-green-800">Pagada</span>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <IoCardOutline className="text-red-800 mysm:hidden" />
-                                                    <span className="mx-2 mysm:mx-0 text-red-800 ">No Pagada</span>
-                                                </>
-                                            )}
-                                        </td>
-                                        <td className=" px-6 py-4 mysm:py-2 mysm:px-3 mysm:whitespace-normal">
-                                            <Link href={`/orders/${order.id}`} className="hover:underline">
-                                                Ver orden
-                                            </Link>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <Pagination totalPages={1} />

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { PiHeartBold } from "react-icons/pi";
+import { AddToCart } from "./ui/SimpleAddToCart";
 
 interface Props {
     product: Product;
@@ -13,6 +14,7 @@ interface Props {
 export const ProductGridItem = ({ product }: Props) => {
     const [imageUrls, setImageUrls] = useState<string[]>([]);
     const [displayImage, setDisplayImage] = useState<string>('');
+    const [isHovered, setIsHovered] = useState<boolean>(false);
 
     useEffect(() => {
         const checkLocalImages = async () => {
@@ -43,7 +45,11 @@ export const ProductGridItem = ({ product }: Props) => {
     }
 
     return (
-        <div className="p-0 overflow-hidden fade-in flex flex-col h-full border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW uppercase">
+        <div
+            className="relative p-0 overflow-hidden fade-in flex flex-col h-full border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW uppercase"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
             <Link href={`/product/${product.slug}`}>
                 <Image
                     src={displayImage}
@@ -57,9 +63,18 @@ export const ProductGridItem = ({ product }: Props) => {
                 />
             </Link>
 
+            {/* Botón de Añadir al Carrito */}
+            {isHovered && (
+                <div className="absolute bottom-28 rounded-brAll left-1/2 transform -translate-x-1/2 flex items-center justify-center pointer-events-none">
+                    <div className="w-fit px-4 py-2 rounded-brAll pointer-events-auto">
+                        <AddToCart product={product} />
+                    </div>
+                </div>
+            )}
+
             <div className="p-2 flex flex-col justify-between flex-grow bg-colorSecondary">
                 <Link
-                    className="hover:text-color text-fs2 font-fw9  text-colorPrimary hover:text-colorHover "
+                    className="hover:text-color text-fs2 font-fw9 text-colorPrimary hover:text-colorHover"
                     href={`/product/${product.slug}`}
                 >
                     {product.title}
@@ -69,8 +84,9 @@ export const ProductGridItem = ({ product }: Props) => {
                         <span className="w-fit px-3 py-1 font-fw7 text-fs2 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
                             ${product.price}
                         </span>
-                        {/* Desktop SlideShow */}<button className="ml-4">
-                            <PiHeartBold className="text-3xl w-fit px-3 py-1  border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW" />
+                        {/* Icono de Favoritos */}
+                        <button className="ml-4">
+                            <PiHeartBold className="text-3xl w-fit px-3 py-1 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW" />
                         </button>
                     </div>
                 </div>

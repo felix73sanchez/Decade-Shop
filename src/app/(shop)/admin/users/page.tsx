@@ -20,15 +20,15 @@ export default async function OrdersPage() {
         <>  
         <div className="flex flex-col min-h-screen">
             <div className="flex-grow mt-20 m-mBody"> 
-                <div className="bg-colorSecondary  border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW pb-4">
-                        <Title title="Mantenimiento de usuarios"  className="border-b-customBW rounded-t-brAll border-colorPrimary bg-color3"/>
+                <div className="bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden">
+                    <div className="m-5">
+                        <Title title="Mantenimiento de usuarios"  className=""/>
 
-                        <div className="text-colorPrimary ">
+                        <div className="border-y-customBW border-colorPrimary mb-16 ">
                             <UsersTable users={users} />
 
-                        
-                        </div> 
-                        
+                        </div>
+                    </div>
                 </div>
             </div>
             <Pagination totalPages={1} />

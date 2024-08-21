@@ -14,9 +14,13 @@ export default async function ProfilePage() {
     return (
         <div className="flex flex-col min-h-screen ">
             <div className="mt-20 flex-grow mx-mBody">
-                <div className={`${allFont.className} border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden`}>
-                    <Title title="Perfil" className="border-b-customBW border-colorPrimary bg-color3" />
-                    <JsonViewer data={session.user} />
+                <div className={`${allFont.className} bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden`}>
+                    <div className="m-5">
+                        <Title title="Perfil" className="" />
+                        <div className="border-y-customBW border-colorPrimary hover:border-none mb-16">
+                            <JsonViewer data={session.user} />
+                        </div>
+                    </div>
                 </div>
                
             </div>

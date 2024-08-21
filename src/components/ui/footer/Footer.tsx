@@ -5,8 +5,8 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <div className="flex w-full justify-center gap-g8 text-fs1 mysm:text-xs movileS:text-xs bottom-0 uppercase mb-5">
-            <Link
+        <div className="flex flex-grow movileS:flex-col w-full justify-center items-center gap-g8 text-fs1 mysm:text-xs movileS:text-xs bottom-0 uppercase my-5">
+            <Link className="col-span-1"
                 href="/"
             >
                 <span className={`${allFont.className} antialiased font-fw7`}> Deca </span>
@@ -17,13 +17,13 @@ export const Footer = () => {
 
             <Link
                 href="/"
-                className=""
+                className="col-span-1"
             > Privacidad & Terminos
             </Link>
 
             <Link
                 href="/"
-                className=""
+                className="col-span-1"
             >Location
             </Link>
         </div>

@@ -65,82 +65,66 @@ export const UsersTable = ({ users }: Props) => {
     };
 
     return (
-        <div className=""> {/* Asegúrate de aplicar esta clase */}
-            <table className="min-w-full text-colorPrimary font-fw9 text-fs1rem mysm:text-[0.6rem]">
-                <thead className="bg-colorGray border-b uppercase rounded-b-brAll overflow-hidden">
-                    <tr>
-                        <th
-                            scope="col"
-                            className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                        >
-                            Email
-                        </th>
-                        <th
-                            scope="col"
-                            className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                        >
-                            Nombre completo
-                        </th>
-                        <th
-                            scope="col"
-                            className="px-6 py-4 mysm:py-2 mysm:px-3 whitespace-nowrap mysm:whitespace-normal text-left"
-                        >
-                            Rol
-                        </th>
-                    </tr>
-                </thead>
-                <tbody className="">
-                    {updatedUsers.map((user) => (
-                        <tr
-                            key={user.id}
-                            className="bg-colorSecondary border-b transition duration-300 ease-in-out hover:bg-colorHoverGray font-fw5 text-fs2 mysm:text-[0.6rem] w-full rounded-b-brAll "
-                        >
-                            <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
-                                {user.email}
-                            </td>
-                            <td className="px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal">
-                                {user.name}
-                            </td>
-                            <td className="flex items-center px-6 py-4 mysm:py-2 mysm:px-2 whitespace-nowrap mysm:whitespace-normal relative">
-                                <div className="custom-select">
-                                    <div
-                                        className="select-selected flex items-center justify-between cursor-pointer"
-                                        onClick={() => handleSelect(user.id)}
-                                    >
-                                        <span className={`text-left ${user.role === 'admin' ? 'admin-role' : ''}`}>
-                                            {user.role}
-                                        </span>
-                                        <div className="ml-2 flex items-center">
-                                            {openSelect === user.id ? (
-                                                <PiCaretUp className="w-4 h-4 transition-transform" />
-                                            ) : (
-                                                <PiCaretDown className="w-4 h-4 transition-transform" />
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div
-                                        ref={(el) => { selectRefs.current[user.id] = el; }}
-                                        className={`select-items ${openSelect === user.id ? 'select-show' : ''}`}
-                                    >
-                                        <div
-                                            className={user.role === 'admin' ? 'same-as-selected' : ''}
-                                            onClick={() => handleOptionClick(user.id, 'admin')}
-                                        >
-                                            Admin
-                                        </div>
-                                        <div
-                                            className={user.role === 'user' ? 'same-as-selected' : ''}
-                                            onClick={() => handleOptionClick(user.id, 'user')}
-                                        >
-                                            User
-                                        </div>
+        <div className="min-w-full"> {/* Asegúrate de aplicar esta clase */}
+            <div className=" text-colorPrimary font-fw9 text-fs1rem mysm:text-[0.6rem]">
+                {/* Header */}
+                <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 bg-colorSecondary px-5 py-3 uppercase font-fw7 text-fs1rem">
+                    <div className="text-left">Email</div>
+                    <div className="text-left">Nombre</div>
+                    <div className="text-left">Rol</div>
+                </div>
+
+                {/* Body */}
+                {updatedUsers.map((user) => (
+                    <div
+                        key={user.id}
+                        className="grid lg:grid-cols-3 sm:grid-cols-1 grid-cols-1 bg-colorSecondary  border-y-customBW hover:bg-colorHover hover:border-colorPrimary hover:rounded-brAll hover:border-customBW transition duration-300 ease-in-out px-5 py-3 uppercase font-fw5 text-fs1rem items-center"
+                    >
+                        <div className="">
+                            {user.email}
+                        </div>
+                        <div className="">
+                            {user.name}
+                        </div>
+                        <div className="flex items-center relative whitespace-nowrap mysm:whitespace-normal">
+                            <div className="custom-select w-full">
+                                <div
+                                    className="select-selected flex items-center justify-between cursor-pointer"
+                                    onClick={() => handleSelect(user.id)}
+                                >
+                                    <span className={`text-left ${user.role === 'admin' ? 'admin-role' : ''}`}>
+                                        {user.role}
+                                    </span>
+                                    <div className="ml-2 flex items-center">
+                                        {openSelect === user.id ? (
+                                            <PiCaretUp className="w-4 h-4 transition-transform" />
+                                        ) : (
+                                            <PiCaretDown className="w-4 h-4 transition-transform" />
+                                        )}
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+                                <div
+                                    ref={(el) => { selectRefs.current[user.id] = el; }}
+                                    className={`select-items ${openSelect === user.id ? 'select-show' : ''}`}
+                                >
+                                    <div
+                                        className={user.role === 'admin' ? 'same-as-selected' : ''}
+                                        onClick={() => handleOptionClick(user.id, 'admin')}
+                                    >
+                                        Admin
+                                    </div>
+                                    <div
+                                        className={user.role === 'user' ? 'same-as-selected' : ''}
+                                        onClick={() => handleOptionClick(user.id, 'user')}
+                                    >
+                                        User
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

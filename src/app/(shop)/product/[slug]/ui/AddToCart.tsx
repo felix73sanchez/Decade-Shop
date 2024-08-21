@@ -10,7 +10,7 @@ interface Props {
     product: Product;
 }
 
-export const AddToCart = ({ product }: Props) => {
+export const  AddToCart = ({ product }: Props) => {
 
     const addProductToCart = useCartStore(state => state.addProductToCart);
     const [size, setSize] = useState<Size | undefined>();

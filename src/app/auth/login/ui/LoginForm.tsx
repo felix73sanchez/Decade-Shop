@@ -2,14 +2,15 @@
 
 import { allFont, logoFont } from "@/config/fonts";
 import { authenticate } from "@/actions";
-import { ExclamationCircleIcon } from "@heroicons/react/16/solid";
+import { ExclamationCircleIcon, EyeIcon, EyeSlashIcon } from "@heroicons/react/16/solid"; 
 import clsx from "clsx";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
 export const LoginForm = () => {
     const [state, dispatch] = useFormState(authenticate, undefined);
+    const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
         if (state === 'Success') {
@@ -29,7 +30,7 @@ export const LoginForm = () => {
                 <div className="flex flex-col gap-1">
                     <label htmlFor="email" className="pl-3 pt-4 text-fs1">Correo electrónico</label>
                     <input
-                        className="p-3 border bg-colorGray rounded-brAll w-full"
+                        className="p-3 border bg-colorGray rounded-brAll w-full font-fw5"
                         type="email"
                         id="email"
                         name="email"
@@ -38,15 +39,26 @@ export const LoginForm = () => {
                 </div>
 
                 {/* LABEL CONTRASEÑA */}
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 relative">
                     <label htmlFor="password" className="pl-3 text-fs1">Contraseña</label>
                     <input
-                        className="p-3 border bg-colorGray rounded-brAll w-full"
-                        type="password"
+                        className="p-3 border bg-colorGray rounded-brAll w-full font-fw5 pr-10"
+                        type={showPassword ? "text" : "password"}
                         id="password"
                         name="password"
                         autoComplete="current-password"
                     />
+                    <button
+                        type="button"
+                        className="absolute right-4 top-1/2 pt-1"
+                        onClick={() => setShowPassword(!showPassword)}
+                    >
+                        {showPassword ? (
+                            <EyeSlashIcon className="h-5 w-5 text-gray-500" />
+                        ) : (
+                            <EyeIcon className="h-5 w-5 text-gray-500" />
+                        )}
+                    </button>
                 </div>
             </div>
 

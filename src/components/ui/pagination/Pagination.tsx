@@ -59,10 +59,10 @@ export const Pagination = ({ totalPages }: Props) => {
     };
 
     return (
-        <div className={`${allFont.className} flex justify-center mb-10 px-1 mysm:text-fs1`}>
-            <nav aria-label="Page navigation example">
-                <ul className="flex list-style-none items-center XR:gap-1 12Pro:gap-0 14Pro:gap-1">
-                    <li className="page-item pr-5">
+        <div className={`${allFont.className} flex  justify-center mb-16 mt-10 px-1 mysm:text-fs1 movileS:text-xs movileM:text-base`}>
+            <nav aria-label="Page navigation example movileS:flex-col">
+                <ul className="flex items-center XR:gap-1 12Pro:gap-0 14Pro:gap-1">
+                    <li className="page-item pr-5 movileS:pr-1 ">
                         <Link
                             className="page-link relative block text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none"
                             href={createPageUrl(currentPage - 1)}>Anterior
@@ -73,7 +73,7 @@ export const Pagination = ({ totalPages }: Props) => {
                         <li key={page + '-' + index} className="page-item px-1 font-fw5 text-fs2 text-colorPrimary rounded-brAll">
                             <Link
                                 className={clsx(
-                                    "page-link relative block w-fit px-4 py-1 mt-1 font-fw5 text-fs2font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW",
+                                    "page-link relative block w-fit px-4 py-1 movileS:px-0.5 movileS:py-0.5 movileM:px-2 mt-1 font-fw5 text-fs2font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW",
                                     {
                                         'bg-colorPrimary shadow-none  text-colorSecondary hover:text-colorHover': page === currentPage,
                                     }
@@ -85,9 +85,9 @@ export const Pagination = ({ totalPages }: Props) => {
                         </li>
                     ))}
 
-                    <li className="page-item pl-5">
+                    <li className="page-item pl-5 movileS:pl-1 ">
                         <Link
-                            className="page-link relative block text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none"
+                            className="page-link relative block text-colorPrimary font-fw4 outline-none transition-all duration-300 hover:text-colorHover focus:shadow-none whitespace-normal"
                             href={createPageUrl(currentPage + 1)}>Siguiente
                         </Link>
                     </li>

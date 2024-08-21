@@ -24,9 +24,9 @@ export const GridImg: React.FC<Props> = ({ className }) => {
     }, []);
 
     return (
-        <div className={`relative w-full h-[36rem] px-p8 overflow-hidden fade-in mt-[4.6rem] grid grid-cols-1 topmenu:grid-cols-3 gap-g8 ${allFont.className} ${className}`}>
+        <div className={`relative w-full h-[36rem] overflow-hidden fade-in mt-[4.6rem] grid grid-cols-1 topmenu:grid-cols-3 gap-g8 ${allFont.className} ${className}`}>
             {/* Imagen visible en pantallas móviles */}
-            <div className="relative w-full h-[36rem] topmenu:hidden block border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
+            <div className="w-full h-[36rem] topmenu:hidden block border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
                 <Image
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].alt}
