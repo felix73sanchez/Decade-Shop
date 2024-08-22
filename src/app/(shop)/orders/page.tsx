@@ -22,7 +22,7 @@ export default async function OrdersPage() {
                     <div className="bg-colorSecondary border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW overflow-hidden ">
                         <div className="m-5">
                             <Title title="Orders"  className=""/>
-                            <div className=" border-y-customBW border-colorPrimary mb-16">
+                            <div className=" border-y-customBW hover:border-y-0 border-colorPrimary mb-16">
                                 <div className="min-w-full">
                                     <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 bg-colorSecondary px-5 py-3 uppercase font-fw7 text-fs1rem">
                                         <div className="text-left">

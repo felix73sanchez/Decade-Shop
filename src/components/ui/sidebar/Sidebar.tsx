@@ -6,7 +6,7 @@ import { useUIStore } from "@/store";
 import { useSession } from "next-auth/react";
 import React from 'react';
 import Link from "next/link";
-import { IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoTicketOutline } from "react-icons/io5";
+import { IoLogInOutline, IoLogOutOutline, IoPeopleOutline, IoPersonOutline, IoTicketOutline, IoShirtOutline } from "react-icons/io5";
 import { useVisibility } from '@/components/ui/barmoving/VisibilityContext';
 import { Title } from "../title/Title";
 
@@ -55,8 +55,27 @@ export const Sidebar = () => {
                             </>
                         )}
 
+                        {!isAuthenticated && (
+                            <Link href="/auth/login" onClick={closeMenu} className="flex items-center py-1 hover:py-2 hover:bg-colorHover transition duration-300 ease-in-out pl-4 hover:rounded-brAll hover:border-customBW hover:border-colorPrimary">
+                                <IoLogInOutline size={24} />
+                                <span className="ml-2">Ingresar</span>
+                            </Link>
+                        )}
+                    </div>
+                    <Title title="Admin" className=" mt-3 " />
+                    <div className="hover:rounded-brAll border-y-customBW border-colorPrimary hover:border-colorSecondary">
+
                         {isAdmin && (
-                            <>
+                            <>  
+                                 <Link
+                                href="/admin/products"
+                                onClick={() => closeMenu()}
+                                className="flex items-center py-1 hover:py-2 hover:bg-colorHover transition duration-300 ease-in-out pl-4 hover:rounded-brAll hover:border-customBW hover:border-colorPrimary"
+                            >
+                                <IoShirtOutline size={24} />
+                                <span className="ml-2">Products</span>
+                                </Link>
+
                                 <Link href="/admin/orders" onClick={closeMenu} className="flex items-center py-1 hover:py-2 hover:bg-colorHover transition duration-300 ease-in-out pl-4 hover:rounded-brAll hover:border-customBW hover:border-colorPrimary">
                                     <IoTicketOutline size={24} />
                                     <span className="ml-2">Órdenes de Admin</span>
@@ -66,13 +85,6 @@ export const Sidebar = () => {
                                     <span className="ml-2">Usuarios de Admin</span>
                                 </Link>
                             </>
-                        )}
-
-                        {!isAuthenticated && (
-                            <Link href="/auth/login" onClick={closeMenu} className="flex items-center py-1 hover:py-2 hover:bg-colorHover transition duration-300 ease-in-out pl-4 hover:rounded-brAll hover:border-customBW hover:border-colorPrimary">
-                                <IoLogInOutline size={24} />
-                                <span className="ml-2">Ingresar</span>
-                            </Link>
                         )}
                     </div>
                 </div>
