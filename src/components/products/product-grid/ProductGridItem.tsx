@@ -15,6 +15,7 @@ export const ProductGridItem = ({ product }: Props) => {
     const [imageUrls, setImageUrls] = useState<string[]>([]);
     const [displayImage, setDisplayImage] = useState<string>('');
     const [isHovered, setIsHovered] = useState<boolean>(false);
+    const [notisHovered, setnotIsHovered] = useState<boolean>(false);
 
     useEffect(() => {
         const checkLocalImages = async () => {
@@ -63,22 +64,27 @@ export const ProductGridItem = ({ product }: Props) => {
                 />
             </Link>
 
-            {/* Botón de Añadir al Carrito */}
-            {isHovered && (
-                <div className="absolute bottom-28 rounded-brAll left-1/2 transform -translate-x-1/2 flex items-center justify-center pointer-events-none">
-                    <div className="w-fit px-4 py-2 rounded-brAll pointer-events-auto">
-                        <AddToCart product={product} />
-                    </div>
+            <div className="h-full p-2 flex flex-col justify-between flex-grow bg-colorSecondary">
+                <div className="h-12">
+                    {/* Botón de Añadir al Carrito */}
+                    {isHovered && (
+                        <div className="flex items-center justify-center text-center">
+                            <div className="w-full py-2.5 rounded-brAll">
+                                <AddToCart product={product} />
+                            </div>
+                        </div>
+                    )}
+                    {!isHovered && (
+                        <div className="w-full px-2 py-0 my-1">
+                            <Link
+                                className="hover:text-color text-fs2 mysm:text-xs font-fw9 text-colorPrimary hover:text-colorHover "
+                                href={`/product/${product.slug}`}
+                            >
+                                {product.title}
+                            </Link>
+                        </div>)
+                    }
                 </div>
-            )}
-
-            <div className="p-2 flex flex-col justify-between flex-grow bg-colorSecondary">
-                <Link
-                    className="hover:text-color text-fs2 font-fw9 text-colorPrimary hover:text-colorHover"
-                    href={`/product/${product.slug}`}
-                >
-                    {product.title}
-                </Link>
                 <div className="flex flex-col h-full">
                     <div className="flex justify-between items-end flex-grow my-2 mx-1">
                         <span className="w-fit px-3 py-1 font-fw7 text-fs2 border-colorPrimary text-colorPrimary rounded-brAll shadow-custom-2 border-customBW">
