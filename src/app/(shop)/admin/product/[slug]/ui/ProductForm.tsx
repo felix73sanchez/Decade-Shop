@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { Category, Product, ProductImage as PorductWithImage } from "@/interfaces";
 import Image from "next/image";
 import clsx from "clsx";
 import { createUpdateProduct, deleteProductImage } from "@/actions";
 import { useRouter } from "next/navigation";
-import { ProductImage } from "@/components";
 import { PiXBold } from "react-icons/pi";
 
 interface Props {
@@ -33,6 +32,7 @@ interface FormImputs {
 export const ProductForm = ({ product, categories }: Props) => {
     const router = useRouter();
     const [selectedImages, setSelectedImages] = useState<{ id: string, file: File, url: string }[]>([]);
+    const [sizeQuantities, setSizeQuantities] = useState<{ [key: string]: number }>({});
     const fileInputRef = useRef<HTMLInputElement | null>(null); 
 
     const {
@@ -48,15 +48,44 @@ export const ProductForm = ({ product, categories }: Props) => {
             tags: product.tags?.join(', '),
             sizes: product.sizes ?? [],
             images: undefined,
+            inStock: 0, // Initialize inStock to 0
         }
     });
 
     watch('sizes');
 
+    useEffect(() => {
+        // Calculate the total inventory based on size quantities
+        const totalQuantity = Object.values(sizeQuantities).reduce((acc, quantity) => acc + quantity, 0);
+        setValue('inStock', totalQuantity);
+    }, [sizeQuantities, setValue]);
+
     const onSizeChanged = (size: string) => {
         const sizes = new Set(getValues('sizes'));
-        sizes.has(size) ? sizes.delete(size) : sizes.add(size);
+    
+        if (sizes.has(size)) {
+            sizes.delete(size);
+            // Remove quantity when size is deselected
+            setSizeQuantities(prev => {
+                const { [size]: _, ...rest } = prev;
+                return rest;
+            });
+        } else {
+            sizes.add(size);
+        }
         setValue('sizes', Array.from(sizes));
+    };
+
+    const handleQuantityChange = (size: string, quantity: number) => {
+        if (quantity === 0) {
+            // Remove size from quantities if quantity is 0
+            setSizeQuantities(prev => {
+                const { [size]: _, ...rest } = prev;
+                return rest;
+            });
+        } else {
+            setSizeQuantities(prev => ({ ...prev, [size]: quantity }));
+        }
     };
 
     const generateUniqueId = () => {
@@ -99,7 +128,7 @@ export const ProductForm = ({ product, categories }: Props) => {
     const onSubmit = async (data: FormImputs) => {
         const formData = new FormData();
         const { images, ...productToSave } = data;
-
+    
         if (product.id) {
             formData.append('id', product.id ?? '');
         }
@@ -112,17 +141,23 @@ export const ProductForm = ({ product, categories }: Props) => {
         formData.append('tags', productToSave.tags);
         formData.append('categoryId', productToSave.categoryId);
         formData.append('gender', productToSave.gender);
-
+    
         // Incluir las imágenes seleccionadas en el FormData
         selectedImages.forEach(image => formData.append('images', image.file));
-
+    
+        // Mostrar los datos en la consola para depuración
+        console.log('FormData contents:');
+        formData.forEach((value, key) => {
+            console.log(key, value);
+        });
+    
         const { ok, product: updatedProduct } = await createUpdateProduct(formData);
-
+    
         if (!ok) {
             alert('Error al guardar el producto');
             return;
         }
-
+    
         router.replace(`/admin/product/${updatedProduct?.slug}`);
     };
 
@@ -191,8 +226,10 @@ export const ProductForm = ({ product, categories }: Props) => {
                         type="number"
                         className="p-2 font-fw5 border-colorPrimary border-customBW rounded-brAll bg-colorGray"
                         {...register("inStock", { required: true, min: 0 })}
+                        readOnly
                     />
                 </div>
+
                 {/* As checkboxes */}
                 <div className="flex flex-col">
                     <span className='ml-3 mb-1'>Tallas</span>
@@ -214,6 +251,8 @@ export const ProductForm = ({ product, categories }: Props) => {
                                     <input
                                         type="number"
                                         placeholder={`Cantidad ${size}`}
+                                        value={isActive ? (sizeQuantities[size]) : ""}
+                                        onChange={(e) => handleQuantityChange(size, Number(e.target.value))}
                                         className={clsx(
                                             "mb-2 py-2 px-3 w-full border-colorPrimary border-customBW rounded-brAll transition-opacity bg-colorGray",
                                             {
@@ -244,6 +283,7 @@ export const ProductForm = ({ product, categories }: Props) => {
                         })}
                     </div>
                 </div>
+
                 <div className="flex flex-col mb-2">
                     <span className='ml-3 mb-1'>Fotos</span>
                     <input
@@ -270,10 +310,10 @@ export const ProductForm = ({ product, categories }: Props) => {
                                 onClick={() => onRemoveImage(image.id)}
                                 className="absolute top-4 right-1 bg-red-500 text-white p-0.5 rounded-full shadow-md"
                             >
-                            <PiXBold
-                            size={18}
-                            className=""
-                            />
+                                <PiXBold
+                                    size={18}
+                                    className=""
+                                />
                             </button>
                         </div>
                     ))}

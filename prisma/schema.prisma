@@ -52,8 +52,21 @@ model Product {
   categoryId   String
   ProductImage ProductImage[]
   OrderItem    OrderItem[]
+  ProductSize  ProductSize[]
 
   @@index([gender])
+}
+
+model ProductSize {
+  id       String   @id @default(uuid())
+  quantity Int
+  size     Size
+
+  // Relaciones
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+
+  @@unique([productId, size])
 }
 
 model ProductImage {
