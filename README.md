@@ -18,5 +18,3 @@ Esto es un E-commerce exclusivo para la marca Decade ©
 
 
 
-## Correr en Prod
-
